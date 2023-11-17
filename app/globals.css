@@ -94,10 +94,24 @@ a {
   color: transparent;
   -webkit-text-stroke: 1px var(--color-tertiary);
   transition: all 0.3s ease-out;
+  display: inline-block;
 }
 
 .outlined-text:hover,
 .outlined-text--active {
   color: var(--color-secondary);
   -webkit-text-stroke: 1px var(--color-secondary);
+}
+
+body::-webkit-scrollbar {
+  width: 4px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent; /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--color-secondary); /* color of the scroll thumb */
+  width: 4px;
 }
