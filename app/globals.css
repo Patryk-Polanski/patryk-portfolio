@@ -93,7 +93,7 @@ a {
 
 .outlined-text {
   color: transparent;
-  -webkit-text-stroke: 1px var(--color-tertiary);
+  -webkit-text-stroke: 1.5px var(--color-tertiary-darker);
   transition: all 0.3s ease-out;
   display: inline-block;
 }

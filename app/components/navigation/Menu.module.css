@@ -1,5 +1,5 @@
 .menu ul {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.4rem;
 }
