@@ -12,6 +12,7 @@
 html {
   font-size: 62.5%;
   background-color: var(--color-primary);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -51,4 +52,52 @@ small {
 
 .d2 {
   font-size: 6.4rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.d1,
+.d2 {
+  font-weight: 600;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wide-container {
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 3rem;
+}
+
+.narrow-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section {
+  min-height: 100vh;
+  padding-top: 6rem;
+}
+
+.section:first-of-type {
+  padding-top: 0;
+}
+
+.outlined-text {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-tertiary);
+  transition: all 0.3s ease-out;
+}
+
+.outlined-text:hover,
+.outlined-text--active {
+  color: var(--color-secondary);
+  -webkit-text-stroke: 1px var(--color-secondary);
 }
