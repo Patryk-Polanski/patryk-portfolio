@@ -123,3 +123,12 @@ body::-webkit-scrollbar-thumb {
   background-color: var(--color-secondary); /* color of the scroll thumb */
   width: 4px;
 }
+
+.svg {
+  color: var(--color-secondary);
+  transition: color 0.2s ease-in;
+}
+
+.svg:hover {
+  color: var(--color-tertiary);
+}

@@ -1,4 +1,4 @@
-import HorizontalLine from '../components/decorative/HorizontalLine';
+import HorizontalLine from '../../components/decorative/HorizontalLine';
 
 export default function SectionHome({ children }) {
   return (

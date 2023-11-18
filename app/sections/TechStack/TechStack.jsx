@@ -1,4 +1,4 @@
-import SectionHeading from './Heading';
+import SectionHeading from '../Heading';
 
 export default function SectionTechStack({ children }) {
   return (
