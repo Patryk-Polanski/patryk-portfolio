@@ -9,6 +9,7 @@
 
 .force-graph-section--initial {
   border: 2px solid var(--color-primary-lighter);
+  background-color: var(--color-primary);
 }
 
 .force-graph-button.render {
@@ -41,7 +42,7 @@
 }
 
 .force-graph-container canvas {
-  border: 2px solid #333333;
+  border: 2px solid var(--color-primary-lighter);
   box-sizing: border-box;
   position: absolute;
   top: 0;

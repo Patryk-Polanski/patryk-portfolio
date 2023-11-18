@@ -11,6 +11,7 @@ import Social from './components/ui/Social';
 import DownArrow from './sections/Home/DownArrow';
 import SkillsGraph from './sections/TechStack/SkillsGraph';
 import SkillsGraphImages from './sections/TechStack/SkillsGraphImages';
+import ExperienceCarousel from './sections/Experience/ExperienceCarousel';
 
 export default function Home() {
   return (
@@ -27,7 +28,9 @@ export default function Home() {
         <SkillsGraph />
         <SkillsGraphImages />
       </SectionTechStack>
-      <SectionExperience></SectionExperience>
+      <SectionExperience>
+        <ExperienceCarousel />
+      </SectionExperience>
       <SectionAbout></SectionAbout>
     </main>
   );

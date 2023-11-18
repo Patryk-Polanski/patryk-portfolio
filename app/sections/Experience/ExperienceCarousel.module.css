@@ -1,0 +1,19 @@
+.embla {
+  padding: 0;
+  margin-top: 12rem;
+}
+
+.emblaContainer {
+  margin-left: 0;
+}
+
+.emblaSlide {
+  padding: 4rem 0;
+  width: 100%;
+}
+
+.emblaSlide h3 {
+  font-family: var(--font-advent-pro);
+  text-align: center;
+  color: var(--color-primary-lighter);
+}

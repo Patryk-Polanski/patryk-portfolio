@@ -1,5 +1,3 @@
-import { AdventProFont } from '@/app/layout';
-
 import styles from './Menu.module.css';
 
 const links = ['Home', 'Portfolio', 'Tech Stack', 'Experience', 'About'];
@@ -11,7 +9,7 @@ export default function Menu() {
         {links.map((link) => (
           <li key={link}>
             <a
-              className={`${AdventProFont.className} d1 outlined-text ${
+              className={`d1 outlined-text ${
                 link.toLocaleLowerCase() === 'home'
                   ? 'outlined-text--active'
                   : ''
