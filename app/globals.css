@@ -85,6 +85,10 @@ a {
   text-decoration: none;
 }
 
+.plain-link {
+  color: var(--color-tertiary-darkest);
+}
+
 .wide-container {
   max-width: 2000px;
   margin: 0 auto;
@@ -92,7 +96,7 @@ a {
 }
 
 .narrow-container {
-  max-width: 1400px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 

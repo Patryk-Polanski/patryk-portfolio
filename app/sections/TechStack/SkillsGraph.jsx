@@ -30,17 +30,19 @@ function SkillsGraph() {
     });
     observer.observe(containerRef?.current);
 
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' && !renderGraph) {
-        if (
-          revealBtnRef.current?.getBoundingClientRect().bottom -
-            window.innerHeight <
-          0
-        ) {
-          setRenderGraph(true);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !renderGraph) {
+          if (
+            revealBtnRef.current?.getBoundingClientRect().bottom -
+              window.innerHeight <
+            0
+          ) {
+            setRenderGraph(true);
+          }
         }
-      }
-    });
+      });
+    }
 
     return () => {
       observer.disconnect();

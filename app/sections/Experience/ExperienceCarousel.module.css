@@ -1,6 +1,7 @@
 .embla {
-  padding: 0;
+  padding: 0 18rem 16rem;
   margin-top: 12rem;
+  position: relative;
 }
 
 .emblaContainer {
@@ -8,12 +9,117 @@
 }
 
 .emblaSlide {
-  padding: 4rem 0;
   width: 100%;
+  padding: 4rem 0;
+  padding-right: 8rem;
 }
 
 .emblaSlide h3 {
   font-family: var(--font-advent-pro);
   text-align: center;
-  color: var(--color-primary-lighter);
+  color: var(--color-tertiary-darkest);
+  opacity: 0.5;
+}
+
+.emblaSlideIntro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6rem;
+}
+
+.emblaSlideIntro h5 {
+  color: var(--color-tertiary-darkest);
+}
+
+.emblaSlideIntroLeft,
+.emblaSlideIntroRight {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.emblaSlideIntroRight {
+  align-items: end;
+}
+
+.emblaSlideDetails {
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.emblaSlideDetails li {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  line-height: 160%;
+}
+
+.emblaSlideDetails li svg {
+  flex-shrink: 0;
+}
+
+.emblaButtons {
+  top: unset;
+  left: 0;
+  bottom: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.emblaButtons svg {
+  width: unset;
+  height: unset;
+}
+
+.emblaButtons :global(.embla__button--prev),
+.emblaButtons :global(.embla__button--next) {
+  width: unset;
+}
+
+.emblaDots {
+  bottom: 8rem;
+  gap: 10rem;
+}
+
+.emblaDots :global(.embla__dot) {
+  position: relative;
+  margin: 0;
+  transition: all 0.2s 0.4s ease-in;
+}
+
+.emblaDots :global(.embla__dot):hover {
+  border-color: var(--color-secondary) !important;
+  /* transition: border-color 0.2s ease-in !important; */
+}
+
+.emblaDots :global(.embla__dot)::before {
+  content: '';
+  width: 10rem;
+  height: 1px;
+  background-color: var(--color-secondary);
+  position: absolute;
+  left: -10rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.4s cubic-bezier(0.82, 0.03, 0.54, 0.2);
+}
+
+.emblaDots :global(.embla__dot):first-of-type:before {
+  display: none;
+}
+
+.emblaDots :global(.embla__dot--selected) ~ :global(.embla__dot) {
+  border-color: var(--color-tertiary-darker);
+}
+
+.emblaDots :global(.embla__dot--selected) ~ :global(.embla__dot)::before {
+  width: 0;
+}
+
+.emblaDots :global(.embla__dot--selected)::before {
+  width: 10rem;
 }

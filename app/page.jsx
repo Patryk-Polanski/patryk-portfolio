@@ -25,7 +25,7 @@ export default function Home() {
       </SectionHome>
       <SectionPortfolio></SectionPortfolio>
       <SectionTechStack>
-        <SkillsGraph />
+        {/* <SkillsGraph /> */}
         <SkillsGraphImages />
       </SectionTechStack>
       <SectionExperience>
