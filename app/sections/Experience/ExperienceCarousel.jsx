@@ -35,6 +35,7 @@ export default function ExperienceCarousel() {
 
   const onInit = useCallback((emblaApi) => {
     setScrollSnaps(emblaApi.scrollSnapList());
+    emblaApi.scrollTo(experienceData.length - 1);
   }, []);
 
   const onSelect = useCallback((emblaApi) => {

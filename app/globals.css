@@ -87,6 +87,11 @@ a {
 
 .plain-link {
   color: var(--color-tertiary-darkest);
+  transition: color 0.2s ease-in;
+}
+
+.plain-link:hover {
+  color: var(--color-secondary);
 }
 
 .wide-container {

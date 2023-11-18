@@ -112,6 +112,26 @@
   display: none;
 }
 
+.emblaDots :global(.embla__dot):last-of-type::after,
+.emblaDots :global(.embla__dot):first-of-type::after {
+  content: 'latest';
+  position: absolute;
+  right: -1.2rem;
+  top: 50%;
+  transform: translateY(-50%) translateX(100%);
+  color: var(--color-tertiary-darker);
+  font-size: 1.4rem;
+  font-family: var(--font-comfortaa);
+}
+
+.emblaDots :global(.embla__dot):first-of-type::after {
+  content: 'oldest';
+  right: unset;
+  transform: translateY(-50%) translateX(-100%);
+  left: -1.2rem;
+  /* transform: rotateZ(-30deg); */
+}
+
 .emblaDots :global(.embla__dot--selected) ~ :global(.embla__dot) {
   border-color: var(--color-tertiary-darker);
 }
