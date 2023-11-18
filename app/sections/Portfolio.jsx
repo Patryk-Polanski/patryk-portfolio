@@ -2,7 +2,7 @@ import SectionHeading from './Heading';
 
 export default function SectionPortfolio({ children }) {
   return (
-    <section className='section' id='portfolio'>
+    <section className='section wide-container' id='portfolio'>
       <SectionHeading text='Portfolio' />
       {children}
     </section>

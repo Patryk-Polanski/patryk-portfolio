@@ -11,7 +11,7 @@ import Social from './components/ui/Social';
 
 export default function Home() {
   return (
-    <main className='wide-container'>
+    <main>
       <SectionHome>
         <Menu />
         <Logo />

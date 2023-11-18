@@ -1,5 +1,5 @@
 :root {
-  --color-primary-lighter: #2d343e;
+  --color-primary-lighter: #282d35;
   --color-primary: #14191f;
   --color-secondary: #8e8106;
   --color-secondary-darker: #373716;
@@ -19,6 +19,7 @@ body {
   color: var(--color-tertiary);
   font-size: 1.6rem;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -87,8 +88,14 @@ a {
   position: relative;
 }
 
-.section:first-of-type {
-  padding-top: 0;
+#home {
+  overflow: hidden;
+  position: relative;
+}
+
+#home .section {
+  overflow: hidden;
+  padding-top: 3rem;
 }
 
 .outlined-text {
