@@ -11,7 +11,7 @@ export default function ArrowDown() {
       <path
         d='M17.0184 1.60128C17.7425 1.5798 99.786 13.8661 16.7622 58.854'
         stroke='currentColor'
-        stroke-width='2'
+        strokeWidth='2'
         stroke-linecap='round'
       />
       <path

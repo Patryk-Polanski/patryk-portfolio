@@ -9,6 +9,8 @@ import SectionAbout from './sections/About/About';
 import Profile from './sections/Home/Profile';
 import Social from './components/ui/Social';
 import DownArrow from './sections/Home/DownArrow';
+import SkillsGraph from './sections/TechStack/SkillsGraph';
+import SkillsGraphImages from './sections/TechStack/SkillsGraphImages';
 
 export default function Home() {
   return (
@@ -21,7 +23,10 @@ export default function Home() {
         <DownArrow />
       </SectionHome>
       <SectionPortfolio></SectionPortfolio>
-      <SectionTechStack></SectionTechStack>
+      <SectionTechStack>
+        <SkillsGraph />
+        <SkillsGraphImages />
+      </SectionTechStack>
       <SectionExperience></SectionExperience>
       <SectionAbout></SectionAbout>
     </main>
