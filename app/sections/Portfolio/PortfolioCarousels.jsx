@@ -11,19 +11,19 @@ import styles from './PortfolioCarousels.module.css';
 
 const slides = [
   {
-    id: '1',
+    id: '0',
     title: 'slide 1',
   },
   {
-    id: '2',
+    id: '1',
     title: 'slide 2',
   },
   {
-    id: '3',
+    id: '2',
     title: 'slide 3',
   },
   {
-    id: '4',
+    id: '3',
     title: 'slide 4',
   },
 ];
@@ -34,18 +34,35 @@ const numberWithinRange = (number, min, max) =>
   Math.min(Math.max(number, min), max);
 
 export default function PortfolioCarousels() {
+  const [activeThumbsIndex, setActiveThumbsIndex] = useState(0);
+  const [activeMainIndex, setActiveMainIndex] = useState(0);
+
+  const updateThumbsIndex = useCallback((index) => {
+    setActiveThumbsIndex(index);
+  }, []);
+
+  const updateMainIndex = useCallback((index) => {
+    setActiveMainIndex(index);
+  }, []);
+
   return (
     <div className={styles.carouselsWrapper}>
       <h3 className={`h2 ${styles.carouselsWrapperHeading}`}>
         Restaurante Miramar
       </h3>
-      <MainCarousel />
-      <CustomThumbsCarousel />
+      <MainCarousel
+        activeMainIndex={activeMainIndex}
+        updateThumbsIndex={updateThumbsIndex}
+      />
+      <CustomThumbsCarousel
+        activeThumbsIndex={activeThumbsIndex}
+        updateMainIndex={updateMainIndex}
+      />
     </div>
   );
 }
 
-function MainCarousel() {
+function MainCarousel({ updateThumbsIndex, activeMainIndex }) {
   const [emblaMainRef, emblaMainApi] = useEmblaCarousel({});
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
@@ -61,11 +78,16 @@ function MainCarousel() {
     [emblaMainApi]
   );
 
-  const onSelect = useCallback((emblaApi) => {
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-    setPrevBtnDisabled(!emblaApi.canScrollPrev());
-    setNextBtnDisabled(!emblaApi.canScrollNext());
-  }, []);
+  const onSelect = useCallback(
+    (emblaApi) => {
+      const scrollSnap = emblaApi.selectedScrollSnap();
+      setSelectedIndex(scrollSnap);
+      setPrevBtnDisabled(!emblaApi.canScrollPrev());
+      setNextBtnDisabled(!emblaApi.canScrollNext());
+      updateThumbsIndex(scrollSnap);
+    },
+    [updateThumbsIndex]
+  );
 
   const onScroll = useCallback(() => {
     if (!emblaMainApi) return;
@@ -100,6 +122,11 @@ function MainCarousel() {
     emblaMainApi.on('reInit', onScroll);
     emblaMainApi.on('select', onSelect);
   }, [emblaMainApi, onScroll, onSelect]);
+
+  useEffect(() => {
+    if (!emblaMainApi) return;
+    emblaMainApi.scrollTo(activeMainIndex);
+  }, [activeMainIndex, emblaMainApi]);
 
   return (
     <div className={`embla ${styles.mainEmbla}`}>
@@ -139,11 +166,29 @@ function MainCarousel() {
   );
 }
 
-function CustomThumbsCarousel() {
+function CustomThumbsCarousel({ activeThumbsIndex, updateMainIndex }) {
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
     align: 'start',
-    loop: true,
   });
+
+  const onSelect = useCallback(
+    (emblaApi) => {
+      const scrollSnap = emblaApi.selectedScrollSnap();
+      updateMainIndex(scrollSnap);
+    },
+    [updateMainIndex]
+  );
+
+  useEffect(() => {
+    if (!emblaThumbsApi) return;
+    emblaThumbsApi.on('select', onSelect);
+  }, [emblaThumbsApi, onSelect]);
+
+  useEffect(() => {
+    if (!emblaThumbsApi) return;
+    emblaThumbsApi.scrollTo(activeThumbsIndex);
+  }, [activeThumbsIndex, emblaThumbsApi]);
 
   return (
     <div className={`embla ${styles.thumbsEmbla}`}>
@@ -157,9 +202,15 @@ function CustomThumbsCarousel() {
               className={`embla__slide ${styles.thumbsEmblaSlide}`}
               key={slide.id}
             >
-              <div className={styles.thumbsEmblaSlideContent}>
+              <button
+                className={`button ${styles.thumbsEmblaSlideContent}`}
+                onClick={() => {
+                  emblaThumbsApi.scrollTo(slide.id);
+                  updateMainIndex(slide.id);
+                }}
+              >
                 <h4>{slide.title}</h4>
-              </div>
+              </button>
             </li>
           ))}
         </ol>

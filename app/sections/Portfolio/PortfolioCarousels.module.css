@@ -42,11 +42,13 @@
 .mainEmblaButtons {
   position: absolute;
   bottom: 8rem;
-  right: 8rem;
+  right: 0;
   top: unset;
   left: unset;
   display: flex;
   gap: 4rem;
+  justify-content: center;
+  width: calc(25% - var(--container-horizontal-padding));
 }
 
 .mainEmblaButtons :global(.embla__button--prev),
@@ -69,6 +71,7 @@
 
 .thumbsEmblaContainer {
   margin-left: calc(2rem * -1);
+  margin-right: calc(100% - 28rem);
 }
 
 .thumbsEmblaSlide {
@@ -77,8 +80,14 @@
   padding-left: 2rem;
 }
 
+/* .thumbsEmblaSlide:last-of-type {
+  padding-right: calc(100% + 30rem);
+} */
+
 .thumbsEmblaSlideContent {
   border-radius: 1rem;
   border: 1px solid var(--color-secondary);
   height: inherit;
+  width: 100%;
+  color: inherit;
 }
