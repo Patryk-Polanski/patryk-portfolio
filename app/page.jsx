@@ -8,6 +8,8 @@ import Social from './components/ui/Social';
 import DownArrow from './sections/Home/DownArrow';
 
 import SectionPortfolio from './sections/Portfolio/Portfolio';
+import PortfolioCarousels from './sections/Portfolio/PortfolioCarousels';
+
 import SectionTechStack from './sections/TechStack/TechStack';
 const DynamicSkillsGraph = dynamic(
   () => import('./sections/TechStack/SkillsGraph'),
@@ -30,14 +32,20 @@ export default function Home() {
         <Social position='top-right' />
         <DownArrow />
       </SectionHome>
-      <SectionPortfolio></SectionPortfolio>
+
+      <SectionPortfolio>
+        <PortfolioCarousels />
+      </SectionPortfolio>
+
       <SectionTechStack>
         <DynamicSkillsGraph />
         <SkillsGraphImages />
       </SectionTechStack>
+
       <SectionExperience>
         <ExperienceCarousel />
       </SectionExperience>
+
       <SectionAbout></SectionAbout>
     </main>
   );

@@ -1,0 +1,73 @@
+.carouselsWrapper {
+  margin-top: 12rem;
+  position: relative;
+}
+
+.carouselsWrapperHeading {
+  padding: 2rem 0;
+  color: var(--color-tertiary-darkest);
+}
+
+.mainEmbla {
+  height: 800px;
+  padding: 0;
+  width: 75%;
+  background-color: var(--color-primary);
+}
+
+.mainEmblaViewport {
+  height: 100%;
+}
+
+.mainEmblaContainer {
+  height: 100%;
+  margin-left: 0;
+  margin-left: calc(2rem * -1);
+}
+
+.mainEmblaSlide {
+  padding-left: 2rem;
+  margin: 0;
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.mainEmblaSlideContent {
+  border: 1px solid var(--color-secondary);
+  border-radius: 1rem;
+  height: inherit;
+}
+
+.thumbsEmbla {
+  width: 40%;
+  position: absolute;
+  padding: 0;
+  top: 0;
+  right: 0;
+  background-color: var(--color-primary);
+  transform: translateX(var(--container-horizontal-padding));
+}
+
+.thumbsEmblaViewport {
+}
+
+.thumbsEmblaContainer {
+  margin-left: calc(2rem * -1);
+}
+
+.thumbsEmblaSlide {
+  flex: 0 0 30rem;
+  height: 55rem;
+  padding-left: 2rem;
+}
+
+.thumbsEmblaSlide:last-of-type {
+  padding-right: 2rem;
+}
+
+.thumbsEmblaSlideContent {
+  border-radius: 1rem;
+  border: 1px solid var(--color-secondary);
+  height: inherit;
+}

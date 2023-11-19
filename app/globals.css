@@ -7,6 +7,8 @@
   --color-tertiary: #e1e1e1;
   --color-tertiary-darker: #7c7c7c;
   --color-tertiary-darkest: #676767;
+
+  --container-horizontal-padding: 3rem;
 }
 
 html {
@@ -97,7 +99,7 @@ a {
 .wide-container {
   max-width: 2000px;
   margin: 0 auto;
-  padding: 3rem;
+  padding: var(--container-horizontal-padding);
 }
 
 .narrow-container {
