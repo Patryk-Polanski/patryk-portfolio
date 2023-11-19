@@ -2,7 +2,10 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import { Thumb } from '@/app/utils/emblaExtras';
+import { PrevButton, NextButton } from '@/app/utils/emblaExtras';
+
+import ArrowLeft from '../../components/ui/svg/ArrowLeft';
+import ArrowRight from '../../components/ui/svg/ArrowRight';
 
 import styles from './PortfolioCarousels.module.css';
 
@@ -44,7 +47,25 @@ export default function PortfolioCarousels() {
 
 function MainCarousel() {
   const [emblaMainRef, emblaMainApi] = useEmblaCarousel({});
+  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
+  const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const [tweenValues, setTweenValues] = useState([]);
+
+  const scrollPrev = useCallback(
+    () => emblaMainApi && emblaMainApi.scrollPrev(),
+    [emblaMainApi]
+  );
+  const scrollNext = useCallback(
+    () => emblaMainApi && emblaMainApi.scrollNext(),
+    [emblaMainApi]
+  );
+
+  const onSelect = useCallback((emblaApi) => {
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+    setPrevBtnDisabled(!emblaApi.canScrollPrev());
+    setNextBtnDisabled(!emblaApi.canScrollNext());
+  }, []);
 
   const onScroll = useCallback(() => {
     if (!emblaMainApi) return;
@@ -74,9 +95,11 @@ function MainCarousel() {
   useEffect(() => {
     if (!emblaMainApi) return;
     onScroll();
+    onSelect(emblaMainApi);
     emblaMainApi.on('scroll', onScroll);
     emblaMainApi.on('reInit', onScroll);
-  }, [emblaMainApi, onScroll]);
+    emblaMainApi.on('select', onSelect);
+  }, [emblaMainApi, onScroll, onSelect]);
 
   return (
     <div className={`embla ${styles.mainEmbla}`}>
@@ -103,6 +126,14 @@ function MainCarousel() {
             </li>
           ))}
         </ol>
+        <div className={`embla__buttons ${styles.mainEmblaButtons} `}>
+          <PrevButton onClick={scrollPrev} disabled={prevBtnDisabled}>
+            <ArrowLeft />
+          </PrevButton>
+          <NextButton onClick={scrollNext} disabled={nextBtnDisabled}>
+            <ArrowRight />
+          </NextButton>
+        </div>
       </div>
     </div>
   );
