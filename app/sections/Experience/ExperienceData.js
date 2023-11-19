@@ -101,7 +101,7 @@ export const experienceData = [
     tasks: [
       {
         id: '1',
-        task: 'Utilized advanced technologies such as React, Next.js, TypeScript, and Tailwind to create engaging websites and web applications',
+        task: 'Utilized modern technologies such as React, Next.js, TypeScript, and Tailwind to create engaging websites and web applications',
       },
       {
         id: '2',
