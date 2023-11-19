@@ -126,6 +126,10 @@ a {
   margin-top: 14rem;
 }
 
+#tech-stack.section {
+  position: relative;
+}
+
 .outlined-text {
   color: transparent;
   -webkit-text-stroke: 1.5px var(--color-tertiary-darker);
@@ -137,6 +141,16 @@ a {
 .outlined-text--active {
   color: var(--color-secondary);
   -webkit-text-stroke: 1px var(--color-secondary);
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 body::-webkit-scrollbar {

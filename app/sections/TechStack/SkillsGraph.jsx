@@ -85,6 +85,17 @@ function SkillsGraph() {
   return (
     <>
       <div
+        className='visually-hidden'
+        aria-label='Description of the below skill graph'
+      >
+        Below is a visual graph demonstrating my skills as a web Developer. I
+        specialize in front end development, specifically React, Next.js, CSS,
+        Tailwind and I have experience working with content management systems
+        such as WordPress, Sanity and Shopify.
+      </div>
+      <div
+        aria-hidden='true'
+        focusable='false'
         className={`force-graph-section ${
           !renderGraph && 'force-graph-section--initial'
         }`}
@@ -107,14 +118,18 @@ function SkillsGraph() {
               onClick={() => {
                 zoomLevel > 0.8 && setZoomLevel((prevZoom) => prevZoom - 0.2);
               }}
+              aria-label='Zoom out'
+              className='styled-icon'
             >
-              -
+              &minus;
             </Button>
             <Button
               type='primary'
               onClick={() => {
                 zoomLevel < 3 && setZoomLevel((prevZoom) => prevZoom + 0.2);
               }}
+              aria-label='Zoom in'
+              className='styled-icon'
             >
               +
             </Button>
@@ -150,7 +165,6 @@ function SkillsGraph() {
               ctx.fillStyle = '#A9A9A9';
               ctx.fillText(node.name, node.x, node.y + (IMAGE_SIZE - 4));
               let icon = document.getElementById(`icon-${node.id}`);
-              if (!icon) icon = document.getElementById('icon-react');
               ctx.drawImage(
                 icon,
                 node.x - IMAGE_SIZE / 2,

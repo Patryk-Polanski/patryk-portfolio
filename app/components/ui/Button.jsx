@@ -1,7 +1,5 @@
 'use client';
 
-import styles from './Button.module.css';
-
 export default function Button({
   children,
   type,
@@ -10,13 +8,11 @@ export default function Button({
   newTab = false,
   className,
 }) {
-  const buttonType = type === 'primary' ? 'buttonPrimary' : '';
-
   return (
     <>
       {onClick && (
         <button
-          className={`${styles.button} ${styles[buttonType]} ${className}`}
+          className={`button button--${type || ''} ${className || ''}`}
           onClick={onClick}
         >
           {children}
@@ -26,7 +22,7 @@ export default function Button({
         <a
           href={link}
           target={newTab ? '_blank' : ''}
-          className={`${styles.button} ${styles[buttonType]} ${className}`}
+          className={`button button--${type || ''} ${className || ''}`}
         >
           {children}
         </a>

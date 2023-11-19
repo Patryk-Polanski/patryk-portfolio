@@ -2,6 +2,7 @@ import { Advent_Pro, Comfortaa } from 'next/font/google';
 import './reset.css';
 import './globals.css';
 import './embla.css';
+import './components/ui/button.css';
 
 export const AdventProFont = Advent_Pro({
   weight: ['400', '600'],

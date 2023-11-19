@@ -5,11 +5,15 @@ import { skillsData } from './skillsData';
 export default function SkillsGraphImages() {
   return (
     <div
+      aria-hidden='true'
+      focusable='false'
+      tabIndex={-1}
       style={{
-        display: 'flex',
-        gap: '12px',
-        justifyContent: 'center',
-        flexWrap: 'wrap',
+        position: 'absolute',
+        pointerEvents: 'none',
+        left: '0',
+        opacity: 0,
+        top: '0',
         visibility: 'hidden',
       }}
     >
@@ -20,8 +24,8 @@ export default function SkillsGraphImages() {
             id={`icon-${node.id}`}
             src={`/${node.id}-icon.png`}
             alt={`icon - ${node.name}`}
-            width={40}
-            height={40}
+            width={150}
+            height={150}
           />
         );
       })}
