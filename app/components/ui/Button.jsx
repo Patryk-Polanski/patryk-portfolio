@@ -46,6 +46,7 @@ export default function Button({
           aria-label={text}
         >
           {children || slicedText}
+          <span className='visually-hidden'>{text}</span>
         </button>
       )}
       {link && (
@@ -56,6 +57,7 @@ export default function Button({
           aria-label={text}
         >
           {children || slicedText}
+          <span className='visually-hidden'>{text}</span>
         </a>
       )}
     </>

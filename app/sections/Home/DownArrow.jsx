@@ -5,7 +5,7 @@ import styles from './DownArrow.module.css';
 
 export default function DownArrow() {
   return (
-    <Button className={styles.downArrow} link='#portfolio'>
+    <Button className={styles.downArrow} link='#portfolio' text='scroll down'>
       <ArrowDown />
     </Button>
   );

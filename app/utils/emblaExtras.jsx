@@ -17,6 +17,7 @@ export const PrevButton = (props) => {
     <button
       className='embla__button embla__button--prev'
       type='button'
+      text='previous slide'
       {...restProps}
     >
       {children}
@@ -31,6 +32,7 @@ export const NextButton = (props) => {
     <button
       className='embla__button embla__button--next'
       type='button'
+      text='next slide'
       {...restProps}
     >
       {children}
