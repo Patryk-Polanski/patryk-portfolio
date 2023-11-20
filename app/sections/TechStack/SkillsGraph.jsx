@@ -103,9 +103,7 @@ function SkillsGraph() {
       >
         {!renderGraph ? (
           <div className='force-graph-button render' ref={revealBtnRef}>
-            <Button type='primary' onClick={handlePlay}>
-              Reveal
-            </Button>
+            <Button type='primary' onClick={handlePlay} text='Reveal' />
             <span className='d2'> or press Enter</span>
           </div>
         ) : (
