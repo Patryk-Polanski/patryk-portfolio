@@ -1,32 +1,17 @@
 'use client';
 
+import Image from 'next/image';
 import { useState, useEffect, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { PrevButton, NextButton } from '@/app/utils/emblaExtras';
 
+import Number from '@/app/components/ui/svg/Number';
 import ArrowLeft from '../../components/ui/svg/ArrowLeft';
 import ArrowRight from '../../components/ui/svg/ArrowRight';
 
 import styles from './PortfolioCarousels.module.css';
 
-const slides = [
-  {
-    id: '0',
-    title: 'slide 1',
-  },
-  {
-    id: '1',
-    title: 'slide 2',
-  },
-  {
-    id: '2',
-    title: 'slide 3',
-  },
-  {
-    id: '3',
-    title: 'slide 4',
-  },
-];
+import { portfolioData } from './PortfolioData';
 
 const TWEEN_FACTOR = 1;
 
@@ -34,35 +19,39 @@ const numberWithinRange = (number, min, max) =>
   Math.min(Math.max(number, min), max);
 
 export default function PortfolioCarousels() {
-  const [activeThumbsIndex, setActiveThumbsIndex] = useState(0);
-  const [activeMainIndex, setActiveMainIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const updateThumbsIndex = useCallback((index) => {
-    setActiveThumbsIndex(index);
+    setActiveIndex(index);
   }, []);
 
   const updateMainIndex = useCallback((index) => {
-    setActiveMainIndex(index);
+    setActiveIndex(index);
   }, []);
 
   return (
     <div className={styles.carouselsWrapper}>
-      <h3 className={`h2 ${styles.carouselsWrapperHeading}`}>
-        Restaurante Miramar
+      <h3 className={styles.carouselsWrapperHeading}>
+        <p className='h2'>{portfolioData[activeIndex].title}</p>
+        <p style={{ display: 'flex', alignItems: 'center', gap: '1.4rem' }}>
+          <Number number={activeIndex + 1} />
+          <span className='h3'>/</span>
+          <Number number={portfolioData.length} />
+        </p>
       </h3>
       <MainCarousel
-        activeMainIndex={activeMainIndex}
+        activeIndex={activeIndex}
         updateThumbsIndex={updateThumbsIndex}
       />
       <CustomThumbsCarousel
-        activeThumbsIndex={activeThumbsIndex}
+        activeIndex={activeIndex}
         updateMainIndex={updateMainIndex}
       />
     </div>
   );
 }
 
-function MainCarousel({ updateThumbsIndex, activeMainIndex }) {
+function MainCarousel({ updateThumbsIndex, activeIndex }) {
   const [emblaMainRef, emblaMainApi] = useEmblaCarousel({});
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
@@ -125,8 +114,8 @@ function MainCarousel({ updateThumbsIndex, activeMainIndex }) {
 
   useEffect(() => {
     if (!emblaMainApi) return;
-    emblaMainApi.scrollTo(activeMainIndex);
-  }, [activeMainIndex, emblaMainApi]);
+    emblaMainApi.scrollTo(activeIndex);
+  }, [activeIndex, emblaMainApi]);
 
   return (
     <div className={`embla ${styles.mainEmbla}`}>
@@ -135,10 +124,10 @@ function MainCarousel({ updateThumbsIndex, activeMainIndex }) {
         ref={emblaMainRef}
       >
         <ol className={`embla__container ${styles.mainEmblaContainer}`}>
-          {slides.map((slide, index) => (
+          {portfolioData.map((project, index) => (
             <li
               className={`embla__slide ${styles.mainEmblaSlide}`}
-              key={slide.id}
+              key={project.id}
             >
               <div
                 className={`embla__scale ${styles.mainEmblaSlideContent}`}
@@ -148,7 +137,12 @@ function MainCarousel({ updateThumbsIndex, activeMainIndex }) {
                   }),
                 }}
               >
-                {slide.title}
+                <Image
+                  src={project.imgDesktop}
+                  width={2000}
+                  height={1078}
+                  alt={`screenshot of ${project.title} project`}
+                />
               </div>
             </li>
           ))}
@@ -166,7 +160,7 @@ function MainCarousel({ updateThumbsIndex, activeMainIndex }) {
   );
 }
 
-function CustomThumbsCarousel({ activeThumbsIndex, updateMainIndex }) {
+function CustomThumbsCarousel({ updateMainIndex, activeIndex }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
     align: 'start',
@@ -175,6 +169,7 @@ function CustomThumbsCarousel({ activeThumbsIndex, updateMainIndex }) {
   const onSelect = useCallback(
     (emblaApi) => {
       const scrollSnap = emblaApi.selectedScrollSnap();
+      setSelectedIndex(scrollSnap);
       updateMainIndex(scrollSnap);
     },
     [updateMainIndex]
@@ -187,8 +182,8 @@ function CustomThumbsCarousel({ activeThumbsIndex, updateMainIndex }) {
 
   useEffect(() => {
     if (!emblaThumbsApi) return;
-    emblaThumbsApi.scrollTo(activeThumbsIndex);
-  }, [activeThumbsIndex, emblaThumbsApi]);
+    emblaThumbsApi.scrollTo(activeIndex);
+  }, [activeIndex, emblaThumbsApi]);
 
   return (
     <div className={`embla ${styles.thumbsEmbla}`}>
@@ -197,19 +192,28 @@ function CustomThumbsCarousel({ activeThumbsIndex, updateMainIndex }) {
         ref={emblaThumbsRef}
       >
         <ol className={`embla__container ${styles.thumbsEmblaContainer}`}>
-          {slides.map((slide, index) => (
+          {portfolioData.map((project, index) => (
             <li
-              className={`embla__slide ${styles.thumbsEmblaSlide}`}
-              key={slide.id}
+              className={`embla__slide ${styles.thumbsEmblaSlide} ${
+                selectedIndex === project.id
+                  ? styles.thumbsEmblaSlideActive
+                  : ''
+              }`}
+              key={project.id}
             >
               <button
                 className={`button ${styles.thumbsEmblaSlideContent}`}
                 onClick={() => {
-                  emblaThumbsApi.scrollTo(slide.id);
-                  updateMainIndex(slide.id);
+                  emblaThumbsApi.scrollTo(project.id);
+                  updateMainIndex(project.id);
                 }}
               >
-                <h4>{slide.title}</h4>
+                <Image
+                  src={project.imgMobile}
+                  width={362}
+                  height={700}
+                  alt={`screenshot of ${project.title} project`}
+                />
               </button>
             </li>
           ))}

@@ -6,10 +6,13 @@
 .carouselsWrapperHeading {
   padding: 2rem 0;
   color: var(--color-tertiary-darkest);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
 }
 
 .mainEmbla {
-  height: 800px;
   padding: 0;
   width: 75%;
   background-color: var(--color-primary);
@@ -37,11 +40,18 @@
   border: 1px solid var(--color-secondary);
   border-radius: 1rem;
   height: inherit;
+  padding: 1rem;
+}
+
+.mainEmblaSlideContent img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
 }
 
 .mainEmblaButtons {
   position: absolute;
-  bottom: 8rem;
+  bottom: 4rem;
   right: 0;
   top: unset;
   left: unset;
@@ -59,35 +69,45 @@
 .thumbsEmbla {
   width: 40%;
   position: absolute;
-  padding: 0;
+  padding: 1rem;
+  background-color: var(--color-primary);
   top: 0;
   right: 0;
-  background-color: var(--color-primary);
   transform: translateX(var(--container-horizontal-padding));
-}
-
-.thumbsEmblaViewport {
+  border-radius: 1rem;
 }
 
 .thumbsEmblaContainer {
   margin-left: calc(2rem * -1);
-  margin-right: calc(100% - 28rem);
+  /* margin-right: calc(100% - 28rem); */
 }
 
 .thumbsEmblaSlide {
-  flex: 0 0 30rem;
-  height: 55rem;
+  flex: 0 0 45%;
   padding-left: 2rem;
 }
 
-/* .thumbsEmblaSlide:last-of-type {
-  padding-right: calc(100% + 30rem);
-} */
+.thumbsEmblaSlide:last-of-type {
+  margin-right: calc(100% - 45%);
+}
+
+.thumbsEmblaSlide img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+
+.thumbsEmblaSlideActive button,
+.thumbsEmblaSlideContent:hover {
+  border: 1px solid var(--color-secondary);
+}
 
 .thumbsEmblaSlideContent {
   border-radius: 1rem;
-  border: 1px solid var(--color-secondary);
+  border: 1px solid var(--color-tertiary-darkest);
   height: inherit;
   width: 100%;
   color: inherit;
+  transition: border 0.2s ease-in;
+  padding: 1rem;
 }
