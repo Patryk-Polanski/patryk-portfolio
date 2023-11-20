@@ -1,6 +1,6 @@
 'use client';
 
-export default function ButtonTest({
+export default function Button({
   children,
   text,
   type,
@@ -14,28 +14,25 @@ export default function ButtonTest({
   const slicedText = (
     <div className='sliced-text'>
       {letters?.map((letter, index) => (
-        <>
+        <span
+          key={index}
+          className='sliced-text-letter'
+          style={{
+            visibility: letter !== ' ' ? 'visible' : 'hidden',
+            transitionDelay: '0.07' * index + 's',
+          }}
+        >
+          {letter !== ' ' ? letter : '|'}
           <span
-            key={index}
-            className='sliced-text-letter'
+            className='sliced-text-letter-copy'
             style={{
               visibility: letter !== ' ' ? 'visible' : 'hidden',
               transitionDelay: '0.07' * index + 's',
             }}
           >
             {letter !== ' ' ? letter : '|'}
-            <span
-              key={index}
-              className='sliced-text-letter-copy'
-              style={{
-                visibility: letter !== ' ' ? 'visible' : 'hidden',
-                transitionDelay: '0.07' * index + 's',
-              }}
-            >
-              {letter !== ' ' ? letter : '|'}
-            </span>
           </span>
-        </>
+        </span>
       ))}
     </div>
   );
@@ -48,7 +45,6 @@ export default function ButtonTest({
           onClick={onClick}
           aria-label={text}
         >
-          {/* {slicedText ? slicedText : children} */}
           {children || slicedText}
         </button>
       )}
@@ -59,7 +55,6 @@ export default function ButtonTest({
           className={`button button--${type || ''} ${className || ''}`}
           aria-label={text}
         >
-          {/* {slicedText ? slicedText : children} */}
           {children || slicedText}
         </a>
       )}

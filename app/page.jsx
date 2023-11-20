@@ -6,6 +6,7 @@ import Logo from './components/ui/Logo';
 import Profile from './sections/Home/Profile';
 import Social from './components/ui/Social';
 import DownArrow from './sections/Home/DownArrow';
+import CircularIcon from './sections/Home/CircularIcon';
 
 import SectionPortfolio from './sections/Portfolio/Portfolio';
 import PortfolioCarousels from './sections/Portfolio/PortfolioCarousels';
@@ -31,6 +32,7 @@ export default function Home() {
         <Profile />
         <Social position='top-right' />
         <DownArrow />
+        <CircularIcon />
       </SectionHome>
 
       <SectionPortfolio>

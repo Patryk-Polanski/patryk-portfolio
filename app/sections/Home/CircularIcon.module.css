@@ -1,0 +1,72 @@
+.circularIcon {
+  background: transparent;
+  position: absolute;
+  bottom: 0;
+  right: 2rem;
+  padding: 0;
+}
+
+.circularIcon:hover textPath {
+  fill: var(--color-secondary);
+}
+
+.circularIcon svg {
+  font-size: 1.5rem;
+  animation-name: rotate-circle;
+  animation-duration: 22s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.circularText {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  fill: var(--color-tertiary-darker);
+  font-family: 'Kanit';
+  font-family: var(--font-comfortaa);
+  transition: fill 0.3s ease-in;
+}
+
+.circularLabel {
+  font-size: 1.7rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  overflow: hidden;
+}
+
+.circularLabel span {
+  color: var(--color-tertiary-darkest);
+  transition: all 0.3s var(--cubic-bezier);
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.circularLabel span:first-of-type {
+  transform: translateY(-100%);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.circularIcon:hover span {
+  color: var(--color-secondary);
+}
+
+.circularIcon:hover span:first-of-type {
+  transform: translateY(0);
+}
+
+.circularIcon:hover span:last-of-type {
+  transform: translateY(100%);
+}
+
+@keyframes rotate-circle {
+  to {
+    transform: rotate(-360deg);
+  }
+}

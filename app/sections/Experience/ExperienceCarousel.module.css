@@ -105,7 +105,7 @@
   left: -10rem;
   top: 50%;
   transform: translateY(-50%);
-  transition: all 0.4s cubic-bezier(0.82, 0.03, 0.54, 0.2);
+  transition: all 0.4s var(--cubic-bezier);
 }
 
 .emblaDots :global(.embla__dot):first-of-type:before {

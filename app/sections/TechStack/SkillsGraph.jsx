@@ -108,9 +108,7 @@ function SkillsGraph() {
           </div>
         ) : (
           <div className='force-graph-button reset'>
-            <Button type='primary' onClick={handleReset}>
-              Reset
-            </Button>
+            <Button type='primary' onClick={handleReset} text='Reset' />
             <Button
               type='primary'
               onClick={() => {
@@ -118,9 +116,8 @@ function SkillsGraph() {
               }}
               aria-label='Zoom out'
               className='styled-icon'
-            >
-              &minus;
-            </Button>
+              text='&minus;'
+            />
             <Button
               type='primary'
               onClick={() => {
@@ -128,9 +125,8 @@ function SkillsGraph() {
               }}
               aria-label='Zoom in'
               className='styled-icon'
-            >
-              +
-            </Button>
+              text='+'
+            />
           </div>
         )}
         {containerWidth && renderGraph && (

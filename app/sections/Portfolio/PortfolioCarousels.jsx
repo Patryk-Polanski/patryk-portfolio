@@ -52,7 +52,7 @@ export default function PortfolioCarousels() {
 }
 
 function MainCarousel({ updateThumbsIndex, activeIndex }) {
-  const [emblaMainRef, emblaMainApi] = useEmblaCarousel({});
+  const [emblaMainRef, emblaMainApi] = useEmblaCarousel({ duration: 50 });
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -164,6 +164,7 @@ function CustomThumbsCarousel({ updateMainIndex, activeIndex }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
     align: 'start',
+    duration: 40,
   });
 
   const onSelect = useCallback(

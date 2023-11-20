@@ -9,6 +9,8 @@
   --color-tertiary-darkest: #676767;
 
   --container-horizontal-padding: 3rem;
+
+  --cubic-bezier: cubic-bezier(0.82, 0.03, 0.54, 0.2);
 }
 
 html {
