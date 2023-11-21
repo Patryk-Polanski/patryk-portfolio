@@ -13,7 +13,7 @@
 .circularIcon svg {
   font-size: 1.5rem;
   animation-name: rotate-circle;
-  animation-duration: 22s;
+  animation-duration: 20s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -38,7 +38,7 @@
 
 .circularLabel span {
   color: var(--color-tertiary-darkest);
-  transition: all 0.3s var(--cubic-bezier);
+  transition: all 0.4s var(--cubic-bezier);
   position: relative;
   display: inline-block;
   width: 100%;

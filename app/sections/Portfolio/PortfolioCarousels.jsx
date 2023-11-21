@@ -118,7 +118,7 @@ function MainCarousel({ updateThumbsIndex, activeIndex }) {
   }, [activeIndex, emblaMainApi]);
 
   return (
-    <div className={`embla ${styles.mainEmbla}`}>
+    <div className={`embla ${styles.mainEmbla} hide-cursor`}>
       <div
         className={`embla__viewport ${styles.mainEmblaViewport}`}
         ref={emblaMainRef}

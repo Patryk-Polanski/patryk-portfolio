@@ -178,3 +178,51 @@ body::-webkit-scrollbar-thumb {
 .svg:hover {
   color: var(--color-tertiary);
 }
+
+/*  custom cursor */
+
+.outer-cursor-wrapper,
+.inner-cursor-wrapper {
+  pointer-events: none;
+  position: fixed;
+  width: 4rem;
+  height: 4rem;
+  top: -2rem;
+  left: -2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: 0.15s;
+}
+
+.inner-cursor-wrapper {
+  transition: 0.1s;
+}
+
+.outer-cursor {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--color-secondary);
+  opacity: 0.4;
+  border-radius: 50%;
+  transition: opacity 0.4s ease;
+}
+
+.inner-cursor {
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: var(--color-secondary);
+  opacity: 0.5;
+  border-radius: 50%;
+  transition: opacity 0.4s ease;
+}
+
+.cursor--opaque {
+  opacity: 0;
+}
+
+/* applied to elements that want to hide custom cursor on hover */
+
+.hide-cursor {
+}

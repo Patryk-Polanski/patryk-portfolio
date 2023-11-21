@@ -98,7 +98,7 @@ function SkillsGraph() {
         focusable='false'
         className={`force-graph-section ${
           !renderGraph && 'force-graph-section--initial'
-        }`}
+        } hide-cursor`}
         ref={containerRef}
       >
         {!renderGraph ? (

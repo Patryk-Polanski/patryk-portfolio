@@ -1,7 +1,7 @@
 export function debounceFunction(cb, delay) {
   let timer;
-  return () => {
+  return (event, currentDot) => {
     if (timer) clearTimeout(timer);
-    timer = setTimeout(() => cb(), delay);
+    timer = setTimeout(() => cb(event), delay);
   };
 }
