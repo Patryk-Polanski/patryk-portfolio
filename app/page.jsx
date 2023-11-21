@@ -22,6 +22,8 @@ import SectionExperience from './sections/Experience/Experience';
 import ExperienceCarousel from './sections/Experience/ExperienceCarousel';
 
 import SectionAbout from './sections/About/About';
+import Description from './sections/About/Description';
+import Testimonials from './sections/About/Testimonials';
 
 export default function Home() {
   return (
@@ -48,7 +50,11 @@ export default function Home() {
         <ExperienceCarousel />
       </SectionExperience>
 
-      <SectionAbout></SectionAbout>
+      <SectionAbout>
+        <Description />
+        <Testimonials />
+        <Social />
+      </SectionAbout>
     </main>
   );
 }

@@ -1,0 +1,37 @@
+.testimonials {
+  display: flex;
+  justify-content: center;
+  margin-top: 16rem;
+  margin-bottom: 12rem;
+  gap: 8rem;
+}
+
+.testimonials blockquote {
+  flex: 1;
+  line-height: 150%;
+}
+
+.testimonials blockquote p {
+  position: relative;
+}
+
+.testimonials blockquote p svg:first-of-type {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -150%);
+  color: var(--color-tertiary-darkest);
+}
+
+.testimonials blockquote p svg:last-of-type {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 150%);
+  color: var(--color-tertiary-darkest);
+}
+
+.testimonials footer {
+  text-align: center;
+  margin-top: 2rem;
+}
