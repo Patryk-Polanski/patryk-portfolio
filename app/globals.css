@@ -55,7 +55,8 @@ h5,
 }
 
 h6,
-.h6 small {
+.h6,
+small {
   font-size: 1.4rem;
 }
 

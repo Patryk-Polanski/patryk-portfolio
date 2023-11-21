@@ -25,6 +25,8 @@ import SectionAbout from './sections/About/About';
 import Description from './sections/About/Description';
 import Testimonials from './sections/About/Testimonials';
 
+import Footer from './sections/Footer/Footer';
+
 export default function Home() {
   return (
     <main>
@@ -55,6 +57,8 @@ export default function Home() {
         <Testimonials />
         <Social />
       </SectionAbout>
+
+      <Footer />
     </main>
   );
 }
