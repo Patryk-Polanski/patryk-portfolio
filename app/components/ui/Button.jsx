@@ -3,7 +3,8 @@
 export default function Button({
   children,
   text,
-  type,
+  variation,
+  type = 'button',
   link,
   onClick,
   newTab = false,
@@ -41,9 +42,10 @@ export default function Button({
     <>
       {onClick && (
         <button
-          className={`button button--${type || ''} ${className || ''}`}
+          className={`button button--${variation || ''} ${className || ''}`}
           onClick={onClick}
           aria-label={text}
+          type={type}
         >
           {children || slicedText}
           <span className='visually-hidden'>{text}</span>
@@ -53,7 +55,7 @@ export default function Button({
         <a
           href={link}
           target={newTab ? '_blank' : ''}
-          className={`button button--${type || ''} ${className || ''}`}
+          className={`button button--${variation || ''} ${className || ''}`}
           aria-label={text}
         >
           {children || slicedText}

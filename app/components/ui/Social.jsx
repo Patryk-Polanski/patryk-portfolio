@@ -8,19 +8,19 @@ export default function Social({ position }) {
     <div className={` ${styles.social} ${styles[socialPosition]}`}>
       <Button
         link='patryk-polanski-cv.pdf'
-        type='primary'
+        variation='primary'
         newTab={true}
         text='view CV'
       />
       <Button
         link='https://www.linkedin.com/in/patryk-polanski/'
-        type='primary'
+        variation='primary'
         newTab={true}
         text='LinkedIn'
       />
       <Button
         link='https://github.com/Patryk-Polanski'
-        type='primary'
+        variation='primary'
         newTab={true}
         text='Github'
       />

@@ -103,12 +103,12 @@ function SkillsGraph() {
       >
         {!renderGraph ? (
           <div className='force-graph-button render' ref={revealBtnRef}>
-            <Button type='primary' onClick={handlePlay} text='Reveal' />
+            <Button variation='primary' onClick={handlePlay} text='Reveal' />
             <span className='d2'> or press Enter</span>
           </div>
         ) : (
           <div className='force-graph-button reset'>
-            <Button type='primary' onClick={handleReset} text='Reset' />
+            <Button variation='primary' onClick={handleReset} text='Reset' />
             <Button
               type='primary'
               onClick={() => {
@@ -119,7 +119,7 @@ function SkillsGraph() {
               text='&minus;'
             />
             <Button
-              type='primary'
+              variation='primary'
               onClick={() => {
                 zoomLevel < 3 && setZoomLevel((prevZoom) => prevZoom + 0.2);
               }}

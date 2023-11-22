@@ -4,7 +4,7 @@ export const DotButton = (props) => {
   const { children, ...restProps } = props;
 
   return (
-    <button type='button' {...restProps}>
+    <button variation='button' {...restProps}>
       {children}
     </button>
   );
