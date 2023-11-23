@@ -31,6 +31,7 @@ export default function RootLayout({ children }) {
       >
         <CustomCursor />
         {children}
+        <div id='modal-slot'></div>
       </body>
     </html>
   );
