@@ -26,6 +26,7 @@ import Description from './sections/About/Description';
 import Testimonials from './sections/About/Testimonials';
 
 import Footer from './sections/Footer/Footer';
+import Copyright from './sections/Footer/Copyright';
 
 export default function Home() {
   return (
@@ -58,7 +59,10 @@ export default function Home() {
         <Social />
       </SectionAbout>
 
-      <Footer />
+      <Footer>
+        <Copyright />
+        <CircularIcon />
+      </Footer>
     </main>
   );
 }
