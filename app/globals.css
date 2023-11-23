@@ -275,6 +275,7 @@ body::-webkit-scrollbar-thumb {
   left: 0;
   transform: translate(1.4rem, 1rem);
   transition: all 0.4s ease;
+  pointer-events: none;
 }
 
 .input-wrapper span::before,
