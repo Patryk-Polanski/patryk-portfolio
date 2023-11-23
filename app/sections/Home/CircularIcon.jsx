@@ -1,11 +1,29 @@
+'use client';
+
 import Modal from '@/app/components/modal/Modal';
 
 import styles from './CircularIcon.module.css';
+import { useState } from 'react';
 
 export default function CircularIcon() {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+
+  function handleOpenForm() {
+    setIsContactFormOpen(true);
+    document.body.classList.add('frozen');
+  }
+
+  function handleCloseForm() {
+    setIsContactFormOpen(false);
+    document.body.classList.remove('frozen');
+  }
+
   return (
     <>
-      <button className={`${styles.circularIcon} button`}>
+      <button
+        className={`${styles.circularIcon} button`}
+        onClick={handleOpenForm}
+      >
         <svg viewBox='0 0 200 200' width={200} height={200}>
           <defs>
             <path
@@ -32,7 +50,7 @@ export default function CircularIcon() {
           <span>contact</span>
         </div>
       </button>
-      <Modal />
+      {isContactFormOpen && <Modal onCloseForm={handleCloseForm} />}
     </>
   );
 }

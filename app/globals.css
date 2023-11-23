@@ -27,6 +27,10 @@ body {
   font-family: var(--font-comfortaa);
 }
 
+.frozen {
+  overflow: hidden;
+}
+
 h1,
 .h1 {
   font-size: 4.2rem;
@@ -226,4 +230,79 @@ body::-webkit-scrollbar-thumb {
 /* applied to elements that want to hide custom cursor on hover */
 
 .hide-cursor {
+}
+
+/* form elements */
+
+.input-wrapper {
+  position: relative;
+}
+
+.input,
+.textarea {
+  font-family: inherit;
+  position: relative;
+  color: var(--color-secondary);
+  font-size: 1.6rem;
+  padding: 1rem 1.4rem;
+  width: 100%;
+  background-color: var(--color-primary);
+  border: transparent;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  visibility: hidden;
+}
+
+.textarea {
+  resize: none;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  /* opacity: 0; */
+  color: white;
+}
+
+.input ~ label,
+.textarea ~ label {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(1.4rem, 1rem);
+  transition: all 0.4s ease;
+}
+
+.input-wrapper span::before,
+.input-wrapper span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 1px;
+  background-color: var(--color-tertiary);
+  width: 100%;
+}
+
+.input-wrapper span::after {
+  width: 0;
+  background-color: var(--color-secondary);
+  transition: width 0.4s ease;
+}
+
+.input-focused ~ label,
+.input-focused ~ label {
+  transform: translateY(calc(-100% - 0.8rem));
+  font-size: 1.4rem;
+}
+
+.input:focus ~ span::after,
+.input:focus-within span::after,
+.textarea:focus ~ span::after,
+.textarea:focus-within span::after {
+  width: 100%;
 }

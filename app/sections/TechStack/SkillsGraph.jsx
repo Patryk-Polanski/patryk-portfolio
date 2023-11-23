@@ -110,7 +110,7 @@ function SkillsGraph() {
           <div className='force-graph-button reset'>
             <Button variation='primary' onClick={handleReset} text='Reset' />
             <Button
-              type='primary'
+              variation='primary'
               onClick={() => {
                 zoomLevel > 0.8 && setZoomLevel((prevZoom) => prevZoom - 0.2);
               }}
