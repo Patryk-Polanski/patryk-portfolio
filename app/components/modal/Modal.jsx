@@ -31,12 +31,10 @@ export default function Modal({ onCloseForm }) {
       }
     };
 
-    window.addEventListener('keydown', (e) => closeForm(e));
+    window.addEventListener('keydown', closeForm);
 
-    return () => {
-      window.removeEventListener('keydown', closeForm);
-    };
-  });
+    return () => window.removeEventListener('keydown', closeForm);
+  }, [onCloseForm]);
 
   return ReactDOM.createPortal(
     <div className={styles.modal}>

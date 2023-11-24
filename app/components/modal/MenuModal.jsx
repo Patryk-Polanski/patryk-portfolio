@@ -1,10 +1,31 @@
+'use client';
+
+import Link from 'next/link';
+import { useEffect } from 'react';
+
+import Marquee from 'react-fast-marquee';
+
 import HorizontalLine from '../decorative/HorizontalLine';
 import Menu from '../navigation/Menu';
 import Social from '../ui/Social';
+import { portfolioData } from '@/app/sections/Portfolio/PortfolioData';
 
 import styles from './MenuModal.module.css';
+import Image from 'next/image';
 
 export default function MenuModal({ onMenuClose }) {
+  useEffect(() => {
+    const closeForm = (e) => {
+      if (e.key === 'Escape') {
+        onMenuClose();
+      }
+    };
+
+    window.addEventListener('keydown', closeForm);
+
+    return () => window.removeEventListener('keydown', closeForm);
+  }, [onMenuClose]);
+
   return (
     <div
       className={`wide-container ${styles.menuModal}`}
@@ -20,6 +41,29 @@ export default function MenuModal({ onMenuClose }) {
       />
       <Menu onLinkClick={onMenuClose} />
       <Social className={styles.menuModalSocial} />
+      <div className={styles.marqueeWrapper}>
+        <Marquee
+          className={styles.marquee}
+          autoFill={true}
+          pauseOnHover={true}
+          speed={30}
+          direction='down'
+        >
+          {portfolioData.map((project) => (
+            <div key={project.id} className={styles.marqueeItem}>
+              <Link href='#' className={styles.marqueeItemLink}>
+                <Image
+                  className={styles.marqueeItemImage}
+                  src={project.imgDesktop}
+                  width={330}
+                  height={178}
+                  alt={`screenshot of ${project.title} project`}
+                />
+              </Link>
+            </div>
+          ))}
+        </Marquee>
+      </div>
     </div>
   );
 }

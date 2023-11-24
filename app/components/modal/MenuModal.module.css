@@ -5,11 +5,52 @@
   left: 0;
   width: 100vw;
   min-height: 100vh;
+  display: flex;
 }
 
 .menuModal :global(.social) {
   position: absolute;
-  top: 3rem;
+  bottom: 3rem;
+  left: 3rem;
+}
+
+.marqueeWrapper {
+  position: absolute;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+  width: 38rem; /* 20rem + the width of the absolutely positioned image */
+  height: 100%;
+}
+
+.menuModal .marquee {
+  width: inherit;
+  right: 0;
+  top: 10rem;
+  overflow-x: visible;
+  margin-left: auto;
+}
+
+.marqueeItem {
+  width: 20rem;
+  aspect-ratio: 1/1;
+  position: relative;
+  margin: 0 1rem;
+}
+
+.marqueeItemImage {
+  position: absolute;
+  height: 100%;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
+  width: auto;
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--color-tertiary-darkest);
+  transition: all 0.2s ease-in;
+}
+
+.marqueeItemLink:hover img {
+  border-color: var(--color-secondary);
 }
