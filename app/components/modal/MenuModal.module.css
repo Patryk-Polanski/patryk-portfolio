@@ -1,0 +1,15 @@
+.menuModal {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.menuModal :global(.social) {
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+}

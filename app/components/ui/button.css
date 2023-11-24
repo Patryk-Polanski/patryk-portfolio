@@ -49,3 +49,69 @@
 .button:hover .sliced-text-letter {
   transform: translateY(100%);
 }
+
+.button--menu {
+  height: 8rem;
+  width: 8rem;
+  border: 2px solid var(--color-secondary-darker);
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  z-index: 10;
+  transition: border-color 0.3s ease-in, transform 0.6s var(--cubic-bezier);
+}
+
+.button--menu:hover {
+  border-color: var(--color-tertiary-darker);
+}
+
+.button--menu:hover .button--menu-line {
+  background-color: var(--color-tertiary);
+  width: calc(100% - 4.6rem);
+}
+
+.button--menu:hover .button--menu-line:nth-child(2) {
+  transform: translateX(-50%);
+}
+
+.button--menu-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  width: calc(100% - 5rem);
+  background-color: var(--color-secondary);
+  transition: all 0.3s ease-in;
+  transform-origin: center left;
+}
+
+.button--menu-line:nth-child(1) {
+  top: 30%;
+}
+
+.button--menu-line:nth-child(2) {
+  top: 50%;
+  transform: translateX(-30%);
+}
+
+.button--menu-line:nth-child(3) {
+  top: 70%;
+}
+
+.button--menu-is-open {
+  transform: rotate(90deg);
+}
+
+.button--menu-is-open .button--menu-line:nth-child(1) {
+  transform: rotateZ(45deg) translateX(-50%);
+  top: 50%;
+}
+
+.button--menu-is-open .button--menu-line:nth-child(2) {
+  width: 0;
+}
+
+.button--menu-is-open .button--menu-line:nth-child(3) {
+  transform: rotateZ(-45deg) translateX(-50%);
+  top: 50%;
+}

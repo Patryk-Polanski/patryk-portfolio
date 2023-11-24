@@ -65,7 +65,7 @@ small {
 }
 
 .d1 {
-  font-size: 9.6rem;
+  font-size: 10.6rem;
 }
 
 .d2 {
@@ -129,6 +129,12 @@ a {
 #home .section {
   overflow: hidden;
   padding-bottom: 3rem;
+}
+
+#home .social {
+  position: absolute;
+  top: 2.4rem;
+  right: 3rem;
 }
 
 #portfolio.section {

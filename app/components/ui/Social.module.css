@@ -4,9 +4,3 @@
   align-items: center;
   gap: 1.2rem;
 }
-
-.socialTopRight {
-  position: absolute;
-  top: 3rem;
-  right: 4rem;
-}

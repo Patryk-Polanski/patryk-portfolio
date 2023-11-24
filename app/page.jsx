@@ -15,7 +15,7 @@ import SectionTechStack from './sections/TechStack/TechStack';
 const DynamicSkillsGraph = dynamic(
   () => import('./sections/TechStack/SkillsGraph'),
   { ssr: false }
-); // window errors in the library
+); // window not defined errors in the library
 import SkillsGraphImages from './sections/TechStack/SkillsGraphImages';
 
 import SectionExperience from './sections/Experience/Experience';
@@ -35,7 +35,7 @@ export default function Home() {
         <Menu />
         <Logo />
         <Profile />
-        <Social position='top-right' />
+        <Social />
         <DownArrow />
         <CircularIcon />
       </SectionHome>

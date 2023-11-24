@@ -24,6 +24,7 @@ export default function CircularIcon() {
         className={`${styles.circularIcon} button`}
         onClick={handleOpenForm}
       >
+        <span className='visually-hidden'>contact me</span>
         <svg viewBox='0 0 200 200' width={200} height={200}>
           <defs>
             <path

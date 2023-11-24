@@ -1,11 +1,12 @@
 import Button from './Button';
 import styles from './Social.module.css';
 
-export default function Social({ position }) {
-  const socialPosition = position === 'top-right' ? 'socialTopRight' : '';
+export default function Social() {
+  // const socialPosition = position === 'top-right' ? 'socialTopRight' : '';
 
   return (
-    <div className={` ${styles.social} ${styles[socialPosition]}`}>
+    // <div className={` ${styles.social} ${styles[socialPosition]}`}>
+    <div className={`social ${styles.social}`}>
       <Button
         link='patryk-polanski-cv.pdf'
         variation='primary'
