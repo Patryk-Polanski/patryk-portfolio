@@ -4,7 +4,7 @@ import Social from '../ui/Social';
 
 import styles from './MenuModal.module.css';
 
-export default function MenuModal() {
+export default function MenuModal({ onMenuClose }) {
   return (
     <div
       className={`wide-container ${styles.menuModal}`}
@@ -18,7 +18,7 @@ export default function MenuModal() {
         height={'120'}
         width={'120'}
       />
-      <Menu />
+      <Menu onLinkClick={onMenuClose} />
       <Social className={styles.menuModalSocial} />
     </div>
   );

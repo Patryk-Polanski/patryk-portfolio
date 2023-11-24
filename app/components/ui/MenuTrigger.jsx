@@ -33,7 +33,7 @@ export default function MenuTrigger() {
         <span className='button--menu-line'></span>
         <span className='visually-hidden'>open menu</span>
       </Button>
-      {isMenuOpen && <MenuModal />}
+      {isMenuOpen && <MenuModal onMenuClose={handleMenu} />}
     </>
   );
 }
