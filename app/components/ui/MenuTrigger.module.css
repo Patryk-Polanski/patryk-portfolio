@@ -1,5 +1,40 @@
 .menuTrigger {
-  position: fixed;
-  top: 3rem;
-  right: 3rem;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0;
+}
+
+.menuTrigger:global(.menuTriggerIsHidden) {
+  animation: 0.5s forwards slideOut;
+  opacity: 1;
+}
+
+.menuTrigger:global(.menuTriggerIsVisible) {
+  pointer-events: all;
+  animation: 0.5s forwards slideIn;
+  opacity: 1;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(0) rotateZ(15deg);
+  }
+  75% {
+    transform: translateX(-13rem) rotateZ(8deg);
+  }
+  100% {
+    transform: translateX(-12rem) rotateZ(0);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(-12rem) rotate(0);
+  }
+  25% {
+    transform: translateX(-13rem) rotateZ(8deg);
+  }
+  100% {
+    transform: translateX(0) rotateZ(15deg);
+  }
 }

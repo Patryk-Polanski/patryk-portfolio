@@ -9,6 +9,7 @@ export default function Button({
   onClick,
   newTab = false,
   className,
+  id,
 }) {
   const letters = text?.split('');
 

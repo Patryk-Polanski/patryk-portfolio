@@ -21,18 +21,24 @@ export default function MenuTrigger() {
 
   return (
     <>
-      <Button
-        variation='menu'
-        className={`${styles.menuTrigger} ${
-          isMenuOpen && 'button--menu-is-open'
-        }`}
-        onClick={handleMenu}
+      <div
+        className={styles.menuTrigger}
+        id='menu-trigger'
+        style={{ position: 'fixed', right: '-10rem', top: '3rem' }}
       >
-        <span className='button--menu-line'></span>
-        <span className='button--menu-line'></span>
-        <span className='button--menu-line'></span>
-        <span className='visually-hidden'>open menu</span>
-      </Button>
+        <Button
+          variation='menu'
+          className={`${styles.menuTriggerButton} ${
+            isMenuOpen && 'button--menu-is-open'
+          }`}
+          onClick={handleMenu}
+        >
+          <span className='button--menu-line'></span>
+          <span className='button--menu-line'></span>
+          <span className='button--menu-line'></span>
+          <span className='visually-hidden'>open menu</span>
+        </Button>
+      </div>
       {isMenuOpen && <MenuModal onMenuClose={handleMenu} />}
     </>
   );

@@ -1,8 +1,28 @@
+'use client';
+
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
+
 import HorizontalLine from '../../components/decorative/HorizontalLine';
 
 export default function SectionHome({ children }) {
+  const { ref, inView, entry } = useInView();
+
+  useEffect(() => {
+    const menuTrigger = document.getElementById('menu-trigger');
+    if (!menuTrigger) return;
+
+    if (inView && window.scrollY > 0) {
+      menuTrigger.classList.remove('menuTriggerIsVisible');
+      menuTrigger.classList.add('menuTriggerIsHidden');
+    } else if (!inView && window.scrollY > 0) {
+      menuTrigger.classList.remove('menuTriggerIsHidden');
+      menuTrigger.classList.add('menuTriggerIsVisible');
+    }
+  }, [inView]);
+
   return (
-    <section id='home'>
+    <section id='home' ref={ref}>
       <HorizontalLine
         xTranslate={'-30'}
         yTranslate={'12'}
