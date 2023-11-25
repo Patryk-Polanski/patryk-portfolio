@@ -5,13 +5,13 @@
 }
 
 .menuTrigger:global(.menuTriggerIsHidden) {
-  animation: 0.5s forwards slideOut;
+  animation: slideOut 0.6s forwards;
   opacity: 1;
 }
 
 .menuTrigger:global(.menuTriggerIsVisible) {
   pointer-events: all;
-  animation: 0.5s forwards slideIn;
+  animation: slideIn 0.5s forwards;
   opacity: 1;
 }
 
