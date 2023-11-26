@@ -1,8 +1,5 @@
 'use client';
 
-import Image from 'next/image';
-import { useSearchParams } from 'next/navigation';
-
 import LinkHome from '../ui/svg/LinkHome';
 import LinkPortfolio from '../ui/svg/LinkPortfolio';
 import LinkTechStack from '../ui/svg/LinkTechStack';
@@ -45,9 +42,6 @@ const links = [
 ];
 
 export default function Menu({ onLinkClick }) {
-  const searchParams = useSearchParams();
-
-  console.log(searchParams);
   return (
     <nav className={styles.menu}>
       <ul>
@@ -56,25 +50,30 @@ export default function Menu({ onLinkClick }) {
             <a
               onClick={onLinkClick}
               className={`${styles.menuLink} ${
-                link.name.toLocaleLowerCase() === 'portfolio' &&
+                link.name.toLocaleLowerCase() === 'home' &&
                 styles.menuLinkActive
               }`}
-              // className={`d1 outlined-text ${
-              //   link.toLocaleLowerCase() === 'home'
-              //     ? 'outlined-text--active'
-              //     : ''
-              // }`}
               href={`#${link.name.toLowerCase().replace(' ', '-')}`}
             >
               <span className='visually-hidden'>{link.name}</span>
-              {link.element}
-              {link.elementActive}
-              {link.name.toLocaleLowerCase() === 'portfolio' && (
-                <div
-                  className={styles.menuImage}
-                  style={{ clipPath: `url(#${link.id})` }}
-                />
-              )}
+              <div
+                className={`${styles.menuLinkText} ${
+                  link.name.toLocaleLowerCase() === 'home' &&
+                  styles.menuLinkTextActive
+                }`}
+              >
+                {link.element}
+              </div>
+              <div className={styles.menuLinkTextClipped}>
+                {link.elementActive}
+              </div>
+              <div
+                className={`${styles.menuImage} ${
+                  link.name.toLocaleLowerCase() === 'home' &&
+                  styles.menuImageVisible
+                }`}
+                style={{ clipPath: `url(#${link.id})` }}
+              />
             </a>
           </li>
         ))}
