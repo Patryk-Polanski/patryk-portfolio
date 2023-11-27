@@ -8,6 +8,11 @@
   display: flex;
 }
 
+.menuModal :global(.menu) svg path {
+  animation: none;
+  stroke-dashoffset: 0;
+}
+
 .menuModal :global(.social) {
   position: absolute;
   bottom: 3rem;

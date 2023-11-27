@@ -43,7 +43,7 @@ const links = [
 
 export default function Menu({ onLinkClick }) {
   return (
-    <nav className={styles.menu}>
+    <nav className={`${styles.menu} menu`}>
       <ul>
         {links.map((link) => (
           <li key={link.name}>
