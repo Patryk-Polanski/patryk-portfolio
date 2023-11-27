@@ -14,6 +14,8 @@ import styles from './MenuModal.module.css';
 import Image from 'next/image';
 
 export default function MenuModal({ onMenuClose }) {
+  const hash = window.location.hash;
+
   useEffect(() => {
     const closeForm = (e) => {
       if (e.key === 'Escape') {
@@ -39,7 +41,7 @@ export default function MenuModal({ onMenuClose }) {
         height={'120'}
         width={'120'}
       />
-      <Menu onLinkClick={onMenuClose} />
+      <Menu onLinkClick={onMenuClose} hash={hash} />
       <Social className={styles.menuModalSocial} />
       <div className={styles.marqueeWrapper}>
         <Marquee

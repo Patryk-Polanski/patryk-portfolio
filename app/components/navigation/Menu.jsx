@@ -41,7 +41,9 @@ const links = [
   },
 ];
 
-export default function Menu({ onLinkClick }) {
+export default function Menu({ onLinkClick, hash }) {
+  const hashFormatted = hash ? hash.replace('#', '') : 'home';
+
   return (
     <nav className={`${styles.menu} menu`}>
       <ul>
@@ -50,7 +52,7 @@ export default function Menu({ onLinkClick }) {
             <a
               onClick={onLinkClick}
               className={`${styles.menuLink} ${
-                link.name.toLocaleLowerCase() === 'home' &&
+                link.name.toLocaleLowerCase() === hashFormatted &&
                 styles.menuLinkActive
               }`}
               href={`#${link.name.toLowerCase().replace(' ', '-')}`}
@@ -58,7 +60,7 @@ export default function Menu({ onLinkClick }) {
               <span className='visually-hidden'>{link.name}</span>
               <div
                 className={`${styles.menuLinkText} ${
-                  link.name.toLocaleLowerCase() === 'home' &&
+                  link.name.toLocaleLowerCase() === hashFormatted &&
                   styles.menuLinkTextActive
                 }`}
               >
@@ -69,7 +71,7 @@ export default function Menu({ onLinkClick }) {
               </div>
               <div
                 className={`${styles.menuImage} ${
-                  link.name.toLocaleLowerCase() === 'home' &&
+                  link.name.toLocaleLowerCase() === hashFormatted &&
                   styles.menuImageVisible
                 }`}
                 style={{ clipPath: `url(#${link.id})` }}
