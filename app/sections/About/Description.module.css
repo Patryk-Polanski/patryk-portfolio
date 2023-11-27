@@ -4,16 +4,48 @@
   position: relative;
 }
 
-.description img {
-  position: absolute;
-  top: 0;
-  width: 342px;
-  height: 550px;
-  left: 0;
-  transform: translateX(-100%);
-}
-
 .description p {
   margin-top: 10rem;
   line-height: 150%;
+}
+
+.descriptionMaskedTextWrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  -webkit-mask-image: url(../../../public/patryk-image.jpg);
+  mask-image: url(../../../public/patryk-image.jpg);
+  -webkit-mask-size: 42rem;
+  mask-size: 42rem;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.descriptionMaskedTextWrapper img {
+  position: absolute;
+  width: 42rem;
+  height: auto;
+  z-index: -1;
+  transition: opacity 0.2s ease-in;
+}
+
+.descriptionMaskedTextWrapper p {
+  color: var(--color-secondary);
+  pointer-events: none;
+  transition: color 0.2s ease-in;
+}
+
+.descriptionMaskedTextWrapper img:hover {
+  opacity: 0;
+}
+
+.descriptionMaskedTextWrapper img:hover ~ p {
+  color: inherit;
+}
+
+.descriptionMaskedTextWrapper p:first-of-type {
+  margin-top: 0;
 }
