@@ -2,16 +2,14 @@ export const modalMenuBackground = {
   initial: {
     clipPath: 'circle(40px at 100% 0)',
   },
-  animate: {
-    clipPath: `circle(${
-      (window ? window.innerHeight : 1000) * 2 + 200
-    }px at 100% 0)`,
+  animate: (windowSize) => ({
+    clipPath: `circle(${windowSize + 300}px at 100% 0)`,
     transition: {
       type: 'spring',
       stiffness: 80,
       restDelta: 2,
     },
-  },
+  }),
   exit: {
     clipPath: 'circle(40px at 100% 0)',
     transition: {
@@ -57,15 +55,18 @@ export const modalMenuSocial = {
 export const modalMenuLinks = {
   initial: {
     opacity: 0,
+    transform: 'translateY(4rem)',
   },
   animate: {
     opacity: 1,
+    transform: 'translateY(0)',
     transition: {
-      duration: 1.4,
+      duration: 1,
       delay: 0.4,
     },
   },
   exit: {
     opacity: 0,
+    transform: 'translateY(4rem)',
   },
 };

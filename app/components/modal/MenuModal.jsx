@@ -22,6 +22,11 @@ import {
 
 export default function MenuModal({ onMenuClose }) {
   const hash = window.location.hash;
+  const windowSize = window
+    ? window.innerHeight > window.innerWidth
+      ? window.innerHeight
+      : window.innerWidth
+    : 1000;
 
   useEffect(() => {
     const closeForm = (e) => {
@@ -42,6 +47,7 @@ export default function MenuModal({ onMenuClose }) {
         style={{ backgroundImage: 'url(/texture.jpg)' }}
         key='modal-background'
         variants={modalMenuBackground}
+        custom={windowSize}
         initial='initial'
         animate='animate'
         exit='exit'
