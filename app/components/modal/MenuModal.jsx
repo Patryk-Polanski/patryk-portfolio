@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect } from 'react';
-
+import { motion } from 'framer-motion';
 import Marquee from 'react-fast-marquee';
 
 import HorizontalLine from '../decorative/HorizontalLine';
@@ -12,6 +12,13 @@ import { portfolioData } from '@/app/sections/Portfolio/PortfolioData';
 
 import styles from './MenuModal.module.css';
 import Image from 'next/image';
+
+import {
+  modalMenuBackground,
+  modalMenuMarquee,
+  modalMenuLinks,
+  modalMenuSocial,
+} from '@/app/utils/motion/menuModal/animations';
 
 export default function MenuModal({ onMenuClose }) {
   const hash = window.location.hash;
@@ -29,21 +36,59 @@ export default function MenuModal({ onMenuClose }) {
   }, [onMenuClose]);
 
   return (
-    <div
-      className={`wide-container ${styles.menuModal}`}
-      style={{ backgroundImage: 'url(/texture.jpg)' }}
-    >
-      <HorizontalLine
-        xTranslate={'20'}
-        yTranslate={'-20'}
-        left={'0'}
-        bottom={'0'}
-        height={'120'}
-        width={'120'}
+    <motion.div key='modal' className={`wide-container ${styles.menuModal}`}>
+      <motion.div
+        className={styles.menuModalBackground}
+        style={{ backgroundImage: 'url(/texture.jpg)' }}
+        key='modal-background'
+        variants={modalMenuBackground}
+        initial='initial'
+        animate='animate'
+        exit='exit'
       />
-      <Menu onLinkClick={onMenuClose} hash={hash} />
-      <Social className={styles.menuModalSocial} />
-      <div className={styles.marqueeWrapper}>
+      <motion.div
+        key='modal-menu-line'
+        variants={modalMenuLinks}
+        initial='initial'
+        animate='animate'
+        exit='exit'
+      >
+        <HorizontalLine
+          xTranslate={'20'}
+          yTranslate={'-20'}
+          left={'0'}
+          bottom={'0'}
+          height={'120'}
+          width={'120'}
+        />
+      </motion.div>
+      <motion.div
+        key='modal-menu-links'
+        variants={modalMenuLinks}
+        initial='initial'
+        animate='animate'
+        exit='exit'
+      >
+        <Menu onLinkClick={onMenuClose} hash={hash} />
+      </motion.div>
+      <motion.div
+        className={styles.menuModalSocial}
+        key='modal-social'
+        variants={modalMenuSocial}
+        initial='initial'
+        animate='animate'
+        exit='exit'
+      >
+        <Social />
+      </motion.div>
+      <motion.div
+        className={styles.marqueeWrapper}
+        key='modal-marquee'
+        variants={modalMenuMarquee}
+        initial='initial'
+        animate='animate'
+        exit='exit'
+      >
         <Marquee
           className={styles.marquee}
           autoFill={true}
@@ -65,7 +110,7 @@ export default function MenuModal({ onMenuClose }) {
             </div>
           ))}
         </Marquee>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

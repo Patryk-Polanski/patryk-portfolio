@@ -6,6 +6,7 @@ import Button from './Button';
 import MenuModal from '../modal/MenuModal';
 
 import styles from './MenuTrigger.module.css';
+import { AnimatePresence } from 'framer-motion';
 
 export default function MenuTrigger() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,7 +40,9 @@ export default function MenuTrigger() {
           <span className='visually-hidden'>open menu</span>
         </Button>
       </div>
-      {isMenuOpen && <MenuModal onMenuClose={handleMenu} />}
+      <AnimatePresence>
+        {isMenuOpen && <MenuModal key='menu-modal' onMenuClose={handleMenu} />}
+      </AnimatePresence>
     </>
   );
 }

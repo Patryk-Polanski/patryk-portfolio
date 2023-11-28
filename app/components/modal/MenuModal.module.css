@@ -8,12 +8,20 @@
   display: flex;
 }
 
+.menuModalBackground {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+
 .menuModal :global(.menu) svg path {
   animation: none;
   stroke-dashoffset: 0;
 }
 
-.menuModal :global(.social) {
+.menuModal .menuModalSocial {
   position: absolute;
   bottom: 3rem;
   left: 3rem;
