@@ -35,8 +35,8 @@ export default function Description() {
       >
         <Image
           src='/patryk-image.jpg'
-          width={1200}
-          height={1926}
+          width={800}
+          height={1284}
           alt='image of myself'
           style={{
             top: '100px',

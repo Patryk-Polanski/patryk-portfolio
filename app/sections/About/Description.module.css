@@ -16,8 +16,8 @@
   top: 0;
   left: 0;
 
-  -webkit-mask-image: url(../../../public/patryk-image.jpg);
-  mask-image: url(../../../public/patryk-image.jpg);
+  -webkit-mask-image: url(../../../public/patryk-image-small.jpg);
+  mask-image: url(../../../public/patryk-image-small.jpg);
   -webkit-mask-size: 42rem;
   mask-size: 42rem;
   -webkit-mask-repeat: no-repeat;
