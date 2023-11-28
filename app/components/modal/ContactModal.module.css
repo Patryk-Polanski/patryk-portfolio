@@ -1,4 +1,4 @@
-.modal {
+.contactModal {
   position: fixed;
   top: 0;
   left: 0;
@@ -10,7 +10,7 @@
   align-items: center;
 }
 
-.modalBackdrop {
+.contactModalBackdrop {
   position: absolute;
   top: 0;
   left: 0;
@@ -21,13 +21,24 @@
   z-index: -1;
 }
 
-.modalBox {
-  background: var(--color-primary);
+.contactModalBox {
   padding: 3.6rem 6rem 6rem;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.modalContactDetails {
+.contactModalBoxBackground {
+  background: var(--color-primary);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.contactModalContactDetails {
   font-family: var(--font-advent-pro);
   display: flex;
   flex-direction: column;
@@ -38,23 +49,23 @@
   margin-bottom: 3rem;
 }
 
-.modalContactDetails a {
+.contactModalContactDetails a {
   font-family: inherit;
   transition: color 0.2s ease;
 }
 
-.modalContactDetails a:hover {
+.contactModalContactDetails a:hover {
   color: var(--color-secondary);
 }
 
-.modalForm {
+.contactModalForm {
   margin-top: 3rem;
   display: flex;
   flex-direction: column;
   gap: 6rem;
 }
 
-.modalButtons {
+.contactModalButtons {
   display: flex;
   align-items: center;
   justify-content: space-between;

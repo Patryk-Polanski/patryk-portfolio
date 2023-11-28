@@ -1,6 +1,8 @@
 'use client';
 
-import Modal from '@/app/components/modal/Modal';
+import { AnimatePresence } from 'framer-motion';
+
+import Modal from '@/app/components/modal/ContactModal';
 
 import styles from './CircularIcon.module.css';
 import { useState } from 'react';
@@ -51,7 +53,9 @@ export default function CircularIcon() {
           <span>contact</span>
         </div>
       </button>
-      {isContactFormOpen && <Modal onCloseForm={handleCloseForm} />}
+      <AnimatePresence>
+        {isContactFormOpen && <Modal onCloseForm={handleCloseForm} />}
+      </AnimatePresence>
     </>
   );
 }
