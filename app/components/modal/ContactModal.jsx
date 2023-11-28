@@ -2,7 +2,7 @@
 
 import ReactDOM from 'react-dom';
 import { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion as m } from 'framer-motion';
 
 import Button from '../ui/Button';
 import Input from '../ui/Input';
@@ -13,14 +13,9 @@ import {
   modalContactBoxBackground,
   modalContactContent,
 } from '@/app/utils/motion/contactModal/animations';
+import { genericAnimProps } from '@/app/utils/motion/shared/animations';
 
 import styles from './ContactModal.module.css';
-
-const genericAnimProps = {
-  initial: 'initial',
-  animate: 'animate',
-  exit: 'exit',
-};
 
 export default function Modal({ onCloseForm }) {
   const windowSize = window
@@ -57,29 +52,25 @@ export default function Modal({ onCloseForm }) {
 
   return ReactDOM.createPortal(
     <div className={styles.contactModal}>
-      <motion.span
+      <m.span
         className={styles.contactModalBackdrop}
         onClick={onCloseForm}
         key='contact-backdrop'
         variants={modalContactBackdrop}
         custom={windowSize}
-        initial='initial'
-        animate='animate'
-        exit='exit'
+        {...genericAnimProps}
       />
       <div className={styles.contactModalBox}>
-        <motion.div
+        <m.div
           className={styles.contactModalBoxBackground}
           style={{ backgroundImage: 'url(/texture.jpg)' }}
           key='contact-box-background'
           variants={modalContactBoxBackground}
           custom={windowSize}
-          initial='initial'
-          animate='animate'
-          exit='exit'
+          {...genericAnimProps}
         />
         <div className={styles.contactModalContent}>
-          <motion.div
+          <m.div
             className={styles.contactModalContactDetails}
             variants={modalContactContent}
             custom={0.8}
@@ -91,20 +82,16 @@ export default function Modal({ onCloseForm }) {
             <a className='d2' href='tel:+00 44 7526 006047'>
               00 44 7526 006047
             </a>
-          </motion.div>
-          <motion.p
-            variants={modalContactContent}
-            custom={1}
-            {...genericAnimProps}
-          >
+          </m.div>
+          <m.p variants={modalContactContent} custom={1} {...genericAnimProps}>
             or
-          </motion.p>
+          </m.p>
 
           <form
             className={styles.contactModalForm}
             onSubmit={(e) => handleSubmit(e)}
           >
-            <motion.div
+            <m.div
               variants={modalContactContent}
               custom={1.2}
               {...genericAnimProps}
@@ -115,9 +102,9 @@ export default function Modal({ onCloseForm }) {
                 id='name'
                 placeholder='Your name*'
               />
-            </motion.div>
+            </m.div>
 
-            <motion.div
+            <m.div
               variants={modalContactContent}
               custom={1.4}
               {...genericAnimProps}
@@ -128,9 +115,9 @@ export default function Modal({ onCloseForm }) {
                 id='email'
                 placeholder='Your email*'
               />
-            </motion.div>
+            </m.div>
 
-            <motion.div
+            <m.div
               variants={modalContactContent}
               custom={1.6}
               {...genericAnimProps}
@@ -140,9 +127,9 @@ export default function Modal({ onCloseForm }) {
                 id='message'
                 placeholder='Your message*'
               />
-            </motion.div>
+            </m.div>
 
-            <motion.div
+            <m.div
               className={styles.contactModalButtons}
               variants={modalContactContent}
               custom={1.8}
@@ -155,7 +142,7 @@ export default function Modal({ onCloseForm }) {
                 text='send'
                 onClick={() => {}}
               />
-            </motion.div>
+            </m.div>
           </form>
         </div>
       </div>

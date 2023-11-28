@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion as m } from 'framer-motion';
 import Marquee from 'react-fast-marquee';
 
 import HorizontalLine from '../decorative/HorizontalLine';
@@ -19,6 +19,7 @@ import {
   modalMenuLinks,
   modalMenuSocial,
 } from '@/app/utils/motion/menuModal/animations';
+import { genericAnimProps } from '@/app/utils/motion/shared/animations';
 
 export default function MenuModal({ onMenuClose }) {
   const hash = window.location.hash;
@@ -41,23 +42,19 @@ export default function MenuModal({ onMenuClose }) {
   }, [onMenuClose]);
 
   return (
-    <motion.div key='modal' className={`wide-container ${styles.menuModal}`}>
-      <motion.div
+    <m.div key='modal' className={`wide-container ${styles.menuModal}`}>
+      <m.div
         className={styles.menuModalBackground}
         style={{ backgroundImage: 'url(/texture.jpg)' }}
         key='modal-background'
         variants={modalMenuBackground}
         custom={windowSize}
-        initial='initial'
-        animate='animate'
-        exit='exit'
+        {...genericAnimProps}
       />
-      <motion.div
+      <m.div
         key='modal-menu-line'
         variants={modalMenuLinks}
-        initial='initial'
-        animate='animate'
-        exit='exit'
+        {...genericAnimProps}
       >
         <HorizontalLine
           xTranslate={'20'}
@@ -67,33 +64,27 @@ export default function MenuModal({ onMenuClose }) {
           height={'120'}
           width={'120'}
         />
-      </motion.div>
-      <motion.div
+      </m.div>
+      <m.div
         key='modal-menu-links'
         variants={modalMenuLinks}
-        initial='initial'
-        animate='animate'
-        exit='exit'
+        {...genericAnimProps}
       >
         <Menu onLinkClick={onMenuClose} hash={hash} />
-      </motion.div>
-      <motion.div
+      </m.div>
+      <m.div
         className={styles.menuModalSocial}
         key='modal-social'
         variants={modalMenuSocial}
-        initial='initial'
-        animate='animate'
-        exit='exit'
+        {...genericAnimProps}
       >
         <Social />
-      </motion.div>
-      <motion.div
+      </m.div>
+      <m.div
         className={styles.marqueeWrapper}
         key='modal-marquee'
         variants={modalMenuMarquee}
-        initial='initial'
-        animate='animate'
-        exit='exit'
+        {...genericAnimProps}
       >
         <Marquee
           className={styles.marquee}
@@ -116,7 +107,7 @@ export default function MenuModal({ onMenuClose }) {
             </div>
           ))}
         </Marquee>
-      </motion.div>
-    </motion.div>
+      </m.div>
+    </m.div>
   );
 }
