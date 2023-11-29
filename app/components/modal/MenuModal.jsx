@@ -1,9 +1,12 @@
 'use client';
 
-import Link from 'next/link';
 import { useEffect } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import { motion as m } from 'framer-motion';
 import Marquee from 'react-fast-marquee';
+
+import { isBrowser } from 'framer-motion';
 
 import HorizontalLine from '../decorative/HorizontalLine';
 import Menu from '../navigation/Menu';
@@ -11,7 +14,6 @@ import Social from '../ui/Social';
 import { portfolioData } from '@/app/sections/Portfolio/PortfolioData';
 
 import styles from './MenuModal.module.css';
-import Image from 'next/image';
 
 import {
   modalMenuBackground,
@@ -21,13 +23,17 @@ import {
 } from '@/app/utils/motion/menuModal/animations';
 import { genericAnimProps } from '@/app/utils/motion/shared/animations';
 
+let windowSize = 1000;
+
+if (isBrowser) {
+  windowSize =
+    window.innerHeight > window.innerWidth
+      ? window.innerHeight
+      : window.innerWidth;
+}
+
 export default function MenuModal({ onMenuClose }) {
   const hash = window.location.hash;
-  const windowSize = window
-    ? window.innerHeight > window.innerWidth
-      ? window.innerHeight
-      : window.innerWidth
-    : 1000;
 
   useEffect(() => {
     const closeForm = (e) => {
