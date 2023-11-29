@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import {
-  motion,
+  motion as m,
   useScroll,
   useTransform,
   useMotionTemplate,
@@ -84,7 +84,7 @@ export default function Description() {
           Tellus elementum sagittis vitae et leo duis ut diam quam.
         </AnimatedParagraph>
       </div>
-      <motion.div
+      <m.div
         className={styles.descriptionImage}
         style={{
           transform,
@@ -97,8 +97,8 @@ export default function Description() {
           height={1284}
           alt='image of myself'
         />
-      </motion.div>
-      <motion.div
+      </m.div>
+      <m.div
         className={styles.descriptionMaskedTextWrapper}
         tabIndex={-1}
         aria-hidden={true}
@@ -129,7 +129,7 @@ export default function Description() {
             odio. Tellus elementum sagittis vitae et leo duis ut diam quam.
           </AnimatedParagraph>
         </div>
-      </motion.div>
+      </m.div>
     </div>
   );
 }
@@ -152,12 +152,12 @@ function AnimatedParagraph({ children }) {
   });
 
   return (
-    <motion.p
+    <m.p
       className='animated-paragraph'
       style={{ opacity, x: xTransformSpring }}
       ref={paragraph}
     >
       {children}
-    </motion.p>
+    </m.p>
   );
 }

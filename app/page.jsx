@@ -27,6 +27,7 @@ import Testimonials from './sections/About/Testimonials';
 
 import Footer from './sections/Footer/Footer';
 import Copyright from './sections/Footer/Copyright';
+import FadeIn from './components/wrappers/FadeIn';
 
 export default function Home() {
   return (
@@ -41,22 +42,32 @@ export default function Home() {
       </SectionHome>
 
       <SectionPortfolio>
-        <PortfolioCarousels />
+        <FadeIn direction='up'>
+          <PortfolioCarousels />
+        </FadeIn>
       </SectionPortfolio>
 
       <SectionTechStack>
-        <DynamicSkillsGraph />
-        <SkillsGraphImages />
+        <FadeIn direction='up'>
+          <DynamicSkillsGraph />
+          <SkillsGraphImages />
+        </FadeIn>
       </SectionTechStack>
 
       <SectionExperience>
-        <ExperienceCarousel />
+        <FadeIn direction='up'>
+          <ExperienceCarousel />
+        </FadeIn>
       </SectionExperience>
 
       <SectionAbout>
         <Description />
-        <Testimonials />
-        <Social />
+        <FadeIn direction='up'>
+          <Testimonials />
+        </FadeIn>
+        <FadeIn direction='up'>
+          <Social />
+        </FadeIn>
       </SectionAbout>
 
       <Footer>
