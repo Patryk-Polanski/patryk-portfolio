@@ -29,16 +29,61 @@ import Footer from './sections/Footer/Footer';
 import Copyright from './sections/Footer/Copyright';
 import FadeIn from './components/wrappers/FadeIn';
 
+import styles from './homePage.module.css';
+
 export default function Home() {
   return (
     <main>
       <SectionHome>
         <Menu />
-        <Logo />
-        <Profile />
-        <Social />
-        <DownArrow />
-        <CircularIcon />
+        <FadeIn
+          direction='down'
+          className={styles.logoWrapper}
+          inView={false}
+          delay={2}
+          startingCoords={{ x: '-50%', y: '0' }}
+          finalCoords={{ x: '-50%', y: '-50%' }}
+        >
+          <Logo />
+        </FadeIn>
+
+        <FadeIn
+          direction='up'
+          className={styles.profileWrapper}
+          inView={false}
+          delay={2}
+          startingCoords={{ x: '-50%', y: '-50%' }}
+          finalCoords={{ x: '-50%', y: '-50%' }}
+        >
+          <Profile />
+        </FadeIn>
+
+        <FadeIn
+          direction='down'
+          className={styles.socialWrapper}
+          inView={false}
+          delay={2}
+        >
+          <Social />
+        </FadeIn>
+
+        <FadeIn
+          direction='right'
+          className={styles.arrowWrapper}
+          inView={false}
+          delay={2}
+        >
+          <DownArrow />
+        </FadeIn>
+
+        <FadeIn
+          direction='left'
+          className={styles.contactWrapper}
+          inView={false}
+          delay={2}
+        >
+          <CircularIcon />
+        </FadeIn>
       </SectionHome>
 
       <SectionPortfolio>

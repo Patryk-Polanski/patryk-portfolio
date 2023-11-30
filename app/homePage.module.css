@@ -1,0 +1,31 @@
+.socialWrapper {
+  position: absolute;
+  top: 2.4rem;
+  right: 3rem;
+}
+
+.contactWrapper {
+  position: absolute;
+  bottom: 0;
+  right: 2rem;
+}
+
+.profileWrapper {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.logoWrapper {
+  position: absolute;
+  left: 50%;
+  top: 3rem;
+  transform: translateX(-50%);
+}
+
+.arrowWrapper {
+  position: absolute;
+  left: 4rem;
+  bottom: 3rem;
+}

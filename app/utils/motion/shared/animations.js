@@ -10,12 +10,33 @@ export const fadeInProps = {
   // viewport: { once: true },
 };
 
-export const fadeIn = (direction, delay = 0.2) => {
+export const shiftProps = {
+  initial: 'hidden',
+  animate: 'visible',
+};
+
+/* starting and final coords are sometimes needed for absolutely positioned elements */
+export const fadeIn = (
+  direction,
+  delay = 0.2,
+  startingCoords = {},
+  finalCoords = {}
+) => {
   return {
     hidden: {
-      y: direction === 'up' ? 80 : direction === 'down' ? -80 : 0,
+      x:
+        direction === 'left'
+          ? 80
+          : direction === 'right'
+          ? -80
+          : startingCoords.x || 0,
+      y:
+        direction === 'up'
+          ? 80
+          : direction === 'down'
+          ? -80
+          : startingCoords.y || 0,
       opacity: 0,
-      x: direction === 'left' ? 80 : direction === 'right' ? -80 : 0,
       transition: {
         type: 'tween',
         duration: 1.5,
@@ -24,8 +45,8 @@ export const fadeIn = (direction, delay = 0.2) => {
       },
     },
     visible: {
-      y: 0,
-      x: 0,
+      x: finalCoords.x || 0,
+      y: finalCoords.y || 0,
       opacity: 1,
       transition: {
         type: 'tween',
