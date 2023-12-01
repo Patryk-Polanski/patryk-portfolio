@@ -1,8 +1,11 @@
 'use client';
 
 import ReactDOM from 'react-dom';
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion as m } from 'framer-motion';
+
+import { debounceFunction, getLongerViewportSide } from '@/app/utils/helpers';
+import { isBrowser } from 'framer-motion';
 
 import Button from '../ui/Button';
 import Input from '../ui/Input';
@@ -17,12 +20,14 @@ import { genericAnimProps } from '@/app/utils/motion/shared/animations';
 
 import styles from './ContactModal.module.css';
 
+const getWindowSize = () =>
+  window.innerHeight > window.innerWidth
+    ? window.innerHeight
+    : window.innerWidth;
+
 export default function Modal({ onCloseForm }) {
-  const windowSize = window
-    ? window.innerHeight > window.innerWidth
-      ? window.innerHeight
-      : window.innerWidth
-    : 1000;
+  const [windowSize, setWindowSize] = useState(getLongerViewportSide());
+  const containerRef = useRef();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -39,6 +44,17 @@ export default function Modal({ onCloseForm }) {
   }
 
   useEffect(() => {
+    const debounce = debounceFunction(() => {
+      if (!isBrowser) return;
+      setWindowSize(getLongerViewportSide());
+    }, 500);
+    const observer = new ResizeObserver(() => {
+      debounce();
+    });
+    observer.observe(containerRef?.current);
+  });
+
+  useEffect(() => {
     const closeForm = (e) => {
       if (e.key === 'Escape') {
         onCloseForm();
@@ -51,7 +67,7 @@ export default function Modal({ onCloseForm }) {
   }, [onCloseForm]);
 
   return ReactDOM.createPortal(
-    <div className={styles.contactModal}>
+    <div className={styles.contactModal} ref={containerRef}>
       <m.span
         className={styles.contactModalBackdrop}
         onClick={onCloseForm}

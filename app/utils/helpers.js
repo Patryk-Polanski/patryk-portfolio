@@ -7,3 +7,9 @@ export function debounceFunction(cb, delay) {
     timer = setTimeout(() => cb(event), delay);
   };
 }
+
+export function getLongerViewportSide() {
+  return window.innerHeight > window.innerWidth
+    ? window.innerHeight
+    : window.innerWidth;
+}

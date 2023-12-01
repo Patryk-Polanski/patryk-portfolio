@@ -21,9 +21,8 @@ function SkillsGraph() {
   const [containerWidth, setContainerWidth] = useState('');
   const [renderGraph, setRenderGraph] = useState(false);
 
-  const debounce = debounceFunction(handleResize, 500);
-
   useEffect(() => {
+    const debounce = debounceFunction(handleResize, 500);
     setContainerWidth(containerRef.current.getBoundingClientRect().width);
     const observer = new ResizeObserver(() => {
       debounce();
@@ -47,7 +46,7 @@ function SkillsGraph() {
     return () => {
       observer.disconnect();
     };
-  }, [debounce, renderGraph]);
+  }, [renderGraph]);
 
   useEffect(() => {
     if (!containerWidth || !renderGraph) return;
