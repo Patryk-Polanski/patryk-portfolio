@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion as m } from 'framer-motion';
 
 import styles from './horizontalLine.module.css';
 
@@ -16,7 +16,7 @@ export default function HorizontalLine({
   delay = 2,
 }) {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{

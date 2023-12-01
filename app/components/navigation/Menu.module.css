@@ -44,47 +44,7 @@
   width: 150%;
   height: 150%;
   background-size: contain;
-  background-position: 0px 120px;
   background-repeat: repeat-x;
   background-image: url('../../../public/wave.svg');
   transition: background-position 1s ease;
-}
-
-.menuLink:hover .menuImage,
-.menuImageVisible {
-  animation-name: filling;
-  animation-duration: 18s;
-  animation-iteration-count: infinite;
-}
-
-.menuImageVisible {
-  animation-delay: 4s;
-}
-
-.menuLinkText path {
-  stroke-dasharray: 500;
-  stroke-dashoffset: 500;
-  stroke-linecap: round;
-  animation-name: drawLines;
-  animation-duration: 6s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-}
-
-@keyframes drawLines {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes filling {
-  30% {
-    background-position: -50px -30px;
-  }
-  95% {
-    background-position: 2000px 80px;
-  }
-  100% {
-    background-position: 2000px 120px;
-  }
 }

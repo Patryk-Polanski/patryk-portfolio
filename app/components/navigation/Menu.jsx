@@ -1,5 +1,9 @@
 'use client';
 
+import { motion as m } from 'framer-motion';
+
+import { menuLinkWave } from '@/app/utils/motion/menuLinks/animations';
+
 import LinkHome from '../ui/svg/LinkHome';
 import LinkPortfolio from '../ui/svg/LinkPortfolio';
 import LinkTechStack from '../ui/svg/LinkTechStack';
@@ -69,12 +73,23 @@ export default function Menu({ onLinkClick, hash }) {
               <div className={styles.menuLinkTextClipped}>
                 {link.elementActive}
               </div>
-              <div
+              <m.div
                 className={`${styles.menuImage} ${
                   link.name.toLocaleLowerCase() === hashFormatted &&
                   styles.menuImageVisible
                 }`}
                 style={{ clipPath: `url(#${link.id})` }}
+                variants={menuLinkWave}
+                initial='initial'
+                animate={
+                  link.name.toLocaleLowerCase() === hashFormatted
+                    ? 'animate'
+                    : {}
+                }
+                whileHover={
+                  link.name.toLocaleLowerCase() !== hashFormatted ? 'hover' : {}
+                }
+                onPointerDownCapture={(e) => e.stopPropagation()}
               />
             </a>
           </li>

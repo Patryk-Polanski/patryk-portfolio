@@ -1,4 +1,4 @@
-import LinkMenu from './LinkMenu';
+import LinkLetter from './LinkLetter';
 
 export default function LinkHome({ id }) {
   const svgDs = [
@@ -12,7 +12,7 @@ export default function LinkHome({ id }) {
   ];
 
   const svgPaths = svgDs.map((path, index) => (
-    <LinkMenu key={index} index={index} path={path} />
+    <LinkLetter key={index} index={index} path={path} />
   ));
 
   return (
