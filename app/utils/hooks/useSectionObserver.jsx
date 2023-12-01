@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-export function useSectionObserver(threshold = 0.5) {
+export function useSectionObserver() {
   const {
     ref: sectionRef,
     inView,
     entry,
   } = useInView({
-    threshold: threshold,
+    rootMargin: '0px 0px -50% 0px',
   });
 
   useEffect(() => {

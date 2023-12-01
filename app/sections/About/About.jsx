@@ -6,7 +6,7 @@ import LinkAbout from '@/app/components/ui/svg/LinkAbout';
 import SectionHeading from '../../components/navigation/Heading';
 
 export default function SectionAbout({ children }) {
-  const { sectionRef } = useSectionObserver(0.2);
+  const { sectionRef } = useSectionObserver();
   const svgId = 'aboutPathMenu';
 
   return (
