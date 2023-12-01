@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useState, useEffect, useCallback } from 'react';
+import { motion as m } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
 import { PrevButton, NextButton } from '@/app/utils/emblaExtras';
 
@@ -9,9 +10,12 @@ import Number from '@/app/components/ui/svg/Number';
 import ArrowLeft from '../../components/ui/svg/ArrowLeft';
 import ArrowRight from '../../components/ui/svg/ArrowRight';
 
-import styles from './PortfolioCarousels.module.css';
-
 import { portfolioData } from './PortfolioData';
+
+import { portfolioThumbs } from '@/app/utils/motion/portfolioCarousel/animations';
+import FadeIn from '@/app/components/wrappers/FadeIn';
+
+import styles from './PortfolioCarousels.module.css';
 
 const TWEEN_FACTOR = 1;
 
@@ -31,18 +35,22 @@ export default function PortfolioCarousels() {
 
   return (
     <div className={styles.carouselsWrapper}>
-      <h3 className={styles.carouselsWrapperHeading}>
-        <p className='h2'>{portfolioData[activeIndex].title}</p>
-        <p style={{ display: 'flex', alignItems: 'center', gap: '1.4rem' }}>
-          <Number number={activeIndex + 1} />
-          <span className='h3'>/</span>
-          <Number number={portfolioData.length} />
-        </p>
-      </h3>
-      <MainCarousel
-        activeIndex={activeIndex}
-        updateThumbsIndex={updateThumbsIndex}
-      />
+      <FadeIn direction='up'>
+        <h3 className={styles.carouselsWrapperHeading}>
+          <p className='h2'>{portfolioData[activeIndex].title}</p>
+          <p style={{ display: 'flex', alignItems: 'center', gap: '1.4rem' }}>
+            <Number number={activeIndex + 1} />
+            <span className='h3'>/</span>
+            <Number number={portfolioData.length} />
+          </p>
+        </h3>
+      </FadeIn>
+      <FadeIn direction='up'>
+        <MainCarousel
+          activeIndex={activeIndex}
+          updateThumbsIndex={updateThumbsIndex}
+        />
+      </FadeIn>
       <CustomThumbsCarousel
         activeIndex={activeIndex}
         updateMainIndex={updateMainIndex}
@@ -118,7 +126,7 @@ function MainCarousel({ updateThumbsIndex, activeIndex }) {
   }, [activeIndex, emblaMainApi]);
 
   return (
-    <div className={`embla ${styles.mainEmbla} hide-cursor`}>
+    <m.div className={`embla ${styles.mainEmbla} hide-cursor`}>
       <div
         className={`embla__viewport ${styles.mainEmblaViewport}`}
         ref={emblaMainRef}
@@ -156,7 +164,7 @@ function MainCarousel({ updateThumbsIndex, activeIndex }) {
           </NextButton>
         </div>
       </div>
-    </div>
+    </m.div>
   );
 }
 
@@ -188,9 +196,23 @@ function CustomThumbsCarousel({ updateMainIndex, activeIndex }) {
 
   return (
     <div className={`embla ${styles.thumbsEmbla}`}>
-      <div
+      <m.span
+        className={styles.thumbsEmblaBackground}
+        initial={{ opacity: 0 }}
+        whileInView={{
+          opacity: 1,
+          transition: {
+            delay: 0.4,
+            duration: 1,
+          },
+        }}
+      />
+      <m.div
         className={`embla__viewport ${styles.thumbsEmblaViewport}`}
         ref={emblaThumbsRef}
+        variants={portfolioThumbs}
+        initial='hidden'
+        whileInView='visible'
       >
         <ol className={`embla__container ${styles.thumbsEmblaContainer}`}>
           {portfolioData.map((project, index) => (
@@ -202,24 +224,26 @@ function CustomThumbsCarousel({ updateMainIndex, activeIndex }) {
               }`}
               key={project.id}
             >
-              <button
-                className={`button ${styles.thumbsEmblaSlideContent}`}
-                onClick={() => {
-                  emblaThumbsApi.scrollTo(project.id);
-                  updateMainIndex(project.id);
-                }}
-              >
-                <Image
-                  src={project.imgMobile}
-                  width={362}
-                  height={700}
-                  alt={`screenshot of ${project.title} project`}
-                />
-              </button>
+              <m.div variants={portfolioThumbs}>
+                <button
+                  className={`button ${styles.thumbsEmblaSlideContent}`}
+                  onClick={() => {
+                    emblaThumbsApi.scrollTo(project.id);
+                    updateMainIndex(project.id);
+                  }}
+                >
+                  <Image
+                    src={project.imgMobile}
+                    width={362}
+                    height={700}
+                    alt={`screenshot of ${project.title} project`}
+                  />
+                </button>
+              </m.div>
             </li>
           ))}
         </ol>
-      </div>
+      </m.div>
     </div>
   );
 }

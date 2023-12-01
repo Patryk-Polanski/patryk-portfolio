@@ -87,9 +87,8 @@ export default function Home() {
       </SectionHome>
 
       <SectionPortfolio>
-        <FadeIn direction='up'>
-          <PortfolioCarousels />
-        </FadeIn>
+        <FadeIn direction='up'></FadeIn>
+        <PortfolioCarousels />
       </SectionPortfolio>
 
       <SectionTechStack>
@@ -116,8 +115,12 @@ export default function Home() {
       </SectionAbout>
 
       <Footer>
-        <Copyright />
-        <CircularIcon />
+        <FadeIn direction='down'>
+          <Copyright />
+        </FadeIn>
+        <FadeIn direction='left' className={styles.contactWrapper}>
+          <CircularIcon />
+        </FadeIn>
       </Footer>
     </main>
   );
