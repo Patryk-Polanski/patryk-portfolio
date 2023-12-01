@@ -3,9 +3,12 @@
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 
+import { useSectionObserver } from '@/app/utils/hooks/useSectionObserver';
+
 import HorizontalLine from '../../components/decorative/HorizontalLine';
 
 export default function SectionHome({ children }) {
+  const { sectionRef } = useSectionObserver();
   const { ref, inView, entry } = useInView();
 
   useEffect(() => {
@@ -19,10 +22,10 @@ export default function SectionHome({ children }) {
       menuTrigger.classList.remove('menuTriggerIsHidden');
       menuTrigger.classList.add('menuTriggerIsVisible');
     }
-  }, [inView]);
+  }, [inView, entry?.target.id]);
 
   return (
-    <section id='home' ref={ref}>
+    <section id='home' ref={sectionRef}>
       <HorizontalLine
         xTranslate={'-30'}
         yTranslate={'12'}
@@ -39,7 +42,9 @@ export default function SectionHome({ children }) {
         height={'140'}
         width={'140'}
       />
-      <div className='section wide-container'>{children}</div>
+      <div className='section wide-container' ref={ref}>
+        {children}
+      </div>
     </section>
   );
 }

@@ -69,6 +69,7 @@ export default function MenuModal({ onMenuClose }) {
           bottom={'0'}
           height={'120'}
           width={'120'}
+          delay={0}
         />
       </m.div>
       <m.div

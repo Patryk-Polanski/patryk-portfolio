@@ -40,7 +40,7 @@ export default function Home() {
           direction='down'
           className={styles.logoWrapper}
           inView={false}
-          delay={2}
+          delay={2.5}
           startingCoords={{ x: '-50%', y: '0' }}
           finalCoords={{ x: '-50%', y: '-50%' }}
         >
@@ -51,7 +51,7 @@ export default function Home() {
           direction='up'
           className={styles.profileWrapper}
           inView={false}
-          delay={2}
+          delay={2.5}
           startingCoords={{ x: '-50%', y: '-50%' }}
           finalCoords={{ x: '-50%', y: '-50%' }}
         >
@@ -62,7 +62,7 @@ export default function Home() {
           direction='down'
           className={styles.socialWrapper}
           inView={false}
-          delay={2}
+          delay={2.5}
         >
           <Social />
         </FadeIn>
@@ -71,7 +71,7 @@ export default function Home() {
           direction='right'
           className={styles.arrowWrapper}
           inView={false}
-          delay={2}
+          delay={2.5}
         >
           <DownArrow />
         </FadeIn>
@@ -80,7 +80,7 @@ export default function Home() {
           direction='left'
           className={styles.contactWrapper}
           inView={false}
-          delay={2}
+          delay={2.5}
         >
           <CircularIcon />
         </FadeIn>

@@ -79,7 +79,6 @@ function SkillsGraph() {
   }
 
   function handleResize() {
-    console.log('kshs', containerRef.current.getBoundingClientRect().width);
     setContainerWidth(containerRef.current.getBoundingClientRect().width);
   }
 

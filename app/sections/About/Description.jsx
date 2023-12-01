@@ -7,7 +7,6 @@ import {
   useTransform,
   useMotionTemplate,
   useSpring,
-  cubicBezier,
 } from 'framer-motion';
 import Image from 'next/image';
 
