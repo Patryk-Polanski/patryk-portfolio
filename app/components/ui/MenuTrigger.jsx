@@ -25,7 +25,7 @@ export default function MenuTrigger() {
       <div
         className={styles.menuTrigger}
         id='menu-trigger'
-        style={{ position: 'fixed', right: '-10rem', top: '3rem' }}
+        style={{ position: 'fixed', right: '-10rem', top: '3rem', opacity: 0 }}
       >
         <Button
           variation='menu'

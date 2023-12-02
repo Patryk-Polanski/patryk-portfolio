@@ -25,15 +25,10 @@ import {
 } from '@/app/utils/motion/menuModal/animations';
 import { genericAnimProps } from '@/app/utils/motion/shared/animations';
 
-const getWindowSize = () =>
-  window.innerHeight > window.innerWidth
-    ? window.innerHeight
-    : window.innerWidth;
-
 export default function MenuModal({ onMenuClose }) {
   const [windowSize, setWindowSize] = useState(getLongerViewportSide());
   const containerRef = useRef();
-  const hash = window.location.hash;
+  const currentSection = document.body.getAttribute('current-section');
 
   useEffect(() => {
     const debounce = debounceFunction(() => {
@@ -93,7 +88,7 @@ export default function MenuModal({ onMenuClose }) {
           variants={modalMenuLinks}
           {...genericAnimProps}
         >
-          <Menu onLinkClick={onMenuClose} hash={hash} />
+          <Menu onLinkClick={onMenuClose} currentSection={currentSection} />
         </m.div>
         <m.div
           className={styles.menuModalSocial}

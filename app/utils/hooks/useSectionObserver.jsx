@@ -12,7 +12,7 @@ export function useSectionObserver() {
 
   useEffect(() => {
     if (inView) {
-      window.location.hash = entry.target.id;
+      document.body.setAttribute('current-section', entry.target.id);
     }
   }, [inView, entry?.target.id]);
 

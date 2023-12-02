@@ -7,7 +7,11 @@ import { menuLinkWave } from '@/app/utils/motion/menuLinks/animations';
 
 import styles from './Menu.module.css';
 
-export default function MenuLink({ link, onLinkClick, hashFormatted }) {
+export default function MenuLink({
+  link,
+  onLinkClick,
+  currentSectionFormatted,
+}) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -15,7 +19,7 @@ export default function MenuLink({ link, onLinkClick, hashFormatted }) {
       <a
         onClick={onLinkClick}
         className={`${styles.menuLink} ${
-          link.name.toLocaleLowerCase() === hashFormatted &&
+          link.name.toLocaleLowerCase() === currentSectionFormatted &&
           styles.menuLinkActive
         }`}
         href={`#${link.name.toLowerCase().replace(' ', '-')}`}
@@ -25,7 +29,7 @@ export default function MenuLink({ link, onLinkClick, hashFormatted }) {
         <span className='visually-hidden'>{link.name}</span>
         <div
           className={`${styles.menuLinkText} ${
-            link.name.toLocaleLowerCase() === hashFormatted &&
+            link.name.toLocaleLowerCase() === currentSectionFormatted &&
             styles.menuLinkTextActive
           }`}
         >
@@ -33,14 +37,14 @@ export default function MenuLink({ link, onLinkClick, hashFormatted }) {
         </div>
         <m.div
           className={`${styles.menuImage} ${
-            link.name.toLocaleLowerCase() === hashFormatted &&
+            link.name.toLocaleLowerCase() === currentSectionFormatted &&
             styles.menuImageVisible
           } menuImage`}
           style={{ clipPath: `url(#${link.id})` }}
           variants={menuLinkWave}
           initial='initial'
           animate={
-            link.name.toLocaleLowerCase() === hashFormatted
+            link.name.toLocaleLowerCase() === currentSectionFormatted
               ? 'animate'
               : isHovered
               ? 'hover'

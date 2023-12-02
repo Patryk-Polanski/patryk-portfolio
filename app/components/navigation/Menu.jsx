@@ -42,8 +42,10 @@ const links = [
   },
 ];
 
-export default function Menu({ onLinkClick, hash }) {
-  const hashFormatted = hash ? hash.replace('#', '') : 'home';
+export default function Menu({ onLinkClick, currentSection }) {
+  const currentSectionFormatted = currentSection
+    ? currentSection.replace('#', '')
+    : 'home';
 
   return (
     <nav className={`${styles.menu} menu`}>
@@ -53,7 +55,7 @@ export default function Menu({ onLinkClick, hash }) {
             key={link.name}
             link={link}
             onLinkClick={onLinkClick}
-            hashFormatted={hashFormatted}
+            currentSectionFormatted={currentSectionFormatted}
           />
         ))}
       </ul>

@@ -3,7 +3,10 @@ export const isBrowser = () => typeof window !== 'undefined';
 export function debounceFunction(cb, delay) {
   let timer;
   return (event) => {
-    if (timer) clearTimeout(timer);
+    if (timer) {
+      clearTimeout(timer);
+      console.log('timeout cleared');
+    }
     timer = setTimeout(() => cb(event), delay);
   };
 }
