@@ -1,4 +1,9 @@
-import LinkPortfolio from '../ui/svg/LinkPortfolio';
+'use client';
+
+import { motion as m } from 'framer-motion';
+
+import { menuLinkWave } from '@/app/utils/motion/menuLinks/animations';
+
 import styles from './Menu.module.css';
 
 export default function SectionHeading({
@@ -14,9 +19,12 @@ export default function SectionHeading({
         {element}
       </div>
       <div className={styles.menuLinkTextClipped}>{elementActive}</div>
-      <div
+      <m.div
         className={`${styles.menuImage} ${styles.menuImageVisible}`}
         style={{ clipPath: `url(#${svgId})` }}
+        variants={menuLinkWave}
+        initial='initial'
+        animate={'animate'}
       />
     </h2>
   );

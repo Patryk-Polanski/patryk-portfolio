@@ -46,9 +46,6 @@ export default function MenuLink({ link, onLinkClick, hashFormatted }) {
               ? 'hover'
               : 'hoverOut'
           }
-          // whileHover={
-          //   link.name.toLocaleLowerCase() !== hashFormatted ? 'hover' : {}
-          // }
         />
         <div className={styles.menuLinkTextClipped}>{link.elementActive}</div>
       </a>
