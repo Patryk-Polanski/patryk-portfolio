@@ -28,4 +28,10 @@ export const menuLinkWave = {
       times: [0, 0.2, 0.92, 1],
     },
   },
+  hoverOut: {
+    backgroundPosition: '-100px 120px',
+    transition: {
+      duration: 2,
+    },
+  },
 };

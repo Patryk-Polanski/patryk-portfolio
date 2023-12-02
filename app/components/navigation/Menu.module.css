@@ -29,7 +29,7 @@
 
 .menuLinkText svg path,
 .menuLinkTextActive svg path {
-  transition: stroke 0.5s ease;
+  transition: stroke 1s 0.2s ease;
 }
 
 .menuLink:hover svg path,
