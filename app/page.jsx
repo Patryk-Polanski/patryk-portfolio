@@ -1,5 +1,3 @@
-import dynamic from 'next/dynamic';
-
 import SectionHome from './sections/Home/Home';
 import Menu from './components/navigation/Menu';
 import Logo from './components/ui/Logo';
@@ -12,11 +10,7 @@ import SectionPortfolio from './sections/Portfolio/Portfolio';
 import PortfolioCarousels from './sections/Portfolio/PortfolioCarousels';
 
 import SectionTechStack from './sections/TechStack/TechStack';
-const DynamicSkillsGraph = dynamic(
-  () => import('./sections/TechStack/SkillsGraph'),
-  { ssr: false }
-); // window not defined errors in the library
-import SkillsGraphImages from './sections/TechStack/SkillsGraphImages';
+import SkillsWrapper from './sections/TechStack/SkillsWrapper';
 
 import SectionExperience from './sections/Experience/Experience';
 import ExperienceCarousel from './sections/Experience/ExperienceCarousel';
@@ -87,14 +81,12 @@ export default function Home() {
       </SectionHome>
 
       <SectionPortfolio>
-        <FadeIn direction='up'></FadeIn>
         <PortfolioCarousels />
       </SectionPortfolio>
 
       <SectionTechStack>
         <FadeIn direction='up'>
-          <DynamicSkillsGraph />
-          <SkillsGraphImages />
+          <SkillsWrapper />
         </FadeIn>
       </SectionTechStack>
 

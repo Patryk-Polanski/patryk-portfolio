@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect, useState, useCallback } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import ForceGraph2D from 'react-force-graph-2d';
 
 import { debounceFunction } from '@/app/utils/helpers';
@@ -22,7 +22,7 @@ function SkillsGraph() {
   const [renderGraph, setRenderGraph] = useState(false);
 
   useEffect(() => {
-    const debounce = debounceFunction(handleResize, 500);
+    const debounce = debounceFunction(handleResize, 600);
     setContainerWidth(containerRef.current.getBoundingClientRect().width);
     const observer = new ResizeObserver(() => {
       debounce();
@@ -78,7 +78,9 @@ function SkillsGraph() {
   }
 
   function handleResize() {
-    setContainerWidth(containerRef.current.getBoundingClientRect().width);
+    setContainerWidth(
+      containerRef?.current?.getBoundingClientRect().width || null
+    );
   }
 
   return (
@@ -158,6 +160,7 @@ function SkillsGraph() {
               ctx.fillStyle = '#A9A9A9';
               ctx.fillText(node.name, node.x, node.y + (IMAGE_SIZE - 4));
               let icon = document.getElementById(`icon-${node.id}`);
+              if (!icon) return;
               ctx.drawImage(
                 icon,
                 node.x - IMAGE_SIZE / 2,

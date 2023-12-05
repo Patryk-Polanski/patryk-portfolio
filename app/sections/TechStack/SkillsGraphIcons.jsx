@@ -1,8 +1,9 @@
+import React from 'react';
 import Image from 'next/image';
 
 import { skillsData } from './skillsData';
 
-export default function SkillsGraphImages() {
+export default function SkillsGraphIcons() {
   return (
     <div
       aria-hidden='true'
@@ -24,8 +25,8 @@ export default function SkillsGraphImages() {
             id={`icon-${node.id}`}
             src={`/${node.id}-icon.png`}
             alt={`icon - ${node.name}`}
-            width={150}
-            height={150}
+            width={100}
+            height={100}
           />
         );
       })}

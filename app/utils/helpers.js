@@ -5,7 +5,7 @@ export function debounceFunction(cb, delay) {
   return (event) => {
     if (timer) {
       clearTimeout(timer);
-      console.log('timeout cleared');
+      // console.log('timeout cleared');
     }
     timer = setTimeout(() => cb(event), delay);
   };
