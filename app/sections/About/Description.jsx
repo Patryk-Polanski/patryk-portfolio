@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import {
   motion as m,
   useScroll,
@@ -10,8 +10,6 @@ import {
 } from 'framer-motion';
 import Image from 'next/image';
 
-import { isInBrowser } from '@/app/utils/helpers';
-
 import FadeIn from '@/app/components/wrappers/FadeIn';
 
 import styles from './Description.module.css';
@@ -19,13 +17,13 @@ import styles from './Description.module.css';
 let windowWidth = 0;
 let windowHeight = 0;
 
-if (isInBrowser()) {
-  windowWidth = window.innerWidth;
-  windowHeight = window.innerHeight;
-}
-
 export default function Description() {
   const textMask = useRef(null);
+
+  useEffect(() => {
+    windowWidth = window.innerWidth;
+    windowHeight = window.innerHeight;
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: textMask,
