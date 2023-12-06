@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from 'react';
 import { motion as m } from 'framer-motion';
 
 import { debounceFunction, getLongerViewportSide } from '@/app/utils/helpers';
-import { isInBrowser } from '@/app/utils/helpers';
 
 import Button from '../ui/Button';
 import Input from '../ui/Input';
@@ -40,7 +39,6 @@ export default function Modal({ onCloseForm }) {
 
   useEffect(() => {
     const debounce = debounceFunction(() => {
-      if (!isInBrowser) return;
       setWindowSize(getLongerViewportSide());
     }, 500);
     const observer = new ResizeObserver(() => {

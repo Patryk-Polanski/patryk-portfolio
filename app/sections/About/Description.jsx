@@ -19,7 +19,7 @@ import styles from './Description.module.css';
 let windowWidth = 0;
 let windowHeight = 0;
 
-if (isInBrowser) {
+if (isInBrowser()) {
   windowWidth = window.innerWidth;
   windowHeight = window.innerHeight;
 }
@@ -35,7 +35,7 @@ export default function Description() {
   const xTransform = useTransform(
     scrollYProgress,
     [0, 0.09, 0.1, 0.8],
-    ['-100%', '0', '0', '0']
+    [windowWidth / -2, '0', '0', '0']
   );
   const yTransform = useTransform(
     scrollYProgress,
@@ -44,7 +44,7 @@ export default function Description() {
   );
   const opacity = useTransform(
     scrollYProgress,
-    [0, 0.1, 0.2, 0.8, 0.82],
+    [0, 0.1, 0.2, 0.7, 0.72],
     [0, 0, 1, 1, 0]
   );
 
