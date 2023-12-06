@@ -11,6 +11,12 @@
   --container-horizontal-padding: 3rem;
   --container-horizontal-padding-mobile: 1.6rem;
 
+  /* --bp-huge: 1500px;
+  --bp-big: 1200px;
+  --bp-medium: 990px;
+  --bp-small: 750px;
+  --bp-tiny: 400px; */
+
   --cubic-bezier: cubic-bezier(0.82, 0.03, 0.54, 0.2);
 }
 
@@ -68,11 +74,23 @@ small {
 }
 
 .d1 {
-  font-size: 10.6rem;
+  font-size: 6.6rem;
+}
+
+@media screen and (min-width: 750px) {
+  .d2 {
+    font-size: 10.6rem;
+  }
 }
 
 .d2 {
-  font-size: 6.4rem;
+  font-size: 3.8rem;
+}
+
+@media screen and (min-width: 750px) {
+  .d2 {
+    font-size: 6.4rem;
+  }
 }
 
 h1,

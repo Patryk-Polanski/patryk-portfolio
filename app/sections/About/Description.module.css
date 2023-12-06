@@ -1,12 +1,24 @@
 .description {
-  margin-top: 12rem;
+  margin-top: 6rem;
   font-family: var(--font-advent-pro);
   position: relative;
 }
 
+@media screen and (min-width: 750px) {
+  .description {
+    margin-top: 12rem;
+  }
+}
+
 .description p {
-  margin-top: 10rem;
+  margin-top: 4rem;
   line-height: 150%;
+}
+
+@media screen and (min-width: var(--bp-small)) {
+  .description p {
+    margin-top: 10rem;
+  }
 }
 
 .descriptionTextWrapper,
@@ -26,20 +38,67 @@
 
   -webkit-mask-image: url(../../../public/patryk-image-small.jpg);
   mask-image: url(../../../public/patryk-image-small.jpg);
-  -webkit-mask-size: 42rem;
-  mask-size: 42rem;
+  -webkit-mask-size: 30rem;
+  mask-size: 30rem;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
+  display: none;
 }
 
-.descriptionImage {
+@media screen and (min-width: 750px) {
+  .descriptionMaskedTextWrapper {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .descriptionMaskedTextWrapper {
+    -webkit-mask-size: 34rem;
+    mask-size: 34rem;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .descriptionMaskedTextWrapper {
+    -webkit-mask-size: 42rem;
+    mask-size: 42rem;
+  }
+}
+
+.descriptionFloatingImage {
   transition: opacity 0.4s ease-in;
+  width: 30rem;
+  height: auto;
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
+  display: none;
 }
 
-.descriptionImage::after {
+@media screen and (min-width: 1200px) {
+  .descriptionFloatingImage {
+    width: 34rem;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .descriptionFloatingImage {
+    width: 42rem;
+  }
+}
+
+.descriptionFloatingImage img {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (min-width: 750px) {
+  .descriptionFloatingImage {
+    display: flex;
+  }
+}
+
+.descriptionFloatingImage::after {
   content: '';
   position: absolute;
   top: 0;
@@ -51,25 +110,38 @@
   transition: opacity 0.4s ease-in;
 }
 
-.descriptionImage img {
-  width: 42rem;
-  height: auto;
-}
-
 .descriptionMaskedTextWrapper p {
   color: var(--color-secondary);
   pointer-events: none;
   transition: color 0.4s ease-in;
 }
 
-.descriptionImage:hover::after {
+.descriptionFloatingImage:hover::after {
   opacity: 0.4;
 }
 
-.descriptionImage:hover ~ div p {
+.descriptionFloatingImage:hover ~ div p {
   color: inherit;
 }
 
 .descriptionMaskedTextWrapper p:first-of-type {
   margin-top: 0;
+}
+
+.descriptionImage {
+  width: 100%;
+  margin-top: 6rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 750px) {
+  .descriptionImage {
+    display: none;
+  }
+}
+
+.descriptionImage img {
+  width: 100%;
+  max-width: 32rem;
+  height: auto;
 }

@@ -10,14 +10,16 @@ import {
 } from 'framer-motion';
 import Image from 'next/image';
 
-import { isBrowser } from 'framer-motion';
+import { isInBrowser } from '@/app/utils/helpers';
+
+import FadeIn from '@/app/components/wrappers/FadeIn';
 
 import styles from './Description.module.css';
 
 let windowWidth = 0;
 let windowHeight = 0;
 
-if (isBrowser) {
+if (isInBrowser) {
   windowWidth = window.innerWidth;
   windowHeight = window.innerHeight;
 }
@@ -33,7 +35,7 @@ export default function Description() {
   const xTransform = useTransform(
     scrollYProgress,
     [0, 0.09, 0.1, 0.8],
-    [windowWidth, windowWidth, windowWidth * 0.66, windowWidth * 0.66]
+    ['-100%', '0', '0', '0']
   );
   const yTransform = useTransform(
     scrollYProgress,
@@ -84,7 +86,7 @@ export default function Description() {
         </AnimatedParagraph>
       </div>
       <m.div
-        className={styles.descriptionImage}
+        className={styles.descriptionFloatingImage}
         style={{
           transform,
           opacity,
@@ -129,6 +131,14 @@ export default function Description() {
           </AnimatedParagraph>
         </div>
       </m.div>
+      <FadeIn className={styles.descriptionImage} direction='right'>
+        <Image
+          src='/patryk-image.jpg'
+          width={400}
+          height={642}
+          alt='image of myself'
+        />
+      </FadeIn>
     </div>
   );
 }
@@ -142,7 +152,7 @@ function AnimatedParagraph({ children }) {
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 1]);
-  const xTransform = useTransform(scrollYProgress, [0, 0.35, 1], [-1000, 0, 0]);
+  const xTransform = useTransform(scrollYProgress, [0, 0.35, 1], [1000, 0, 0]);
 
   const xTransformSpring = useSpring(xTransform, {
     stiffness: 100,

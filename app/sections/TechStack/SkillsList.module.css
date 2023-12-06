@@ -30,7 +30,7 @@
   flex-direction: column;
   gap: 2rem;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   z-index: 1;
   flex-grow: 0;
   flex-shrink: 0;

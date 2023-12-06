@@ -1,9 +1,18 @@
 .testimonials {
   display: flex;
   justify-content: center;
-  margin-top: 16rem;
-  margin-bottom: 12rem;
+  margin-top: 8rem;
+  margin-bottom: 6rem;
   gap: 8rem;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 750px) {
+  .testimonials {
+    flex-direction: row;
+    margin-top: 16rem;
+    margin-bottom: 12rem;
+  }
 }
 
 .testimonials blockquote {
@@ -15,20 +24,44 @@
   position: relative;
 }
 
-.testimonials blockquote p svg:first-of-type {
+.testimonials blockquote p svg {
+  width: 3.2rem;
+  height: auto;
+}
+
+@media screen and (min-width: 750px) {
+  .testimonials blockquote p svg {
+    width: 5rem;
+    height: auto;
+  }
+}
+
+.testimonials blockquote svg:first-of-type {
   position: absolute;
   top: 0;
   left: 0;
-  transform: translate(-50%, -150%);
   color: var(--color-tertiary-darkest);
+  transform: translate(0, -150%);
+}
+
+@media screen and (min-width: 750px) {
+  .testimonials blockquote svg:first-of-type {
+    transform: translate(-50%, -150%);
+  }
 }
 
 .testimonials blockquote p svg:last-of-type {
   position: absolute;
   bottom: 0;
   right: 0;
-  transform: translate(50%, 150%);
   color: var(--color-tertiary-darkest);
+  transform: translate(0, 150%);
+}
+
+@media screen and (min-width: 750px) {
+  .testimonials blockquote svg:first-of-type {
+    transform: translate(50%, 150%);
+  }
 }
 
 .testimonials footer {

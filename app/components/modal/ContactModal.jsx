@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { motion as m } from 'framer-motion';
 
 import { debounceFunction, getLongerViewportSide } from '@/app/utils/helpers';
-import { isBrowser } from 'framer-motion';
+import { isInBrowser } from '@/app/utils/helpers';
 
 import Button from '../ui/Button';
 import Input from '../ui/Input';
@@ -19,11 +19,6 @@ import {
 import { genericAnimProps } from '@/app/utils/motion/shared/animations';
 
 import styles from './ContactModal.module.css';
-
-const getWindowSize = () =>
-  window.innerHeight > window.innerWidth
-    ? window.innerHeight
-    : window.innerWidth;
 
 export default function Modal({ onCloseForm }) {
   const [windowSize, setWindowSize] = useState(getLongerViewportSide());
@@ -45,7 +40,7 @@ export default function Modal({ onCloseForm }) {
 
   useEffect(() => {
     const debounce = debounceFunction(() => {
-      if (!isBrowser) return;
+      if (!isInBrowser) return;
       setWindowSize(getLongerViewportSide());
     }, 500);
     const observer = new ResizeObserver(() => {

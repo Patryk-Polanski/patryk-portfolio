@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { motion as m } from 'framer-motion';
 import Marquee from 'react-fast-marquee';
 
-import { isBrowser } from 'framer-motion';
+import { isInBrowser } from '@/app/utils/helpers';
 
 import { debounceFunction, getLongerViewportSide } from '@/app/utils/helpers';
 import { portfolioData } from '@/app/sections/Portfolio/PortfolioData';
@@ -32,7 +32,7 @@ export default function MenuModal({ onMenuClose }) {
 
   useEffect(() => {
     const debounce = debounceFunction(() => {
-      if (!isBrowser) return;
+      if (!isInBrowser) return;
       setWindowSize(getLongerViewportSide());
     }, 500);
     const observer = new ResizeObserver(() => {
