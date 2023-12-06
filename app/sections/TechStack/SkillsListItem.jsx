@@ -1,11 +1,14 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
+import { motion as m } from 'framer-motion';
 
 import styles from './SkillsList.module.css';
 
-export default function SkillsListItem({ node }) {
+export default function SkillsListItem({ node, index }) {
   return (
-    <li className={styles.skillsListItem}>
+    <div className={styles.skillsListItem}>
       <div className={styles.skillsListImageWrapper}>
         <Image
           className={styles.skillsListImage}
@@ -19,12 +22,16 @@ export default function SkillsListItem({ node }) {
           className={styles.skillsListImageBackground}
         />
       </div>
-      <h5
+      <m.h5
         className={styles.skillsListItemHeading}
         style={{ color: `${node.color}` }}
+        initial={{ opacity: 0, translateY: '20px' }}
+        whileInView={{ opacity: 1, translateY: '0' }}
+        transition={{ delay: 1 + 0.05 * index, duration: 0.4 }}
+        viewport={{ once: true }}
       >
         {node.name}
-      </h5>
-    </li>
+      </m.h5>
+    </div>
   );
 }

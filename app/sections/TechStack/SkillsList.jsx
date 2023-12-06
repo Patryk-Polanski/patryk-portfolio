@@ -1,3 +1,7 @@
+'use client';
+
+import { motion as m } from 'framer-motion';
+
 import { skillsData } from './skillsData';
 
 import SkillsListItem from './SkillsListItem';
@@ -8,34 +12,86 @@ const filteredSkillsData = {
   backend: skillsData.nodes.filter((node) => node.type === 'backend'),
 };
 
+const skillsListAnim = {
+  initial: { scale: 0, rotate: 360 },
+  visible: {
+    rotate: 0,
+    scale: 1,
+    transition: {
+      type: 'spring',
+      stiffness: 260,
+      damping: 40,
+      staggerChildren: 0.05,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const skillsListHeadingAnim = {
+  initial: { opacity: 0 },
+  whileInView: { opacity: 1 },
+  transition: { delay: 0.8, duration: 0.4 },
+  viewport: { once: true },
+};
+
 import styles from './SkillsList.module.css';
 
 export default function SkillsList() {
   return (
-    <ul className={styles.skillsList}>
-      <li key='frontend' className={styles.skillsListHeading}>
+    <m.ul
+      variants={skillsListAnim}
+      initial='initial'
+      whileInView='visible'
+      viewport={{ once: true }}
+      className={styles.skillsList}
+    >
+      <m.li
+        key='frontend'
+        {...skillsListHeadingAnim}
+        className={styles.skillsListHeading}
+      >
         <h3>Frontend</h3>
-      </li>
+      </m.li>
 
-      {filteredSkillsData.frontend.map((node) => {
-        return <SkillsListItem key={node.id} node={node} />;
+      {filteredSkillsData.frontend.map((node, index) => {
+        return (
+          <m.li variants={skillsListAnim} key={node.id}>
+            <SkillsListItem node={node} index={index} />
+          </m.li>
+        );
       })}
 
-      <li key='cms' className={styles.skillsListHeading}>
+      <m.li
+        key='cms'
+        {...skillsListHeadingAnim}
+        className={styles.skillsListHeading}
+      >
         <h3>CMS</h3>
-      </li>
+      </m.li>
 
-      {filteredSkillsData.cms.map((node) => {
-        return <SkillsListItem key={node.id} node={node} />;
+      {filteredSkillsData.cms.map((node, index) => {
+        return (
+          <m.li variants={skillsListAnim} key={node.id}>
+            <SkillsListItem node={node} index={index} />
+          </m.li>
+        );
       })}
 
-      <li key='backend' className={styles.skillsListHeading}>
+      <m.li
+        key='backend'
+        {...skillsListHeadingAnim}
+        className={styles.skillsListHeading}
+      >
         <h3>Backend</h3>
-      </li>
+      </m.li>
 
-      {filteredSkillsData.backend.map((node) => {
-        return <SkillsListItem key={node.id} node={node} />;
+      {filteredSkillsData.backend.map((node, index) => {
+        return (
+          <m.li variants={skillsListAnim} key={node.id}>
+            <SkillsListItem node={node} index={index} />
+          </m.li>
+        );
       })}
-    </ul>
+    </m.ul>
   );
 }
