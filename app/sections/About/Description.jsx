@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import {
   motion as m,
   useScroll,
@@ -14,16 +14,10 @@ import FadeIn from '@/app/components/wrappers/FadeIn';
 
 import styles from './Description.module.css';
 
-let windowWidth = 0;
-let windowHeight = 0;
-
 export default function Description() {
+  const [windowWidth] = useState(window.innerWidth);
+  const [windowHeight] = useState(window.innerHeight);
   const textMask = useRef(null);
-
-  useEffect(() => {
-    windowWidth = window.innerWidth;
-    windowHeight = window.innerHeight;
-  }, []);
 
   const { scrollYProgress } = useScroll({
     target: textMask,
