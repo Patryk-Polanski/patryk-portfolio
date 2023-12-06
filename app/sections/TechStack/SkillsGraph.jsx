@@ -52,7 +52,7 @@ function SkillsGraph() {
     if (!containerWidth || !renderGraph) return;
     forceRef.current
       .d3Force('charge')
-      .strength(containerWidth < 1400 ? -400 : -400)
+      .strength(containerWidth < 1400 ? -360 : -400)
       .distanceMin(60)
       .distanceMax(containerWidth < 1400 ? 250 : 300);
     setTimeout(() => {

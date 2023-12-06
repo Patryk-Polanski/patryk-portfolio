@@ -15,7 +15,7 @@
   line-height: 150%;
 }
 
-@media screen and (min-width: var(--bp-small)) {
+@media screen and (min-width: 750px) {
   .description p {
     margin-top: 10rem;
   }

@@ -1,7 +1,37 @@
 .embla {
-  padding: 0 18rem 16rem;
-  margin-top: 12rem;
+  padding: 0 0 6rem;
+  margin-top: 6rem;
   position: relative;
+}
+
+@media screen and (min-width: 500px) {
+  .embla {
+    padding: 0 0 8rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .embla {
+    margin-top: 10rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .embla {
+    padding: 0 10rem 14rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .embla {
+    padding: 0 14rem 14rem;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .embla {
+    padding: 0 18rem 16rem;
+  }
 }
 
 .emblaContainer {
@@ -10,8 +40,13 @@
 
 .emblaSlide {
   width: 100%;
-  padding: 4rem;
-  /* padding-right: 8rem; */
+  padding: 4rem 0;
+}
+
+@media screen and (min-width: 990px) {
+  .emblaSlide {
+    padding: 4rem;
+  }
 }
 
 .emblaSlide h3 {
@@ -23,9 +58,21 @@
 
 .emblaSlideIntro {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  margin-top: 6rem;
+  margin-top: 5rem;
+  gap: 2rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 750px) {
+  .emblaSlideIntro {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: unset;
+    margin-top: 6rem;
+  }
 }
 
 .emblaSlideIntro h5 {
@@ -36,25 +83,52 @@
 .emblaSlideIntroRight {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1.2rem;
 }
 
-.emblaSlideIntroRight {
-  align-items: end;
+@media screen and (min-width: 750px) {
+  .emblaSlideIntroRight {
+    align-items: end;
+  }
+
+  .emblaSlideIntroLeft {
+    align-items: flex-start;
+  }
 }
 
 .emblaSlideDetails {
-  margin-top: 6rem;
+  margin-top: 4rem;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 400px) {
+  .emblaSlideDetails {
+    margin-top: 6rem;
+    gap: 4rem;
+  }
 }
 
 .emblaSlideDetails li {
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
+  flex-direction: column;
   align-items: center;
   line-height: 160%;
+}
+
+@media screen and (min-width: 400px) {
+  .emblaSlideDetails li {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .emblaSlideDetails li {
+    gap: 3rem;
+  }
 }
 
 .emblaSlideDetails li svg {
@@ -68,6 +142,13 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  display: none;
+}
+
+@media screen and (min-width: 990px) {
+  .emblaButtons {
+    display: flex;
+  }
 }
 
 .emblaButtons svg {
@@ -81,31 +162,73 @@
 }
 
 .emblaDots {
-  bottom: 8rem;
-  gap: 10rem;
+  bottom: 4rem;
+  gap: 3.2rem;
+}
+
+@media screen and (min-width: 500px) {
+  .emblaDots {
+    gap: 6rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .emblaDots {
+    bottom: 8rem;
+    gap: 10rem;
+  }
 }
 
 .emblaDots :global(.embla__dot) {
   position: relative;
   margin: 0;
   transition: all 0.2s 0.4s ease-in;
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+@media screen and (min-width: 500px) {
+  .emblaDots :global(.embla__dot) {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .emblaDots :global(.embla__dot) {
+    width: 3rem;
+    height: 3rem;
+  }
 }
 
 .emblaDots :global(.embla__dot):hover {
   border-color: var(--color-secondary) !important;
-  /* transition: border-color 0.2s ease-in !important; */
 }
 
 .emblaDots :global(.embla__dot)::before {
   content: '';
-  width: 10rem;
+  width: 3.2rem;
+  left: -3.2rem;
   height: 1px;
   background-color: var(--color-secondary);
   position: absolute;
-  left: -10rem;
   top: 50%;
   transform: translateY(-50%);
   transition: all 0.4s var(--cubic-bezier);
+}
+
+@media screen and (min-width: 500px) {
+  .emblaDots :global(.embla__dot)::before {
+    width: 6rem;
+    left: -6rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .emblaDots :global(.embla__dot)::before {
+    width: 10rem;
+    left: -10rem;
+  }
 }
 
 .emblaDots :global(.embla__dot):first-of-type:before {
@@ -118,7 +241,7 @@
   position: absolute;
   right: -1.2rem;
   top: 50%;
-  transform: translateY(-50%) translateX(100%);
+  transform: translateY(140%);
   color: var(--color-tertiary-darker);
   font-size: 1.4rem;
   font-family: var(--font-comfortaa);
@@ -127,9 +250,18 @@
 .emblaDots :global(.embla__dot):first-of-type::after {
   content: 'oldest';
   right: unset;
-  transform: translateY(-50%) translateX(-100%);
+  transform: translateY(140%);
   left: -1.2rem;
-  /* transform: rotateZ(-30deg); */
+}
+
+@media screen and (min-width: 400px) {
+  .emblaDots :global(.embla__dot):first-of-type::after {
+    transform: translateY(-50%) translateX(-100%);
+  }
+
+  .emblaDots :global(.embla__dot):last-of-type::after {
+    transform: translateY(-50%) translateX(100%);
+  }
 }
 
 .emblaDots :global(.embla__dot--selected) ~ :global(.embla__dot) {
@@ -141,5 +273,17 @@
 }
 
 .emblaDots :global(.embla__dot--selected)::before {
-  width: 10rem;
+  width: 3.2rem;
+}
+
+@media screen and (min-width: 500px) {
+  .emblaDots :global(.embla__dot--selected)::before {
+    width: 6rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .emblaDots :global(.embla__dot--selected)::before {
+    width: 10rem;
+  }
 }

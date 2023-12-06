@@ -15,9 +15,14 @@ import FadeIn from '@/app/components/wrappers/FadeIn';
 import styles from './Description.module.css';
 
 export default function Description() {
-  const [windowWidth] = useState(window.innerWidth);
-  const [windowHeight] = useState(window.innerHeight);
+  const [windowWidth, setWindowWidth] = useState(0);
+  const [windowHeight, setWindowHeight] = useState(0);
   const textMask = useRef(null);
+
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+    setWindowHeight(window.innerHeight);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: textMask,
