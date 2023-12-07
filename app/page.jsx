@@ -68,7 +68,16 @@ export default function Home() {
     <main>
       <MenuTrigger menuLinkSize={menuLinkSize} />
       <SectionHome>
-        <Menu menuLinkSize={menuLinkSize} />
+        <FadeIn
+          direction='up'
+          className={styles.profileWrapper}
+          inView={false}
+          delay={2.5}
+          startingCoords={{ x: '-50%', y: '-50%' }}
+          finalCoords={{ x: '-50%', y: '-50%' }}
+        >
+          <Profile />
+        </FadeIn>
         <FadeIn
           direction='down'
           className={styles.logoWrapper}
@@ -80,16 +89,7 @@ export default function Home() {
           <Logo />
         </FadeIn>
 
-        <FadeIn
-          direction='up'
-          className={styles.profileWrapper}
-          inView={false}
-          delay={2.5}
-          startingCoords={{ x: '-50%', y: '-50%' }}
-          finalCoords={{ x: '-50%', y: '-50%' }}
-        >
-          <Profile />
-        </FadeIn>
+        <Menu menuLinkSize={menuLinkSize} />
 
         <FadeIn
           direction='down'

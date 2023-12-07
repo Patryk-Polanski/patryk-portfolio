@@ -3,5 +3,11 @@
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 400px) {
+  .social {
+    gap: 1.2rem;
+  }
 }
