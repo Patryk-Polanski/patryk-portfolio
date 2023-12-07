@@ -9,6 +9,7 @@ import styles from './Menu.module.css';
 export default function SectionHeading({
   title,
   svgId,
+  menuLinkSize,
   element,
   elementActive,
 }) {
@@ -22,7 +23,7 @@ export default function SectionHeading({
       <m.div
         className={`${styles.menuImage} ${styles.menuImageVisible}`}
         style={{ clipPath: `url(#${svgId})` }}
-        variants={menuLinkWave}
+        variants={menuLinkWave(menuLinkSize)}
         initial='initial'
         animate={'animate'}
       />

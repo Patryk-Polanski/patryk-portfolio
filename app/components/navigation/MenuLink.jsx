@@ -9,6 +9,7 @@ import styles from './Menu.module.css';
 
 export default function MenuLink({
   link,
+  menuLinkSize,
   onLinkClick,
   currentSectionFormatted,
 }) {
@@ -41,7 +42,7 @@ export default function MenuLink({
             styles.menuImageVisible
           } menuImage`}
           style={{ clipPath: `url(#${link.id})` }}
-          variants={menuLinkWave}
+          variants={menuLinkWave(menuLinkSize)}
           initial='initial'
           animate={
             link.name.toLocaleLowerCase() === currentSectionFormatted

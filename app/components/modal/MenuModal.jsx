@@ -23,7 +23,7 @@ import {
 } from '@/app/utils/motion/menuModal/animations';
 import { genericAnimProps } from '@/app/utils/motion/shared/animations';
 
-export default function MenuModal({ onMenuClose }) {
+export default function MenuModal({ onMenuClose, menuLinkSize }) {
   const [windowSize, setWindowSize] = useState(getLongerViewportSide());
   const containerRef = useRef();
   const currentSection = document.body.getAttribute('current-section');
@@ -85,7 +85,11 @@ export default function MenuModal({ onMenuClose }) {
           variants={modalMenuLinks}
           {...genericAnimProps}
         >
-          <Menu onLinkClick={onMenuClose} currentSection={currentSection} />
+          <Menu
+            onLinkClick={onMenuClose}
+            currentSection={currentSection}
+            menuLinkSize={menuLinkSize}
+          />
         </m.div>
         <m.div
           className={styles.menuModalSocial}

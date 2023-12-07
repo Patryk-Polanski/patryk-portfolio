@@ -1,3 +1,11 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+
+import { debounceFunction } from './utils/helpers';
+
+import MenuTrigger from './components/ui/MenuTrigger';
+
 import SectionHome from './sections/Home/Home';
 import Menu from './components/navigation/Menu';
 import Logo from './components/ui/Logo';
@@ -26,10 +34,41 @@ import FadeIn from './components/wrappers/FadeIn';
 import styles from './homePage.module.css';
 
 export default function Home() {
+  const [menuLinkSize, setMenuLinkSize] = useState('desktop');
+
+  useEffect(() => {
+    setMenuLinkSize(
+      window.innerWidth > 1199
+        ? 'desktop'
+        : window.innerWidth > 499
+        ? 'tablet'
+        : 'mobile'
+    );
+
+    const checkWindowSize = () => {
+      if (window.innerWidth > 1199) {
+        if (menuLinkSize === 'desktop') return;
+        setMenuLinkSize('desktop');
+      } else if (window.innerWidth > 499) {
+        if (menuLinkSize === 'tablet') return;
+        setMenuLinkSize('tablet');
+      } else if (window.innerWidth < 500) {
+        if (menuLinkSize === 'mobile') return;
+        setMenuLinkSize('mobile');
+      }
+    };
+
+    const debounce = debounceFunction(checkWindowSize, 500);
+    window.addEventListener('resize', debounce);
+
+    return () => window.removeEventListener('resize', checkWindowSize);
+  }, [menuLinkSize]);
+
   return (
     <main>
+      <MenuTrigger menuLinkSize={menuLinkSize} />
       <SectionHome>
-        <Menu />
+        <Menu menuLinkSize={menuLinkSize} />
         <FadeIn
           direction='down'
           className={styles.logoWrapper}
@@ -80,23 +119,23 @@ export default function Home() {
         </FadeIn>
       </SectionHome>
 
-      <SectionPortfolio>
+      <SectionPortfolio menuLinkSize={menuLinkSize}>
         <PortfolioCarousels />
       </SectionPortfolio>
 
-      <SectionTechStack>
+      <SectionTechStack menuLinkSize={menuLinkSize}>
         <FadeIn direction='up'>
           <SkillsWrapper />
         </FadeIn>
       </SectionTechStack>
 
-      <SectionExperience>
+      <SectionExperience menuLinkSize={menuLinkSize}>
         <FadeIn direction='up'>
           <ExperienceCarousel />
         </FadeIn>
       </SectionExperience>
 
-      <SectionAbout>
+      <SectionAbout menuLinkSize={menuLinkSize}>
         <Description />
         <FadeIn direction='up'>
           <Testimonials />

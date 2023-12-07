@@ -5,7 +5,6 @@ import './embla.css';
 import './components/ui/button.css';
 
 import CustomCursor from './components/decorative/CustomCursor';
-import MenuTrigger from './components/ui/MenuTrigger';
 
 export const AdventProFont = Advent_Pro({
   weight: ['400', '600'],
@@ -32,7 +31,6 @@ export default function RootLayout({ children }) {
         style={{ backgroundImage: 'url(/texture.jpg)' }}
       >
         <CustomCursor />
-        <MenuTrigger />
         {children}
         <div id='modal-slot'></div>
       </body>

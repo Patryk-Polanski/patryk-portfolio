@@ -5,7 +5,7 @@ import { useSectionObserver } from '@/app/utils/hooks/useSectionObserver';
 import LinkPortfolio from '@/app/components/ui/svg/LinkPortfolio';
 import SectionHeading from '../../components/navigation/Heading';
 
-export default function SectionPortfolio({ children }) {
+export default function SectionPortfolio({ children, menuLinkSize }) {
   const { sectionRef } = useSectionObserver();
   const svgId = 'portfolioPathMenu';
 
@@ -14,8 +14,9 @@ export default function SectionPortfolio({ children }) {
       <SectionHeading
         title='Portfolio'
         svgId={svgId}
-        element={<LinkPortfolio />}
-        elementActive={<LinkPortfolio id={svgId} />}
+        menuLinkSize={menuLinkSize}
+        element={<LinkPortfolio menuLinkSize={menuLinkSize} />}
+        elementActive={<LinkPortfolio id={svgId} menuLinkSize={menuLinkSize} />}
       />
       {children}
     </section>

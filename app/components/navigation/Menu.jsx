@@ -1,5 +1,9 @@
 'use client';
 
+import { useState, useEffect } from 'react';
+
+import { debounceFunction } from '@/app/utils/helpers';
+
 import LinkHome from '../ui/svg/LinkHome';
 import LinkPortfolio from '../ui/svg/LinkPortfolio';
 import LinkTechStack from '../ui/svg/LinkTechStack';
@@ -9,40 +13,46 @@ import LinkAbout from '../ui/svg/LinkAbout';
 import styles from './Menu.module.css';
 import MenuLink from './MenuLink';
 
-const links = [
-  {
-    name: 'Home',
-    id: 'homePath',
-    elementActive: <LinkHome id='homePath' />,
-    element: <LinkHome />,
-  },
-  {
-    name: 'Portfolio',
-    id: 'portfolioPath',
-    elementActive: <LinkPortfolio id='portfolioPath' />,
-    element: <LinkPortfolio />,
-  },
-  {
-    name: 'Tech-Stack',
-    id: 'techStackPath',
-    elementActive: <LinkTechStack id='techStackPath' />,
-    element: <LinkTechStack />,
-  },
-  {
-    name: 'Experience',
-    id: 'experiencePath',
-    elementActive: <LinkExperience id='experiencePath' />,
-    element: <LinkExperience />,
-  },
-  {
-    name: 'About',
-    id: 'aboutPath',
-    elementActive: <LinkAbout id='aboutPath' />,
-    element: <LinkAbout />,
-  },
-];
+export default function Menu({ onLinkClick, currentSection, menuLinkSize }) {
+  const links = [
+    {
+      name: 'Home',
+      id: 'homePath',
+      elementActive: <LinkHome id='homePath' menuLinkSize={menuLinkSize} />,
+      element: <LinkHome menuLinkSize={menuLinkSize} />,
+    },
+    {
+      name: 'Portfolio',
+      id: 'portfolioPath',
+      elementActive: (
+        <LinkPortfolio id='portfolioPath' menuLinkSize={menuLinkSize} />
+      ),
+      element: <LinkPortfolio menuLinkSize={menuLinkSize} />,
+    },
+    {
+      name: 'Tech-Stack',
+      id: 'techStackPath',
+      elementActive: (
+        <LinkTechStack id='techStackPath' menuLinkSize={menuLinkSize} />
+      ),
+      element: <LinkTechStack menuLinkSize={menuLinkSize} />,
+    },
+    {
+      name: 'Experience',
+      id: 'experiencePath',
+      elementActive: (
+        <LinkExperience id='experiencePath' menuLinkSize={menuLinkSize} />
+      ),
+      element: <LinkExperience menuLinkSize={menuLinkSize} />,
+    },
+    {
+      name: 'About',
+      id: 'aboutPath',
+      elementActive: <LinkAbout id='aboutPath' menuLinkSize={menuLinkSize} />,
+      element: <LinkAbout menuLinkSize={menuLinkSize} />,
+    },
+  ];
 
-export default function Menu({ onLinkClick, currentSection }) {
   const currentSectionFormatted = currentSection
     ? currentSection.replace('#', '')
     : 'home';
@@ -53,6 +63,7 @@ export default function Menu({ onLinkClick, currentSection }) {
         {links.map((link) => (
           <MenuLink
             key={link.name}
+            menuLinkSize={menuLinkSize}
             link={link}
             onLinkClick={onLinkClick}
             currentSectionFormatted={currentSectionFormatted}
