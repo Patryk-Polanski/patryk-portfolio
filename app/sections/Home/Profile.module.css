@@ -7,7 +7,7 @@
 }
 
 .profile p {
-  flex: 1 1 0;
+  white-space: nowrap;
 }
 
 .profile p:first-of-type {

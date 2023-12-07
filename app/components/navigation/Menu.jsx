@@ -58,18 +58,20 @@ export default function Menu({ onLinkClick, currentSection, menuLinkSize }) {
     : 'home';
 
   return (
-    <nav className={`${styles.menu} menu`}>
-      <ul>
-        {links.map((link) => (
-          <MenuLink
-            key={link.name}
-            menuLinkSize={menuLinkSize}
-            link={link}
-            onLinkClick={onLinkClick}
-            currentSectionFormatted={currentSectionFormatted}
-          />
-        ))}
-      </ul>
-    </nav>
+    <header>
+      <nav className={`${styles.menu} menu`}>
+        <ul>
+          {links.map((link) => (
+            <MenuLink
+              key={link.name}
+              menuLinkSize={menuLinkSize}
+              link={link}
+              onLinkClick={onLinkClick}
+              currentSectionFormatted={currentSectionFormatted}
+            />
+          ))}
+        </ul>
+      </nav>
+    </header>
   );
 }

@@ -4,7 +4,7 @@ import styles from './Profile.module.css';
 
 export default function Profile() {
   return (
-    <div className={styles.profile}>
+    <div className={`${styles.profile} profile`}>
       <p>Patryk Polanski</p>
       <Image
         src='/profile.png'

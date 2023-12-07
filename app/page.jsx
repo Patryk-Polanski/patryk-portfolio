@@ -7,6 +7,7 @@ import { debounceFunction } from './utils/helpers';
 import MenuTrigger from './components/ui/MenuTrigger';
 
 import SectionHome from './sections/Home/Home';
+import MobileHeader from './sections/Home/MobileHeader';
 import Menu from './components/navigation/Menu';
 import Logo from './components/ui/Logo';
 import Profile from './sections/Home/Profile';
@@ -68,16 +69,10 @@ export default function Home() {
     <main>
       <MenuTrigger menuLinkSize={menuLinkSize} />
       <SectionHome>
-        <FadeIn
-          direction='up'
-          className={styles.profileWrapper}
-          inView={false}
-          delay={2.5}
-          startingCoords={{ x: '-50%', y: '-50%' }}
-          finalCoords={{ x: '-50%', y: '-50%' }}
-        >
-          <Profile />
-        </FadeIn>
+        <MobileHeader />
+
+        <Menu menuLinkSize={menuLinkSize} />
+
         <FadeIn
           direction='down'
           className={styles.logoWrapper}
@@ -89,7 +84,16 @@ export default function Home() {
           <Logo />
         </FadeIn>
 
-        <Menu menuLinkSize={menuLinkSize} />
+        <FadeIn
+          direction='up'
+          className={styles.profileWrapper}
+          inView={false}
+          delay={2.5}
+          startingCoords={{ x: '-50%', y: '-50%' }}
+          finalCoords={{ x: '-50%', y: '-50%' }}
+        >
+          <Profile />
+        </FadeIn>
 
         <FadeIn
           direction='down'
