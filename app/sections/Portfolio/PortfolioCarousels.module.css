@@ -1,6 +1,12 @@
 .carouselsWrapper {
-  margin-top: 12rem;
+  margin-top: 8rem;
   position: relative;
+}
+
+@media screen and (min-width: 750px) {
+  .carouselsWrapper {
+    margin-top: 12rem;
+  }
 }
 
 .carouselsWrapperHeading {
@@ -11,7 +17,7 @@
   justify-content: space-between;
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 750px) {
   .carouselsWrapperHeading {
     width: 60%;
   }
@@ -23,15 +29,21 @@
 
 @media screen and (min-width: 990px) {
   .carouselsWrapperHeading p {
-    display: 'flex';
-    align-items: 'center';
-    gap: '1.4rem';
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
   }
 }
 
 .mainEmbla {
   padding: 0;
   background-color: var(--color-primary);
+}
+
+@media screen and (min-width: 750px) {
+  .mainEmbla {
+    width: 95%;
+  }
 }
 
 @media screen and (min-width: 990px) {
@@ -42,33 +54,74 @@
 
 .mainEmblaViewport {
   height: 100%;
+  width: calc(100% + var(--container-horizontal-padding-mobile));
+}
+
+@media screen and (min-width: 750px) {
+  .mainEmblaViewport {
+    width: unset;
+  }
 }
 
 .mainEmblaContainer {
   height: 100%;
   margin-left: 0;
-  margin-left: calc(2rem * -1);
+  margin-left: calc(1.2rem * -1);
+}
+
+@media screen and (min-width: 750px) {
+  .mainEmblaContainer {
+    margin-left: calc(2rem * -1);
+  }
 }
 
 .mainEmblaSlide {
-  padding-left: 2rem;
+  padding-left: 1.2rem;
   margin: 0;
-  flex: 0 0 28rem;
+  flex: 0 0 60%;
   width: 100%;
   height: 100%;
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 500px) {
   .mainEmblaSlide {
+    flex: 0 0 40%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .mainEmblaSlide {
+    padding-left: 2rem;
     flex: 0 0 100%;
   }
 }
 
+.mainEmblaSlide:last-of-type {
+  margin-right: calc(100% - 60%);
+}
+
+@media screen and (min-width: 500px) {
+  .mainEmblaSlide:last-of-type {
+    margin-right: calc(100% - 40%);
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .mainEmblaSlide:last-of-type {
+    margin-right: unset;
+  }
+}
+
+.mainEmblaSlideActive .mainEmblaSlideContent {
+  border-color: var(--color-secondary);
+}
+
 .mainEmblaSlideContent {
-  border: 1px solid var(--color-secondary);
+  border: 1px solid var(--color-tertiary-darkest);
   border-radius: 1rem;
   height: inherit;
   padding: 1rem;
+  transition: border 0.2s ease-in;
 }
 
 .mainEmblaSlideContent img {
@@ -78,37 +131,51 @@
 }
 
 .mainEmblaButtons {
-  position: absolute;
-  bottom: 4rem;
-  right: 0;
-  top: unset;
-  left: unset;
-  display: flex;
-  gap: 4rem;
-  justify-content: center;
-  width: calc(25% - var(--container-horizontal-padding));
-}
-
-.mainEmblaButtons :global(.embla__button--prev),
-.mainEmblaButtons :global(.embla__button--next) {
-  width: unset;
-}
-
-.thumbsEmbla {
   display: none;
 }
 
 @media screen and (min-width: 990px) {
-  .thumbsEmbla {
-    width: 40%;
+  .mainEmblaButtons {
     position: absolute;
-    padding: 1rem;
-    padding-right: 0;
-    top: 0;
+    bottom: 4rem;
     right: 0;
-    transform: translateX(var(--container-horizontal-padding));
-    border-radius: 1rem;
-    display: block;
+    top: unset;
+    left: unset;
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    width: calc(25% - var(--container-horizontal-padding));
+  }
+}
+
+.mainEmblaButtons button {
+  object-fit: contain;
+  width: 8rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .mainEmblaButtons button {
+    width: 10rem;
+  }
+}
+
+.thumbsEmbla {
+  visibility: hidden;
+  pointer-events: none;
+  width: 40%;
+  position: absolute;
+  padding: 1rem;
+  padding-right: 0;
+  top: 0;
+  right: 0;
+  transform: translateX(var(--container-horizontal-padding));
+  border-radius: 1rem;
+}
+
+@media screen and (min-width: 750px) {
+  .thumbsEmbla {
+    visibility: visible;
+    pointer-events: all;
   }
 }
 
@@ -119,16 +186,29 @@
   left: 0;
   height: 100%;
   width: 100%;
+  border-radius: 1rem;
 }
 
 .thumbsEmblaContainer {
-  margin-left: calc(2rem * -1);
-  /* margin-right: calc(100% - 28rem); */
+  margin-left: calc(1rem * -1);
+}
+
+@media screen and (min-width: 990px) {
+  .thumbsEmblaContainer {
+    margin-left: calc(1.6rem * -1);
+  }
 }
 
 .thumbsEmblaSlide {
-  flex: 0 0 45%;
-  padding-left: 2rem;
+  flex: 0 0 55%;
+  padding-left: 1rem;
+}
+
+@media screen and (min-width: 990px) {
+  .thumbsEmblaSlide {
+    flex: 0 0 45%;
+    padding-left: 1.6rem;
+  }
 }
 
 .thumbsEmblaSlide:last-of-type {

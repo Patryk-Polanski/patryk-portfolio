@@ -61,7 +61,10 @@ export default function PortfolioCarousels({ deviceType }) {
 }
 
 function MainCarousel({ updateThumbsIndex, activeIndex, deviceType }) {
-  const [emblaMainRef, emblaMainApi] = useEmblaCarousel({ duration: 50 });
+  const [emblaMainRef, emblaMainApi] = useEmblaCarousel({
+    duration: 50,
+    align: 'start',
+  });
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -88,7 +91,12 @@ function MainCarousel({ updateThumbsIndex, activeIndex, deviceType }) {
   );
 
   const onScroll = useCallback(() => {
-    if (!emblaMainApi || deviceType === 'mobile') return;
+    if (!emblaMainApi) return;
+
+    if (deviceType === 'mobile') {
+      setTweenValues([]);
+      return;
+    }
 
     const engine = emblaMainApi.internalEngine();
     const scrollProgress = emblaMainApi.scrollProgress();
@@ -110,7 +118,7 @@ function MainCarousel({ updateThumbsIndex, activeIndex, deviceType }) {
       return numberWithinRange(tweenValue, 0, 1);
     });
     setTweenValues(styles);
-  }, [emblaMainApi, setTweenValues]);
+  }, [emblaMainApi, setTweenValues, deviceType]);
 
   useEffect(() => {
     if (!emblaMainApi) return;
@@ -135,7 +143,9 @@ function MainCarousel({ updateThumbsIndex, activeIndex, deviceType }) {
         <ol className={`embla__container ${styles.mainEmblaContainer}`}>
           {portfolioData.map((project, index) => (
             <li
-              className={`embla__slide ${styles.mainEmblaSlide}`}
+              className={`embla__slide ${styles.mainEmblaSlide} ${
+                selectedIndex === project.id && styles.mainEmblaSlideActive
+              }`}
               key={project.id}
             >
               <div
@@ -149,7 +159,7 @@ function MainCarousel({ updateThumbsIndex, activeIndex, deviceType }) {
                 <picture>
                   <source
                     srcSet={project.imgDesktop}
-                    media='(min-width: 990px)'
+                    media='(min-width: 750px)'
                     alt={`screenshot of ${project.title} project`}
                     width={2000}
                     height={1078}
