@@ -35,43 +35,43 @@ import FadeIn from './components/wrappers/FadeIn';
 import styles from './homePage.module.css';
 
 export default function Home() {
-  const [menuLinkSize, setMenuLinkSize] = useState('desktop');
+  const [deviceType, setDeviceType] = useState('desktop');
 
   useEffect(() => {
-    setMenuLinkSize(
+    setDeviceType(
       window.innerWidth > 1199
         ? 'desktop'
-        : window.innerWidth > 499
+        : window.innerWidth > 749
         ? 'tablet'
         : 'mobile'
     );
 
-    const checkWindowSize = () => {
+    const determineDevice = () => {
       if (window.innerWidth > 1199) {
-        if (menuLinkSize === 'desktop') return;
-        setMenuLinkSize('desktop');
-      } else if (window.innerWidth > 499) {
-        if (menuLinkSize === 'tablet') return;
-        setMenuLinkSize('tablet');
-      } else if (window.innerWidth < 500) {
-        if (menuLinkSize === 'mobile') return;
-        setMenuLinkSize('mobile');
+        if (deviceType === 'desktop') return;
+        setDeviceType('desktop');
+      } else if (window.innerWidth > 749) {
+        if (deviceType === 'tablet') return;
+        setDeviceType('tablet');
+      } else if (window.innerWidth < 750) {
+        if (deviceType === 'mobile') return;
+        setDeviceType('mobile');
       }
     };
 
-    const debounce = debounceFunction(checkWindowSize, 500);
+    const debounce = debounceFunction(determineDevice, 500);
     window.addEventListener('resize', debounce);
 
-    return () => window.removeEventListener('resize', checkWindowSize);
-  }, [menuLinkSize]);
+    return () => window.removeEventListener('resize', determineDevice);
+  }, [deviceType]);
 
   return (
     <main>
-      <MenuTrigger menuLinkSize={menuLinkSize} />
+      <MenuTrigger deviceType={deviceType} />
       <SectionHome>
         <MobileHeader />
 
-        <Menu menuLinkSize={menuLinkSize} />
+        <Menu deviceType={deviceType} />
 
         <FadeIn
           direction='down'
@@ -123,23 +123,23 @@ export default function Home() {
         </FadeIn>
       </SectionHome>
 
-      <SectionPortfolio menuLinkSize={menuLinkSize}>
-        <PortfolioCarousels />
+      <SectionPortfolio deviceType={deviceType}>
+        <PortfolioCarousels deviceType={deviceType} />
       </SectionPortfolio>
 
-      <SectionTechStack menuLinkSize={menuLinkSize}>
+      <SectionTechStack deviceType={deviceType}>
         <FadeIn direction='up'>
-          <SkillsWrapper />
+          <SkillsWrapper deviceType={deviceType} />
         </FadeIn>
       </SectionTechStack>
 
-      <SectionExperience menuLinkSize={menuLinkSize}>
+      <SectionExperience deviceType={deviceType}>
         <FadeIn direction='up'>
           <ExperienceCarousel />
         </FadeIn>
       </SectionExperience>
 
-      <SectionAbout menuLinkSize={menuLinkSize}>
+      <SectionAbout deviceType={deviceType}>
         <Description />
         <FadeIn direction='up'>
           <Testimonials />

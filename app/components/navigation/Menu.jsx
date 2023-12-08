@@ -13,43 +13,43 @@ import LinkAbout from '../ui/svg/LinkAbout';
 import styles from './Menu.module.css';
 import MenuLink from './MenuLink';
 
-export default function Menu({ onLinkClick, currentSection, menuLinkSize }) {
+export default function Menu({ onLinkClick, currentSection, deviceType }) {
   const links = [
     {
       name: 'Home',
       id: 'homePath',
-      elementActive: <LinkHome id='homePath' menuLinkSize={menuLinkSize} />,
-      element: <LinkHome menuLinkSize={menuLinkSize} />,
+      elementActive: <LinkHome id='homePath' deviceType={deviceType} />,
+      element: <LinkHome deviceType={deviceType} />,
     },
     {
       name: 'Portfolio',
       id: 'portfolioPath',
       elementActive: (
-        <LinkPortfolio id='portfolioPath' menuLinkSize={menuLinkSize} />
+        <LinkPortfolio id='portfolioPath' deviceType={deviceType} />
       ),
-      element: <LinkPortfolio menuLinkSize={menuLinkSize} />,
+      element: <LinkPortfolio deviceType={deviceType} />,
     },
     {
       name: 'Tech-Stack',
       id: 'techStackPath',
       elementActive: (
-        <LinkTechStack id='techStackPath' menuLinkSize={menuLinkSize} />
+        <LinkTechStack id='techStackPath' deviceType={deviceType} />
       ),
-      element: <LinkTechStack menuLinkSize={menuLinkSize} />,
+      element: <LinkTechStack deviceType={deviceType} />,
     },
     {
       name: 'Experience',
       id: 'experiencePath',
       elementActive: (
-        <LinkExperience id='experiencePath' menuLinkSize={menuLinkSize} />
+        <LinkExperience id='experiencePath' deviceType={deviceType} />
       ),
-      element: <LinkExperience menuLinkSize={menuLinkSize} />,
+      element: <LinkExperience deviceType={deviceType} />,
     },
     {
       name: 'About',
       id: 'aboutPath',
-      elementActive: <LinkAbout id='aboutPath' menuLinkSize={menuLinkSize} />,
-      element: <LinkAbout menuLinkSize={menuLinkSize} />,
+      elementActive: <LinkAbout id='aboutPath' deviceType={deviceType} />,
+      element: <LinkAbout deviceType={deviceType} />,
     },
   ];
 
@@ -64,7 +64,7 @@ export default function Menu({ onLinkClick, currentSection, menuLinkSize }) {
           {links.map((link) => (
             <MenuLink
               key={link.name}
-              menuLinkSize={menuLinkSize}
+              deviceType={deviceType}
               link={link}
               onLinkClick={onLinkClick}
               currentSectionFormatted={currentSectionFormatted}

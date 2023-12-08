@@ -8,7 +8,7 @@ import MenuModal from '../modal/MenuModal';
 import styles from './MenuTrigger.module.css';
 import { AnimatePresence } from 'framer-motion';
 
-export default function MenuTrigger({ menuLinkSize }) {
+export default function MenuTrigger({ deviceType }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function handleMenu() {
@@ -45,7 +45,7 @@ export default function MenuTrigger({ menuLinkSize }) {
           <MenuModal
             key='menu-modal'
             onMenuClose={handleMenu}
-            menuLinkSize={menuLinkSize}
+            deviceType={deviceType}
           />
         )}
       </AnimatePresence>

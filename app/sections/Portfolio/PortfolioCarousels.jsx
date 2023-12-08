@@ -22,7 +22,7 @@ const TWEEN_FACTOR = 1;
 const numberWithinRange = (number, min, max) =>
   Math.min(Math.max(number, min), max);
 
-export default function PortfolioCarousels() {
+export default function PortfolioCarousels({ deviceType }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const updateThumbsIndex = useCallback((index) => {
@@ -37,8 +37,8 @@ export default function PortfolioCarousels() {
     <div className={styles.carouselsWrapper}>
       <FadeIn direction='up'>
         <h3 className={styles.carouselsWrapperHeading}>
-          <p className='h2'>{portfolioData[activeIndex].title}</p>
-          <p style={{ display: 'flex', alignItems: 'center', gap: '1.4rem' }}>
+          <span className='h2'>{portfolioData[activeIndex].title}</span>
+          <p>
             <Number number={activeIndex + 1} />
             <span className='h3'>/</span>
             <Number number={portfolioData.length} />
@@ -49,6 +49,7 @@ export default function PortfolioCarousels() {
         <MainCarousel
           activeIndex={activeIndex}
           updateThumbsIndex={updateThumbsIndex}
+          deviceType={deviceType}
         />
       </FadeIn>
       <CustomThumbsCarousel
@@ -59,7 +60,7 @@ export default function PortfolioCarousels() {
   );
 }
 
-function MainCarousel({ updateThumbsIndex, activeIndex }) {
+function MainCarousel({ updateThumbsIndex, activeIndex, deviceType }) {
   const [emblaMainRef, emblaMainApi] = useEmblaCarousel({ duration: 50 });
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
@@ -87,7 +88,7 @@ function MainCarousel({ updateThumbsIndex, activeIndex }) {
   );
 
   const onScroll = useCallback(() => {
-    if (!emblaMainApi) return;
+    if (!emblaMainApi || deviceType === 'mobile') return;
 
     const engine = emblaMainApi.internalEngine();
     const scrollProgress = emblaMainApi.scrollProgress();
@@ -145,12 +146,21 @@ function MainCarousel({ updateThumbsIndex, activeIndex }) {
                   }),
                 }}
               >
-                <Image
-                  src={project.imgDesktop}
-                  width={2000}
-                  height={1078}
-                  alt={`screenshot of ${project.title} project`}
-                />
+                <picture>
+                  <source
+                    srcSet={project.imgDesktop}
+                    media='(min-width: 990px)'
+                    alt={`screenshot of ${project.title} project`}
+                    width={2000}
+                    height={1078}
+                  />
+                  <Image
+                    src={project.imgMobile}
+                    width={362}
+                    height={700}
+                    alt={`screenshot of ${project.title} project`}
+                  />
+                </picture>
               </div>
             </li>
           ))}

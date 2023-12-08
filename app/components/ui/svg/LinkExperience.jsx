@@ -1,6 +1,6 @@
 import LinkLetter from './LinkLetter';
 
-export default function LinkExperience({ id, menuLinkSize = 'desktop' }) {
+export default function LinkExperience({ id, deviceType = 'desktop' }) {
   const responsiveVariants = {
     mobile: {
       width: '266',
@@ -78,10 +78,10 @@ export default function LinkExperience({ id, menuLinkSize = 'desktop' }) {
     },
   };
 
-  const currentVariantWidth = responsiveVariants[menuLinkSize].width;
-  const currentVariantHeight = responsiveVariants[menuLinkSize].height;
+  const currentVariantWidth = responsiveVariants[deviceType].width;
+  const currentVariantHeight = responsiveVariants[deviceType].height;
 
-  const svgPaths = responsiveVariants[menuLinkSize].paths.map((path, index) => (
+  const svgPaths = responsiveVariants[deviceType].paths.map((path, index) => (
     <LinkLetter key={index} index={index} path={path} />
   ));
 

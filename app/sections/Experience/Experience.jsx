@@ -5,7 +5,7 @@ import { useSectionObserver } from '@/app/utils/hooks/useSectionObserver';
 import LinkExperience from '@/app/components/ui/svg/LinkExperience';
 import SectionHeading from '../../components/navigation/Heading';
 
-export default function SectionExperience({ children, menuLinkSize }) {
+export default function SectionExperience({ children, deviceType }) {
   const { sectionRef } = useSectionObserver();
   const svgId = 'experiencePathMenu';
 
@@ -18,11 +18,9 @@ export default function SectionExperience({ children, menuLinkSize }) {
       <SectionHeading
         title='Portfolio'
         svgId={svgId}
-        menuLinkSize={menuLinkSize}
-        element={<LinkExperience menuLinkSize={menuLinkSize} />}
-        elementActive={
-          <LinkExperience id={svgId} menuLinkSize={menuLinkSize} />
-        }
+        deviceType={deviceType}
+        element={<LinkExperience deviceType={deviceType} />}
+        elementActive={<LinkExperience id={svgId} deviceType={deviceType} />}
       />
       <div className='narrow-container'>{children}</div>
     </section>

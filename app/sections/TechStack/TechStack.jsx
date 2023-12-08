@@ -5,7 +5,7 @@ import { useSectionObserver } from '@/app/utils/hooks/useSectionObserver';
 import LinkTechStack from '@/app/components/ui/svg/LinkTechStack';
 import SectionHeading from '../../components/navigation/Heading';
 
-export default function SectionTechStack({ children, menuLinkSize }) {
+export default function SectionTechStack({ children, deviceType }) {
   const { sectionRef } = useSectionObserver();
   const svgId = 'techStackPathMenu';
 
@@ -18,9 +18,9 @@ export default function SectionTechStack({ children, menuLinkSize }) {
       <SectionHeading
         title='Portfolio'
         svgId={svgId}
-        menuLinkSize={menuLinkSize}
-        element={<LinkTechStack menuLinkSize={menuLinkSize} />}
-        elementActive={<LinkTechStack id={svgId} menuLinkSize={menuLinkSize} />}
+        deviceType={deviceType}
+        element={<LinkTechStack deviceType={deviceType} />}
+        elementActive={<LinkTechStack id={svgId} deviceType={deviceType} />}
       />
       {children}
     </section>
