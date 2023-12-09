@@ -1,7 +1,6 @@
 .mobileHeader {
   display: flex;
   justify-content: space-between;
-  margin-bottom: auto;
 }
 
 @media screen and (min-width: 990px) {

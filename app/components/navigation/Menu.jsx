@@ -1,9 +1,5 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-
-import { debounceFunction } from '@/app/utils/helpers';
-
 import LinkHome from '../ui/svg/LinkHome';
 import LinkPortfolio from '../ui/svg/LinkPortfolio';
 import LinkTechStack from '../ui/svg/LinkTechStack';
@@ -58,7 +54,7 @@ export default function Menu({ onLinkClick, currentSection, deviceType }) {
     : 'home';
 
   return (
-    <header>
+    <header className={styles.menuHeader}>
       <nav className={`${styles.menu} menu`}>
         <ul>
           {links.map((link) => (

@@ -11,6 +11,16 @@
   }
 }
 
+.menuHeader {
+  margin: auto 0;
+}
+
+@media screen and (min-width: 990px) {
+  .menuHeader {
+    margin: unset;
+  }
+}
+
 .menu ul {
   display: flex;
   flex-direction: column;
