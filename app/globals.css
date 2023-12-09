@@ -11,13 +11,25 @@
   --container-horizontal-padding: 3rem;
   --container-horizontal-padding-mobile: 1.6rem;
 
+  --cubic-bezier: cubic-bezier(0.82, 0.03, 0.54, 0.2);
+
   /* --bp-huge: 1500px;
   --bp-big: 1200px;
   --bp-medium: 990px;
   --bp-small: 750px;
   --bp-tiny: 500px; */
+}
 
-  --cubic-bezier: cubic-bezier(0.82, 0.03, 0.54, 0.2);
+:root.light-mode {
+  --color-primary-lighter: #cdcdcd;
+  --color-primary: #e8e8e8;
+  --color-secondary: #604309;
+  --color-secondary-darker: #3e2b04;
+
+  --color-tertiary-lighter: #282d35;
+  --color-tertiary: #11151a;
+  --color-tertiary-darker: #14171b;
+  --color-tertiary-darkest: #111315;
 }
 
 html {
@@ -34,6 +46,14 @@ body {
   overflow-x: hidden;
   font-family: var(--font-comfortaa);
   scrollbar-gutter: stable;
+}
+
+.light-mode body {
+  font-weight: bolder;
+}
+
+.light-mode .link-letter {
+  stroke-width: 2;
 }
 
 .frozen {

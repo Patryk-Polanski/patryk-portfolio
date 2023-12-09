@@ -69,6 +69,5 @@
   height: 150%;
   background-size: contain;
   background-repeat: repeat-x;
-  background-image: url('../../../public/wave.svg');
   transition: background-position 1s ease;
 }

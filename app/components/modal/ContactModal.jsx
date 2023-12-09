@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { useEffect, useRef, useState } from 'react';
 import { motion as m } from 'framer-motion';
 
+import { useThemeContext } from '@/app/context/ThemeContext';
 import { debounceFunction, getLongerViewportSide } from '@/app/utils/helpers';
 
 import Button from '../ui/Button';
@@ -20,6 +21,7 @@ import { genericAnimProps } from '@/app/utils/motion/shared/animations';
 import styles from './ContactModal.module.css';
 
 export default function Modal({ onCloseForm }) {
+  const { isDarkTheme } = useThemeContext();
   const [windowSize, setWindowSize] = useState(getLongerViewportSide());
   const containerRef = useRef();
 
@@ -72,7 +74,11 @@ export default function Modal({ onCloseForm }) {
       <div className={styles.contactModalBox}>
         <m.div
           className={styles.contactModalBoxBackground}
-          style={{ backgroundImage: 'url(/texture.jpg)' }}
+          style={{
+            backgroundImage: isDarkTheme
+              ? 'url(/texture-dark-theme.jpg)'
+              : 'url(/texture-light-theme.jpg)',
+          }}
           key='contact-box-background'
           variants={modalContactBoxBackground}
           custom={windowSize}

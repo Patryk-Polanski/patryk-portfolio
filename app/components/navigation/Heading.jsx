@@ -2,6 +2,8 @@
 
 import { motion as m } from 'framer-motion';
 
+import { useThemeContext } from '@/app/context/ThemeContext';
+
 import { menuLinkWave } from '@/app/utils/motion/menuLinks/animations';
 
 import styles from './Menu.module.css';
@@ -13,6 +15,8 @@ export default function SectionHeading({
   element,
   elementActive,
 }) {
+  const { isDarkTheme } = useThemeContext();
+
   return (
     <h2 className={`${styles.menuLink} ${styles.menuLinkActive}`}>
       <span className='visually-hidden'>{title}</span>
@@ -22,7 +26,12 @@ export default function SectionHeading({
       <div className={styles.menuLinkTextClipped}>{elementActive}</div>
       <m.div
         className={`${styles.menuImage} ${styles.menuImageVisible}`}
-        style={{ clipPath: `url(#${svgId})` }}
+        style={{
+          backgroundImage: isDarkTheme
+            ? 'url(/wave-dark-theme.svg)'
+            : 'url(/wave-light-theme.svg)',
+          clipPath: `url(#${svgId})`,
+        }}
         variants={menuLinkWave(deviceType)}
         initial='initial'
         animate={'animate'}

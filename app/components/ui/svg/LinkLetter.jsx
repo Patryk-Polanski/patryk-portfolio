@@ -7,7 +7,8 @@ export default function LinkLetter({ index, path }) {
       key={index}
       d={path}
       stroke='currentColor'
-      strokeWidth='1.5'
+      className='link-letter'
+      strokeWidth='2'
       initial={{
         strokeDashoffset: 500,
         strokeDasharray: 500,
