@@ -17,15 +17,32 @@
   width: 100%;
   height: 100%;
   background-color: #000;
-  opacity: 50%;
+  opacity: 40%;
   z-index: -1;
 }
 
 .contactModalBox {
-  padding: 3.6rem 6rem 6rem;
+  margin: 1.6rem;
+  padding: 3rem 1.6rem;
   text-align: center;
   position: relative;
   overflow: hidden;
+  width: 100%;
+  max-width: 70rem;
+}
+
+@media screen and (min-width: 500px) {
+  .contactModalBox {
+    margin: 2rem;
+    padding: 3rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .contactModalBox {
+    margin: 4rem;
+    padding: 3.6rem 6rem 6rem;
+  }
 }
 
 .contactModalBoxBackground {
@@ -47,6 +64,28 @@
   gap: 1rem;
   color: var(--color-tertiary-darkest);
   margin-bottom: 3rem;
+}
+
+.contactModalContactDetails :global(.d2) {
+  font-size: 2.8rem;
+}
+
+@media screen and (min-width: 500px) {
+  .contactModalContactDetails :global(.d2) {
+    font-size: 3.8rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .contactModalContactDetails :global(.d2) {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .contactModalContactDetails :global(.d2) {
+    font-size: 6.4rem;
+  }
 }
 
 .contactModalContactDetails a {

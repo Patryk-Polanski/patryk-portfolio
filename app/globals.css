@@ -300,13 +300,20 @@ body::-webkit-scrollbar-thumb {
   font-family: inherit;
   position: relative;
   color: var(--color-secondary);
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   padding: 1rem 1.4rem;
   width: 100%;
   background-color: var(--color-primary);
   border: transparent;
   outline: none;
   box-sizing: border-box;
+}
+
+@media screen and (min-width: 750px) {
+  .input,
+  .textarea {
+    font-size: 1.6rem;
+  }
 }
 
 .input::placeholder,
@@ -333,6 +340,14 @@ body::-webkit-scrollbar-thumb {
   transform: translate(1.4rem, 1rem);
   transition: all 0.4s ease;
   pointer-events: none;
+  font-size: 1.4rem;
+}
+
+@media screen and (min-width: 750px) {
+  .input ~ label,
+  .textarea ~ label {
+    font-size: unset;
+  }
 }
 
 .input-wrapper span::before,
