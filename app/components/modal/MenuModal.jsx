@@ -20,6 +20,7 @@ import {
   modalMenuMarquee,
   modalMenuLinks,
   modalMenuSocial,
+  modalMenuLine,
 } from '@/app/utils/motion/menuModal/animations';
 import { genericAnimProps } from '@/app/utils/motion/shared/animations';
 
@@ -67,7 +68,7 @@ export default function MenuModal({ onMenuClose, deviceType }) {
         />
         <m.div
           key='modal-menu-line'
-          variants={modalMenuLinks}
+          variants={modalMenuLine}
           {...genericAnimProps}
         >
           <HorizontalLine
@@ -81,6 +82,7 @@ export default function MenuModal({ onMenuClose, deviceType }) {
           />
         </m.div>
         <m.div
+          className={styles.menuModalLinksWrapper}
           key='modal-menu-links'
           variants={modalMenuLinks}
           {...genericAnimProps}

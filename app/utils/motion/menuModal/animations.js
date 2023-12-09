@@ -3,7 +3,7 @@ export const modalMenuBackground = {
     clipPath: 'circle(40px at 100% 0)',
   },
   animate: (windowSize) => ({
-    clipPath: `circle(${windowSize + 300}px at 100% 0)`,
+    clipPath: `circle(${windowSize + 400}px at 100% 0)`,
     transition: {
       type: 'spring',
       stiffness: 80,
@@ -69,4 +69,10 @@ export const modalMenuLinks = {
     opacity: 0,
     transform: 'translateY(4rem)',
   },
+};
+
+export const modalMenuLine = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1, transition: { duration: 1, delay: 0.4 } },
+  exit: { opacity: 0, transition: { duration: 0.2 } },
 };
