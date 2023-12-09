@@ -23,7 +23,7 @@ export default function HorizontalLine({
         delay: delay,
         duration: 1,
       }}
-      className={styles.horizontalLine}
+      className={`${styles.horizontalLine} horizontal-line`}
       style={{
         transform: `translateX(${xTranslate}vw) translateY(${yTranslate}vh)`,
         left: left || 'unset',

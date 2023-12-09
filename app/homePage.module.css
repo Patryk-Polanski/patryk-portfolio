@@ -15,8 +15,12 @@
   display: none;
 }
 
+.contactWrapperFooter {
+}
+
 @media screen and (min-width: 750px) {
-  .contactWrapper {
+  .contactWrapper,
+  .contactWrapperFooter {
     display: block;
     position: absolute;
     bottom: 0;
@@ -25,7 +29,8 @@
 }
 
 @media screen and (min-width: 990px) {
-  .contactWrapper {
+  .contactWrapper,
+  .contactWrapperFooter {
     right: 2rem;
   }
 }

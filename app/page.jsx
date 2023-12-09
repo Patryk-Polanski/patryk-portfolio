@@ -150,11 +150,11 @@ export default function Home() {
       </SectionAbout>
 
       <Footer>
+        <FadeIn direction='left' className={styles.contactWrapperFooter}>
+          <CircularIcon />
+        </FadeIn>
         <FadeIn direction='down'>
           <Copyright />
-        </FadeIn>
-        <FadeIn direction='left' className={styles.contactWrapper}>
-          <CircularIcon />
         </FadeIn>
       </Footer>
     </main>

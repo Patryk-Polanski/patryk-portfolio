@@ -1,8 +1,26 @@
 .footer {
   position: relative;
   padding: 2rem;
-  padding-top: 16rem;
+  padding-top: 8rem;
   text-align: center;
   color: var(--color-tertiary-darker);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 750px) {
+  .footer {
+    padding-top: 16rem;
+    display: block;
+  }
+}
+
+.footer small {
+  line-height: 180%;
+}
+
+.footer :global(.horizontal-line) {
+  display: block;
 }
