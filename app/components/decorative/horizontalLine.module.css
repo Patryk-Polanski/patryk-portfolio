@@ -12,8 +12,3 @@
     display: block;
   }
 }
-
-:global(.light-mode) .horizontalLine {
-  border: 2px solid var(--color-tertiary-lighter);
-  opacity: 0.1 !important;
-}

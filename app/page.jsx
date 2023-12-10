@@ -14,7 +14,6 @@ import Profile from './sections/Home/Profile';
 import Social from './components/ui/Social';
 import DownArrow from './sections/Home/DownArrow';
 import CircularIcon from './sections/Home/CircularIcon';
-import ThemeSwitcher from './sections/Home/ThemeSwitcher';
 
 import SectionPortfolio from './sections/Portfolio/Portfolio';
 import PortfolioCarousels from './sections/Portfolio/PortfolioCarousels';
@@ -94,17 +93,6 @@ export default function Home() {
           finalCoords={{ x: '-50%', y: '-50%' }}
         >
           <Profile />
-        </FadeIn>
-
-        <FadeIn
-          direction='left'
-          inView={false}
-          delay={2.5}
-          startingCoords={{ x: '0', y: '-50%' }}
-          finalCoords={{ x: '0', y: '-50%' }}
-          className={styles.themeSwitcherWrapper}
-        >
-          <ThemeSwitcher />
         </FadeIn>
 
         <FadeIn

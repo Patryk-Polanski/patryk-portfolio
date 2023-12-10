@@ -56,10 +56,6 @@
   opacity: 0.5;
 }
 
-:global(.light-mode) .emblaSlide h3 {
-  color: var(--color-tertiary-lighter);
-}
-
 .emblaSlideIntro {
   display: flex;
   flex-direction: column;

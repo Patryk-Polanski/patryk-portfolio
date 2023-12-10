@@ -20,19 +20,6 @@
   --bp-tiny: 500px; */
 }
 
-:root.light-mode {
-  --color-primary-lighter: #e9e8e8;
-  --color-primary: #d6d6d6;
-
-  --color-secondary: #8e6006;
-  --color-secondary-darker: #734e06;
-
-  --color-tertiary-lighter: #5c6673;
-  --color-tertiary: #171f2a;
-  --color-tertiary-darker: #14191f;
-  --color-tertiary-darkest: #111317;
-}
-
 html {
   font-size: 62.5%;
   background-color: var(--color-primary);
@@ -47,17 +34,6 @@ body {
   overflow-x: hidden;
   font-family: var(--font-comfortaa);
   scrollbar-gutter: stable;
-}
-
-.light-mode body {
-  font-weight: 600;
-  color: var(--color-tertiary-darkest);
-}
-
-@media screen and (min-width: 990px) {
-  .light-mode .link-letter {
-    stroke-width: 3;
-  }
 }
 
 .frozen {

@@ -110,10 +110,6 @@
   transition: opacity 0.4s ease-in;
 }
 
-:global(.light-mode) .descriptionFloatingImage::after {
-  background-color: #fff;
-}
-
 .descriptionMaskedTextWrapper p {
   color: var(--color-secondary);
   pointer-events: none;

@@ -124,10 +124,6 @@
   transition: border 0.2s ease-in;
 }
 
-:global(.light-mode) .mainEmblaSlideContent {
-  border-width: 2px;
-}
-
 .mainEmblaSlideContent img {
   width: 100%;
   height: auto;
@@ -230,11 +226,6 @@
   border: 1px solid var(--color-secondary);
 }
 
-:global(.light-mode) .thumbsEmblaSlideActive button,
-:global(.light-mode) .thumbsEmblaSlideContent:hover {
-  border: 2px solid var(--color-secondary);
-}
-
 .thumbsEmblaSlideContent {
   border-radius: 1rem;
   border: 1px solid var(--color-tertiary-darkest);
@@ -243,8 +234,4 @@
   color: inherit;
   transition: border 0.2s ease-in;
   padding: 1rem;
-}
-
-:global(.light-mode) .thumbsEmblaSlideContent {
-  border: 2px solid var(--color-tertiary-lighter);
 }

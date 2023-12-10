@@ -3,8 +3,6 @@
 import { useState } from 'react';
 import { motion as m } from 'framer-motion';
 
-import { useThemeContext } from '@/app/context/ThemeContext';
-
 import { menuLinkWave } from '@/app/utils/motion/menuLinks/animations';
 
 import styles from './Menu.module.css';
@@ -15,7 +13,6 @@ export default function MenuLink({
   onLinkClick,
   currentSectionFormatted,
 }) {
-  const { isDarkTheme } = useThemeContext();
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -45,9 +42,7 @@ export default function MenuLink({
             styles.menuImageVisible
           } menuImage`}
           style={{
-            backgroundImage: isDarkTheme
-              ? 'url(/wave-dark-theme.svg)'
-              : 'url(/wave-light-theme.svg)',
+            backgroundImage: 'url(/wave.svg)',
             clipPath: `url(#${link.id})`,
           }}
           variants={menuLinkWave(deviceType)}

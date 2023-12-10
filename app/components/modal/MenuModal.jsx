@@ -9,8 +9,6 @@ import Marquee from 'react-fast-marquee';
 import { debounceFunction, getLongerViewportSide } from '@/app/utils/helpers';
 import { portfolioData } from '@/app/sections/Portfolio/PortfolioData';
 
-import { useThemeContext } from '@/app/context/ThemeContext';
-
 import HorizontalLine from '../decorative/HorizontalLine';
 import Menu from '../navigation/Menu';
 import Social from '../ui/Social';
@@ -27,7 +25,6 @@ import {
 import { genericAnimProps } from '@/app/utils/motion/shared/animations';
 
 export default function MenuModal({ onMenuClose, deviceType }) {
-  const { isDarkTheme } = useThemeContext();
   const [windowSize, setWindowSize] = useState(getLongerViewportSide());
   const containerRef = useRef();
   const currentSection = document.body.getAttribute('current-section');
@@ -64,9 +61,7 @@ export default function MenuModal({ onMenuClose, deviceType }) {
         <m.div
           className={styles.menuModalBackground}
           style={{
-            backgroundImage: isDarkTheme
-              ? 'url(/texture-dark-theme.jpg)'
-              : 'url(/texture-light-theme.jpg',
+            backgroundImage: 'url(/texture.jpg)',
           }}
           key='modal-background'
           variants={modalMenuBackground}

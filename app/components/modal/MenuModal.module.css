@@ -92,12 +92,3 @@
   border: 1px solid var(--color-tertiary-darkest);
   transition: all 0.2s ease-in;
 }
-
-:global(.light-mode) .marqueeItemImage {
-  border: 2px solid var(--color-tertiary-lighter);
-}
-
-.marqueeItemLink:hover img,
-:global(.light-mode) .marqueeItemLink:hover img {
-  border-color: var(--color-secondary);
-}

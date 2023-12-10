@@ -1,5 +1,18 @@
-import { ThemeContextProvider } from './context/ThemeContext';
-import BodyLayout from './BodyLayout';
+import { Advent_Pro, Comfortaa } from 'next/font/google';
+
+import CustomCursor from './components/decorative/CustomCursor';
+
+export const AdventProFont = Advent_Pro({
+  weight: ['400', '600'],
+  subsets: ['latin'],
+  variable: '--font-advent-pro',
+});
+
+export const ComfortaaFont = Comfortaa({
+  weight: ['400', '600'],
+  subsets: ['latin'],
+  variable: '--font-comfortaa',
+});
 
 import './reset.css';
 import './globals.css';
@@ -14,9 +27,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <ThemeContextProvider>
-        <BodyLayout>{children}</BodyLayout>
-      </ThemeContextProvider>
+      <body
+        className={`${ComfortaaFont.variable} ${AdventProFont.variable}`}
+        style={{
+          backgroundImage: 'url(/texture.jpg)',
+        }}
+      >
+        <CustomCursor />
+        {children}
+        <div id='modal-slot'></div>
+      </body>
     </html>
   );
 }

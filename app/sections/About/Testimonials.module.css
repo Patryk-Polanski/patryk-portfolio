@@ -30,11 +30,6 @@
   color: var(--color-tertiary-darkest);
 }
 
-:global(.light-mode) .testimonials blockquote p svg {
-  color: var(--color-tertiary-lighter);
-  opacity: 0.5;
-}
-
 @media screen and (min-width: 750px) {
   .testimonials blockquote p svg {
     width: 5rem;
