@@ -9,6 +9,10 @@
   transition: color 0.3s ease;
 }
 
+:global(.light-mode) .themeSwitcher {
+  color: var(--color-tertiary-lighter);
+}
+
 @media screen and (min-width: 750px) {
   .themeSwitcher {
     writing-mode: vertical-rl;
@@ -18,7 +22,8 @@
 }
 
 .themeSwitcher:hover,
-.themeSwitcher:hover :global(.svg) {
+.themeSwitcher:hover :global(.svg),
+:global(.light-mode) .themeSwitcher:hover :global(.svg) {
   color: var(--color-secondary);
 }
 
@@ -44,6 +49,10 @@
   width: 4rem;
   color: var(--color-tertiary-darkest);
   transition: color 0.3s ease;
+}
+
+:global(.light-mode) .themeSwitcher :global(.svg) {
+  color: var(--color-tertiary-lighter);
 }
 
 .themeSwitcher :global(.moon),

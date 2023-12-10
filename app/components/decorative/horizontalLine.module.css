@@ -1,6 +1,5 @@
 .horizontalLine {
   display: none;
-  color: var(--color-primary-lighter);
   position: absolute;
   left: 0;
   top: 0;
@@ -12,4 +11,9 @@
   .horizontalLine {
     display: block;
   }
+}
+
+:global(.light-mode) .horizontalLine {
+  border: 2px solid var(--color-tertiary-lighter);
+  opacity: 0.1 !important;
 }

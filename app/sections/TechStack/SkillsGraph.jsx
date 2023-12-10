@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState } from 'react';
 import ForceGraph2D from 'react-force-graph-2d';
 
+import { useThemeContext } from '@/app/context/ThemeContext';
 import { debounceFunction } from '@/app/utils/helpers';
 
 import Button from '@/app/components/ui/Button';
@@ -14,6 +15,7 @@ import './skillsGraph.css';
 const IMAGE_SIZE = 37;
 
 function SkillsGraph() {
+  const { isDarkTheme } = useThemeContext();
   const forceRef = useRef(null);
   const containerRef = useRef(null);
   const revealBtnRef = useRef(null);
@@ -135,7 +137,7 @@ function SkillsGraph() {
             ref={forceRef}
             key={Math.random}
             graphData={skillsData}
-            backgroundColor='#14191F'
+            backgroundColor={isDarkTheme ? '#14191F' : '#b0b0b0'}
             nodeLabel='name'
             refresh={true}
             enableZoomInteraction={false}
@@ -151,13 +153,13 @@ function SkillsGraph() {
             nodeCanvasObjectMode={() => 'after'}
             nodeColor={(node) => node.color}
             linkCurvature={0.2}
-            linkColor={(link) => '#333333'}
+            linkColor={(link) => (isDarkTheme ? '#333333' : '#cfcfcf')}
             linkWidth={(link) => '3'}
             nodeCanvasObject={(node, ctx, globalScale) => {
               ctx.font = '11px Sans-Serif';
               ctx.textAlign = 'center';
               ctx.textBaseline = 'middle';
-              ctx.fillStyle = '#A9A9A9';
+              ctx.fillStyle = isDarkTheme ? '#A9A9A9' : '#171f2a';
               ctx.fillText(node.name, node.x, node.y + (IMAGE_SIZE - 4));
               let icon = document.getElementById(`icon-${node.id}`);
               if (!icon) return;

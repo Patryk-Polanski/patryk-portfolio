@@ -78,8 +78,8 @@ export default function LinkExperience({ id, deviceType = 'desktop' }) {
     },
   };
 
-  const currentVariantWidth = responsiveVariants[deviceType].width;
-  const currentVariantHeight = responsiveVariants[deviceType].height;
+  const currentVariantWidth = +responsiveVariants[deviceType].width + 1;
+  const currentVariantHeight = +responsiveVariants[deviceType].height + 1;
 
   const svgPaths = responsiveVariants[deviceType].paths.map((path, index) => (
     <LinkLetter key={index} index={index} path={path} />

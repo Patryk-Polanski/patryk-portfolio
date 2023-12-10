@@ -4,7 +4,7 @@ export default function LinkTechStack({ id, deviceType = 'desktop' }) {
   const responsiveVariants = {
     mobile: {
       width: '257',
-      height: '47',
+      height: '48',
       paths: [
         'M9.84025 6.43145H0V0.643066H25.8548V6.43145H15.6929V45.6638H9.84025V6.43145Z',
 
@@ -72,8 +72,8 @@ export default function LinkTechStack({ id, deviceType = 'desktop' }) {
     },
   };
 
-  const currentVariantWidth = responsiveVariants[deviceType].width;
-  const currentVariantHeight = responsiveVariants[deviceType].height;
+  const currentVariantWidth = +responsiveVariants[deviceType].width + 1;
+  const currentVariantHeight = +responsiveVariants[deviceType].height + 1;
 
   const svgPaths = responsiveVariants[deviceType].paths.map((path, index) => (
     <LinkLetter key={index} index={index} path={path} />

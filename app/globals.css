@@ -21,15 +21,16 @@
 }
 
 :root.light-mode {
-  --color-primary-lighter: #cdcdcd;
-  --color-primary: #e8e8e8;
-  --color-secondary: #604309;
-  --color-secondary-darker: #3e2b04;
+  --color-primary-lighter: #e9e8e8;
+  --color-primary: #d6d6d6;
 
-  --color-tertiary-lighter: #282d35;
-  --color-tertiary: #11151a;
-  --color-tertiary-darker: #14171b;
-  --color-tertiary-darkest: #111315;
+  --color-secondary: #8e6006;
+  --color-secondary-darker: #734e06;
+
+  --color-tertiary-lighter: #5c6673;
+  --color-tertiary: #171f2a;
+  --color-tertiary-darker: #14191f;
+  --color-tertiary-darkest: #111317;
 }
 
 html {
@@ -49,11 +50,14 @@ body {
 }
 
 .light-mode body {
-  font-weight: bolder;
+  font-weight: 600;
+  color: var(--color-tertiary-darkest);
 }
 
-.light-mode .link-letter {
-  stroke-width: 2;
+@media screen and (min-width: 990px) {
+  .light-mode .link-letter {
+    stroke-width: 3;
+  }
 }
 
 .frozen {

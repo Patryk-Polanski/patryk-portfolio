@@ -4,7 +4,7 @@ export default function LinkAbout({ id, deviceType = 'desktop' }) {
   const responsiveVariants = {
     mobile: {
       width: '139',
-      height: '46',
+      height: '48',
       paths: [
         'M0 45H6.33962L9.66038 31.6216L21.434 31.9257L25.0566 45H32L19.3208 0H11.7736L0 45ZM11.1698 25.2365L15.3962 9.72973L19.9245 25.2365H11.1698Z',
 
@@ -49,8 +49,8 @@ export default function LinkAbout({ id, deviceType = 'desktop' }) {
     },
   };
 
-  const currentVariantWidth = responsiveVariants[deviceType].width;
-  const currentVariantHeight = responsiveVariants[deviceType].height;
+  const currentVariantWidth = +responsiveVariants[deviceType].width + 1;
+  const currentVariantHeight = +responsiveVariants[deviceType].height + 1;
 
   const svgPaths = responsiveVariants[deviceType].paths.map((path, index) => (
     <LinkLetter key={index} index={index} path={path} />

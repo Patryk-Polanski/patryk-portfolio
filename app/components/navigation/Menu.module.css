@@ -51,6 +51,10 @@
   stroke: var(--color-tertiary-darkest);
 }
 
+:global(.light-mode) .menuLinkText svg path {
+  stroke: var(--color-tertiary-lighter);
+}
+
 .menuLinkText svg path,
 .menuLinkTextActive svg path {
   transition: stroke 1s 0.2s ease;
@@ -58,7 +62,7 @@
 
 .menuLink:hover svg path,
 .menuLinkTextActive svg path {
-  stroke: var(--color-secondary);
+  stroke: var(--color-secondary) !important;
 }
 
 .menuImage {

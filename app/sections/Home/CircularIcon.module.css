@@ -41,7 +41,8 @@
 }
 
 .circularLabel span {
-  color: var(--color-tertiary-darkest);
+  color: var(--color-tertiary-darker);
+  opacity: 0.8;
   transition: all 0.4s var(--cubic-bezier);
   position: relative;
   display: inline-block;
