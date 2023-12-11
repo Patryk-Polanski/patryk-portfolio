@@ -1,0 +1,11 @@
+.projectHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

@@ -1,7 +1,7 @@
 'use client';
 
-import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 import { useSectionObserver } from '@/app/utils/hooks/useSectionObserver';
 
@@ -12,7 +12,7 @@ export default function SectionHome({ children }) {
   const { ref, inView, entry } = useInView();
 
   useEffect(() => {
-    const menuTrigger = document.getElementById('menu-trigger');
+    const menuTrigger = document.getElementById('menu-trigger-observed');
     if (!menuTrigger) return;
 
     if (inView && window.scrollY > 0) {

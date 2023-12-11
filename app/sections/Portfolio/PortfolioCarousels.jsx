@@ -1,7 +1,8 @@
 'use client';
 
-import Image from 'next/image';
 import { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import { motion as m } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
 import { PrevButton, NextButton } from '@/app/utils/emblaExtras';
@@ -37,7 +38,14 @@ export default function PortfolioCarousels({ deviceType }) {
     <div className={styles.carouselsWrapper}>
       <FadeIn direction='up'>
         <h3 className={styles.carouselsWrapperHeading}>
-          <span className='h2'>{portfolioData[activeIndex].title}</span>
+          <Link
+            href={portfolioData[activeIndex].title
+              .toLowerCase()
+              .replace(' ', '-')}
+            className='h2'
+          >
+            {portfolioData[activeIndex].title}
+          </Link>
           <p>
             <Number number={activeIndex + 1} />
             <span className='h3'>/</span>
@@ -148,7 +156,8 @@ function MainCarousel({ updateThumbsIndex, activeIndex, deviceType }) {
               }`}
               key={project.id}
             >
-              <div
+              <Link
+                href={'/' + project.title.toLowerCase().replace(' ', '-')}
                 className={`embla__scale ${styles.mainEmblaSlideContent}`}
                 style={{
                   ...(tweenValues.length && {
@@ -171,7 +180,7 @@ function MainCarousel({ updateThumbsIndex, activeIndex, deviceType }) {
                     alt={`screenshot of ${project.title} project`}
                   />
                 </picture>
-              </div>
+              </Link>
             </li>
           ))}
         </ol>

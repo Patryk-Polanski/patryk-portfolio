@@ -23,6 +23,14 @@
   }
 }
 
+.carouselsWrapperHeading a {
+  transition: color 0.3s ease;
+}
+
+.carouselsWrapperHeading a:hover {
+  color: var(--color-secondary);
+}
+
 .carouselsWrapperHeading p {
   display: none;
 }
@@ -122,6 +130,7 @@
   height: inherit;
   padding: 1rem;
   transition: border 0.2s ease-in;
+  display: block;
 }
 
 .mainEmblaSlideContent img {

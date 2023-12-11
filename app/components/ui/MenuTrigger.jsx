@@ -8,7 +8,7 @@ import MenuModal from '../modal/MenuModal';
 import styles from './MenuTrigger.module.css';
 import { AnimatePresence } from 'framer-motion';
 
-export default function MenuTrigger({ deviceType }) {
+export default function MenuTrigger({ deviceType, id = 'menu-trigger' }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function handleMenu() {
@@ -23,9 +23,17 @@ export default function MenuTrigger({ deviceType }) {
   return (
     <>
       <div
-        className={styles.menuTrigger}
-        id='menu-trigger'
-        style={{ position: 'fixed', right: '-10rem', top: '3rem', opacity: 0 }}
+        className={`${styles.menuTrigger} ${
+          id === 'menu-trigger' && 'menuTriggerIsVisible'
+        } `}
+        id={id}
+        style={{
+          animationDelay: id === 'menu-trigger' ? '2.4s' : '0',
+          position: 'fixed',
+          right: '-10rem',
+          top: '3rem',
+          opacity: id === 'menu-trigger' ? 1 : 0,
+        }}
       >
         <Button
           variation='menu'

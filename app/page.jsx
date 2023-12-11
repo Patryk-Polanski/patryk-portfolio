@@ -34,7 +34,7 @@ import FadeIn from './components/wrappers/FadeIn';
 
 import styles from './homePage.module.css';
 
-export default function Home() {
+export default function HomePage() {
   const [deviceType, setDeviceType] = useState('desktop');
 
   useEffect(() => {
@@ -67,7 +67,7 @@ export default function Home() {
 
   return (
     <main>
-      <MenuTrigger deviceType={deviceType} />
+      <MenuTrigger deviceType={deviceType} id='menu-trigger-observed' />
       <SectionHome>
         <MobileHeader />
 
