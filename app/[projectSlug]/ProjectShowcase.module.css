@@ -1,0 +1,36 @@
+.projectShowcase {
+  text-align: center;
+  margin-top: 6rem;
+}
+
+.projectOverview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12rem;
+  margin-top: 6rem;
+}
+
+.projectOverviewImages,
+.projectOverviewText {
+  flex: 1 1 0;
+}
+
+.projectOverviewText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4.5rem;
+}
+
+.projectOverviewText p {
+  max-width: 45rem;
+  line-height: 140%;
+}
+
+.projectOverviewButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+}
