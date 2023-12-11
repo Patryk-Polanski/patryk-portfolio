@@ -22,8 +22,8 @@ export default function SkillsGraphIcons() {
         return (
           <Image
             key={node.id}
-            id={`icon-${node.id}`}
-            src={`/${node.id}-icon.png`}
+            id={`skill-${node.id}`}
+            src={`/skill-${node.id}.png`}
             alt={`icon - ${node.name}`}
             width={100}
             height={100}

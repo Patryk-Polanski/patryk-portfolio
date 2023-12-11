@@ -159,7 +159,7 @@ function SkillsGraph() {
               ctx.textBaseline = 'middle';
               ctx.fillStyle = '#A9A9A9';
               ctx.fillText(node.name, node.x, node.y + (IMAGE_SIZE - 4));
-              let icon = document.getElementById(`icon-${node.id}`);
+              let icon = document.getElementById(`skill-${node.id}`);
               if (!icon) return;
               ctx.drawImage(
                 icon,

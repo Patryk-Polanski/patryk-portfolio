@@ -12,7 +12,7 @@ export default function SkillsListItem({ node, index }) {
       <div className={styles.skillsListImageWrapper}>
         <Image
           className={styles.skillsListImage}
-          src={`/${node.id}-icon.png`}
+          src={`/skill-${node.id}.png`}
           alt={`icon - ${node.name}`}
           width={80}
           height={80}
