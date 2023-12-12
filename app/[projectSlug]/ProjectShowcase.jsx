@@ -3,75 +3,14 @@
 import React from 'react';
 import { motion as m } from 'framer-motion';
 
-import { skillsData } from '../sections/TechStack/skillsData';
-
 import SectionHeading from '../components/navigation/Heading';
 import LinkPortfolio from '../components/ui/svg/LinkPortfolio';
-import SkillsListItem from '../sections/TechStack/SkillsListItem';
 import Button from '../components/ui/Button';
+import DownArrow from '../sections/Home/DownArrow';
+import FadeIn from '../components/wrappers/FadeIn';
 
 import styles from './ProjectShowcase.module.css';
 import Image from 'next/image';
-
-const skillsListAnim = {
-  initial: { scale: 0, rotate: 360 },
-  visible: {
-    rotate: 0,
-    scale: 1,
-    transition: {
-      type: 'spring',
-      stiffness: 260,
-      damping: 40,
-      staggerChildren: 0.05,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const tempArr = [
-  {
-    id: 'css',
-    name: 'CSS',
-    color: '#2465F1',
-    type: 'frontend',
-  },
-  {
-    id: 'scss',
-    name: 'SCSS',
-    color: '#D06397',
-    type: 'frontend',
-  },
-  {
-    id: 'javascript',
-    name: 'JavaScript',
-    color: '#F0DB4F',
-    type: 'frontend',
-  },
-  {
-    id: 'typescript',
-    name: 'TypeScript',
-    color: '#007ACC',
-    type: 'frontend',
-  },
-  {
-    id: 'react',
-    name: 'React',
-    color: '#00D8FF',
-    type: 'frontend',
-  },
-  {
-    id: 'framer-motion',
-    name: 'Framer Motion',
-    color: '#EF01B9',
-    type: 'frontend',
-  },
-  {
-    id: 'prisma',
-    name: 'Prisma',
-    color: '#178C7E',
-    type: 'backend',
-  },
-];
 
 export default function ProjectShowcase({ slug }) {
   return (
@@ -83,6 +22,14 @@ export default function ProjectShowcase({ slug }) {
         element={<LinkPortfolio deviceType={'desktop'} />}
         elementActive={<LinkPortfolio id={slug} deviceType={'desktop'} />}
       />
+      <FadeIn
+        direction='left'
+        className={styles.arrowWrapper}
+        inView={false}
+        delay={2.5}
+      >
+        <DownArrow target='#challenge' />
+      </FadeIn>
       <div className={styles.projectOverview}>
         <div className={styles.projectOverviewImages}>
           <Image
@@ -128,12 +75,10 @@ export default function ProjectShowcase({ slug }) {
               text='Github repo'
             />
           </div>
-          <ul className={styles.projectOverviewTech}>
-            {tempArr.map((node, index) => (
-              <m.li variants={skillsListAnim} key={node.id}>
-                <SkillsListItem node={node} index={index} />
-              </m.li>
-            ))}
+          <ul className={styles.projectOverviewTasks}>
+            <li className='h2'>UI/UX</li>
+            <li className='h2'>Frontend</li>
+            <li className='h2'>Backend</li>
           </ul>
         </div>
       </div>

@@ -1,6 +1,7 @@
 .projectShowcase {
   text-align: center;
   margin-top: 5rem;
+  position: relative;
 }
 
 .projectOverview {
@@ -54,21 +55,17 @@
   gap: 1.2rem;
 }
 
-.projectOverviewTech {
+.projectOverviewTasks {
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-wrap: wrap;
-  column-gap: 0.5rem;
-  row-gap: 3rem;
-  max-width: 50rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6rem;
+  color: var(--color-primary-lighter);
 }
 
-.projectOverviewTech img {
-  height: 4rem;
-  width: 4rem;
-}
-
-.projectOverviewTech h5 {
-  font-size: 1.4rem;
+.arrowWrapper {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 8%;
 }

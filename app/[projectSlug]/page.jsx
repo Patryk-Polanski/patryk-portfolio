@@ -1,8 +1,9 @@
 import React from 'react';
 
 import MenuTrigger from '../components/ui/MenuTrigger';
-import ProjectShowcase from './ProjectShowcase';
 import ProjectNav from './ProjectNav';
+import ProjectShowcase from './ProjectShowcase';
+import ProjectTechStack from './ProjectTechStack';
 import ProjectDescription from './ProjectDescription';
 import ProjectGallery from './ProjectGallery';
 import Footer from '../sections/Footer/Footer';
@@ -20,6 +21,7 @@ export default function ProjectDetailsPage({ params }) {
       <main>
         <ProjectNav />
         <ProjectShowcase slug={projectSlug} />
+        <ProjectTechStack />
         <ProjectDescription />
         <ProjectGallery />
       </main>

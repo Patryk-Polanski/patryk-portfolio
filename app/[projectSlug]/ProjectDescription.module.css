@@ -3,7 +3,7 @@
 
 .projectDescription h2 {
   color: var(--color-tertiary-darkest);
-  margin-top: 6rem;
+  padding-top: 6rem;
   text-align: center;
 }
 

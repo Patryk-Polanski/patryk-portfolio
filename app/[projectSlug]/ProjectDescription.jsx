@@ -3,7 +3,7 @@ import styles from './ProjectDescription.module.css';
 export default function ProjectDescription() {
   return (
     <section className={`section text-container ${styles.projectDescription}`}>
-      <h2>The challenge</h2>
+      <h2 id='challenge'>The challenge</h2>
       <p>
         The Vape Superstore project was one of the first Shopify sites that I
         had a chance to work on. It was also the most complex Shopify store I

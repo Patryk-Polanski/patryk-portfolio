@@ -110,7 +110,7 @@ export default function HomePage() {
           inView={false}
           delay={2.5}
         >
-          <DownArrow />
+          <DownArrow target='#portfolio' />
         </FadeIn>
 
         <FadeIn

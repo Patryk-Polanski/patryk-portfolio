@@ -1,9 +1,9 @@
 import ArrowDown from '@/app/components/ui/svg/ArrowDown';
 import Button from '@/app/components/ui/Button';
 
-export default function DownArrow() {
+export default function DownArrow({ target }) {
   return (
-    <Button link='#portfolio' text='scroll down'>
+    <Button link={target} text='scroll down'>
       <ArrowDown />
     </Button>
   );
