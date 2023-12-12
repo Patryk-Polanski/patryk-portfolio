@@ -3,6 +3,7 @@ import React from 'react';
 import ProjectHeader from './ProjectHeader';
 import ProjectShowcase from './ProjectShowcase';
 import ProjectDescription from './ProjectDescription';
+import ProjectGallery from './ProjectGallery';
 import Footer from '../sections/Footer/Footer';
 import FadeIn from '../components/wrappers/FadeIn';
 import CircularIcon from '../sections/Home/CircularIcon';
@@ -18,6 +19,7 @@ export default function ProjectDetailsPage({ params }) {
       <main>
         <ProjectShowcase slug={projectSlug} />
         <ProjectDescription />
+        <ProjectGallery />
       </main>
       <Footer>
         <FadeIn direction='left' className={styles.contactWrapperFooter}>
