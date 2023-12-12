@@ -3,9 +3,9 @@
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import useEmblaCarousel from 'embla-carousel-react';
-import { DotButton } from '../utils/emblaExtras';
+import { DotButton } from '../../utils/emblaExtras';
 
-import { portfolioData } from '../sections/Portfolio/PortfolioData';
+import { portfolioData } from '../../sections/Portfolio/PortfolioData';
 const portfolioLength = portfolioData.length;
 
 import ProjectNavItem from './ProjectNavItem';
@@ -51,9 +51,9 @@ export default function ProjectNav() {
       const targetIndex = index + portfolioLength;
       setSelectedIndex(targetIndex);
       emblaApi.scrollTo(targetIndex);
-      setTimeout(() => {
-        router.push(link);
-      }, 1000);
+      // setTimeout(() => {
+      //   router.push(link);
+      // }, 1000);
     },
     [emblaApi, router]
   );

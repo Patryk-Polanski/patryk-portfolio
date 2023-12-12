@@ -3,11 +3,11 @@
 import React from 'react';
 import { motion as m } from 'framer-motion';
 
-import SectionHeading from '../components/navigation/Heading';
-import LinkPortfolio from '../components/ui/svg/LinkPortfolio';
-import Button from '../components/ui/Button';
-import DownArrow from '../sections/Home/DownArrow';
-import FadeIn from '../components/wrappers/FadeIn';
+import SectionHeading from '../../components/navigation/Heading';
+import LinkPortfolio from '../../components/ui/svg/LinkPortfolio';
+import Button from '../../components/ui/Button';
+import DownArrow from '../../sections/Home/DownArrow';
+import FadeIn from '../../components/wrappers/FadeIn';
 
 import styles from './ProjectShowcase.module.css';
 import Image from 'next/image';

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MenuTrigger from '../components/ui/MenuTrigger';
+import MenuTrigger from '../../components/ui/MenuTrigger';
 
 import styles from './ProjectHeader.module.css';
 

@@ -4,10 +4,10 @@ import ProjectShowcase from './ProjectShowcase';
 import ProjectTechStack from './ProjectTechStack';
 import ProjectDescription from './ProjectDescription';
 import ProjectGallery from './ProjectGallery';
-import Footer from '../sections/Footer/Footer';
-import FadeIn from '../components/wrappers/FadeIn';
-import CircularIcon from '../sections/Home/CircularIcon';
-import Copyright from '../sections/Footer/Copyright';
+import Footer from '../../sections/Footer/Footer';
+import FadeIn from '../../components/wrappers/FadeIn';
+import CircularIcon from '../../sections/Home/CircularIcon';
+import Copyright from '../../sections/Footer/Copyright';
 
 import styles from './ProjectPage.module.css';
 

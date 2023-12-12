@@ -2,7 +2,7 @@
 
 import { motion as m } from 'framer-motion';
 
-import SkillsListItem from '../sections/TechStack/SkillsListItem';
+import SkillsListItem from '../../sections/TechStack/SkillsListItem';
 
 import styles from './ProjectTechStack.module.css';
 

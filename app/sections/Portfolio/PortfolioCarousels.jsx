@@ -157,7 +157,9 @@ function MainCarousel({ updateThumbsIndex, activeIndex, deviceType }) {
               key={project.id}
             >
               <Link
-                href={'/' + project.title.toLowerCase().replaceAll(' ', '-')}
+                href={
+                  '/project/' + project.title.toLowerCase().replaceAll(' ', '-')
+                }
                 className={`embla__scale ${styles.mainEmblaSlideContent}`}
                 style={{
                   ...(tweenValues.length && {

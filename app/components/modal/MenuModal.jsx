@@ -118,7 +118,13 @@ export default function MenuModal({ onMenuClose, deviceType }) {
           >
             {portfolioData.map((project) => (
               <div key={project.id} className={styles.marqueeItem}>
-                <Link href='#' className={styles.marqueeItemLink}>
+                <Link
+                  href={
+                    '/project/' +
+                    project.title.toLowerCase().replaceAll(' ', '-')
+                  }
+                  className={styles.marqueeItemLink}
+                >
                   <Image
                     className={styles.marqueeItemImage}
                     src={project.imgDesktop}
