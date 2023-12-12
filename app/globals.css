@@ -162,6 +162,18 @@ a {
   margin: 0 auto;
 }
 
+.text-container {
+  max-width: 990px;
+  margin: 0 auto;
+  padding: var(--container-horizontal-padding-mobile);
+}
+
+@media screen and (min-width: 750px) {
+  .text-container {
+    padding: var(--container-horizontal-padding);
+  }
+}
+
 .section {
   padding-top: 2rem;
   padding-bottom: 14rem;

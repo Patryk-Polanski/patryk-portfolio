@@ -1,0 +1,14 @@
+@media screen and (min-width: 750px) {
+  .contactWrapperFooter {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .contactWrapperFooter {
+    right: 2rem;
+  }
+}

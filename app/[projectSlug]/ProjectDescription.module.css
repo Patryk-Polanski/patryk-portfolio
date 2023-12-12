@@ -1,0 +1,13 @@
+.projectDescription {
+}
+
+.projectDescription h2 {
+  color: var(--color-tertiary-darkest);
+  margin-top: 6rem;
+  text-align: center;
+}
+
+.projectDescription p {
+  margin-top: 4rem;
+  line-height: 140%;
+}
