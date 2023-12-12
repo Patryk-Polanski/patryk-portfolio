@@ -1,7 +1,5 @@
 import React from 'react';
 
-import MenuTrigger from '../components/ui/MenuTrigger';
-import ProjectNav from './ProjectNav';
 import ProjectShowcase from './ProjectShowcase';
 import ProjectTechStack from './ProjectTechStack';
 import ProjectDescription from './ProjectDescription';
@@ -17,9 +15,7 @@ export default function ProjectDetailsPage({ params }) {
   const { projectSlug } = params;
   return (
     <>
-      <MenuTrigger />
       <main>
-        <ProjectNav />
         <ProjectShowcase slug={projectSlug} />
         <ProjectTechStack />
         <ProjectDescription />

@@ -7,6 +7,7 @@ export default function Button({
   type = 'button',
   link,
   onClick,
+  onClickParams = [],
   newTab = false,
   className,
   id,
@@ -44,7 +45,7 @@ export default function Button({
       {onClick && (
         <button
           className={`button button--${variation || ''} ${className || ''}`}
-          onClick={onClick}
+          onClick={() => onClick(...onClickParams)}
           aria-label={text}
           type={type}
         >

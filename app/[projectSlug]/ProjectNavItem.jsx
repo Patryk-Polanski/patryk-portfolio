@@ -2,11 +2,22 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import styles from './ProjectNav.module.css';
+import Button from '../components/ui/Button';
 
-export default function ProjectNavItem({ project }) {
+export default function ProjectNavItem({
+  project,
+  selected,
+  handleClick,
+  onClickParams,
+}) {
   return (
-    <li className={`embla__slide ${styles.emblaSlide}`}>
-      <Link href={'/' + project.title.toLowerCase().replaceAll(' ', '-')}>
+    <li
+      className={`embla__slide ${styles.emblaSlide} ${
+        selected && styles.emblaSlideSelected
+      }`}
+      data-link={'/' + project.title.toLowerCase().replaceAll(' ', '-')}
+    >
+      <Button onClick={handleClick} onClickParams={onClickParams}>
         <picture>
           <source
             srcSet={project.imgDesktop}
@@ -22,7 +33,7 @@ export default function ProjectNavItem({ project }) {
             alt={`screenshot of ${project.title} project`}
           />
         </picture>
-      </Link>
+      </Button>
     </li>
   );
 }
