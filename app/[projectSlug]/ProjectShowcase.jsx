@@ -108,7 +108,7 @@ export default function ProjectShowcase({ slug }) {
           />
         </div>
         <div className={styles.projectOverviewText}>
-          <h2>Overview</h2>
+          <h2>Overview - {slug}</h2>
           <p>
             A web application built to help traders keep track of all their
             completed trades, keep a trading journal and analyze their trading

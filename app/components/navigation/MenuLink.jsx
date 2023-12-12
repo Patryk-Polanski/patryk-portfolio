@@ -23,7 +23,7 @@ export default function MenuLink({
           link.name.toLocaleLowerCase() === currentSectionFormatted &&
           styles.menuLinkActive
         }`}
-        href={`#${link.name.toLowerCase().replace(' ', '-')}`}
+        href={`#${link.name.toLowerCase().replaceAll(' ', '-')}`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >

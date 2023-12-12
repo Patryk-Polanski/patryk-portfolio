@@ -41,7 +41,7 @@ export default function PortfolioCarousels({ deviceType }) {
           <Link
             href={portfolioData[activeIndex].title
               .toLowerCase()
-              .replace(' ', '-')}
+              .replaceAll(' ', '-')}
             className='h2'
           >
             {portfolioData[activeIndex].title}
@@ -157,7 +157,7 @@ function MainCarousel({ updateThumbsIndex, activeIndex, deviceType }) {
               key={project.id}
             >
               <Link
-                href={'/' + project.title.toLowerCase().replace(' ', '-')}
+                href={'/' + project.title.toLowerCase().replaceAll(' ', '-')}
                 className={`embla__scale ${styles.mainEmblaSlideContent}`}
                 style={{
                   ...(tweenValues.length && {

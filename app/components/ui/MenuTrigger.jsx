@@ -28,7 +28,7 @@ export default function MenuTrigger({ deviceType, id = 'menu-trigger' }) {
         } `}
         id={id}
         style={{
-          animationDelay: id === 'menu-trigger' ? '2.2s' : '0',
+          animationDelay: id === 'menu-trigger' ? '1.6s' : '0',
           position: 'fixed',
           right: '-10rem',
           top: '3rem',
