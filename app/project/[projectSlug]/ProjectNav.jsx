@@ -6,6 +6,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { DotButton } from '../../utils/emblaExtras';
 
 import { portfolioData } from '../../sections/Portfolio/PortfolioData';
+import { getProjectLink } from '@/app/utils/helpers';
 const portfolioLength = portfolioData.length;
 
 import ProjectNavItem from './ProjectNavItem';
@@ -52,8 +53,6 @@ export default function ProjectNav() {
     },
     [emblaApi, router]
   );
-
-  const getProjectLink = (title) => title.toLowerCase().replaceAll(' ', '-');
 
   useEffect(() => {
     if (!emblaApi) return;

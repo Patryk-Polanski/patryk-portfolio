@@ -6,7 +6,11 @@ import Image from 'next/image';
 import { motion as m } from 'framer-motion';
 import Marquee from 'react-fast-marquee';
 
-import { debounceFunction, getLongerViewportSide } from '@/app/utils/helpers';
+import {
+  debounceFunction,
+  getLongerViewportSide,
+  getProjectLink,
+} from '@/app/utils/helpers';
 import { portfolioData } from '@/app/sections/Portfolio/PortfolioData';
 
 import HorizontalLine from '../decorative/HorizontalLine';
@@ -119,10 +123,7 @@ export default function MenuModal({ onMenuClose, deviceType }) {
             {portfolioData.map((project) => (
               <div key={project.id} className={styles.marqueeItem}>
                 <Link
-                  href={
-                    '/project/' +
-                    project.title.toLowerCase().replaceAll(' ', '-')
-                  }
+                  href={getProjectLink(project.title)}
                   className={styles.marqueeItemLink}
                 >
                   <Image

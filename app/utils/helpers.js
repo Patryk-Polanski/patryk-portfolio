@@ -1,5 +1,8 @@
 export const isInBrowser = () => typeof window !== 'undefined';
 
+export const getProjectLink = (title) =>
+  '/project/' + title.toLowerCase().replaceAll(' ', '-');
+
 export function debounceFunction(cb, delay) {
   let timer;
   return (event) => {

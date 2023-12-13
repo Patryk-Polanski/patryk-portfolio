@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import Link from 'next/link';
+
+import { getProjectLink } from '@/app/utils/helpers';
 
 import styles from './ProjectNav.module.css';
 import Button from '../../components/ui/Button';
@@ -15,7 +16,7 @@ export default function ProjectNavItem({
       className={`embla__slide ${styles.emblaSlide} ${
         selected && styles.emblaSlideSelected
       }`}
-      data-link={'/project/' + project.title.toLowerCase().replaceAll(' ', '-')}
+      data-link={getProjectLink(project.title)}
     >
       <Button onClick={handleClick} onClickParams={onClickParams}>
         <picture>

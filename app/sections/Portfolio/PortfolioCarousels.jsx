@@ -8,6 +8,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { PrevButton, NextButton } from '@/app/utils/emblaExtras';
 
 import { useResponsiveContext } from '@/app/context/ResponsiveContext';
+import { getProjectLink } from '@/app/utils/helpers';
 
 import Number from '@/app/components/ui/svg/Number';
 import ArrowLeft from '../../components/ui/svg/ArrowLeft';
@@ -160,9 +161,7 @@ function MainCarousel({ updateThumbsIndex, activeIndex, deviceType }) {
               key={project.id}
             >
               <Link
-                href={
-                  '/project/' + project.title.toLowerCase().replaceAll(' ', '-')
-                }
+                href={getProjectLink(project.title)}
                 className={`embla__scale ${styles.mainEmblaSlideContent}`}
                 style={{
                   ...(tweenValues.length && {
