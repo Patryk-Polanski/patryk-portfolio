@@ -7,6 +7,8 @@ import { motion as m } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
 import { PrevButton, NextButton } from '@/app/utils/emblaExtras';
 
+import { useResponsiveContext } from '@/app/context/ResponsiveContext';
+
 import Number from '@/app/components/ui/svg/Number';
 import ArrowLeft from '../../components/ui/svg/ArrowLeft';
 import ArrowRight from '../../components/ui/svg/ArrowRight';
@@ -23,7 +25,8 @@ const TWEEN_FACTOR = 1;
 const numberWithinRange = (number, min, max) =>
   Math.min(Math.max(number, min), max);
 
-export default function PortfolioCarousels({ deviceType }) {
+export default function PortfolioCarousels() {
+  const { deviceType } = useResponsiveContext();
   const [activeIndex, setActiveIndex] = useState(0);
 
   const updateThumbsIndex = useCallback((index) => {

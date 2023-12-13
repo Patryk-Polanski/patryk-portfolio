@@ -1,11 +1,13 @@
 'use client';
 
 import { useSectionObserver } from '@/app/utils/hooks/useSectionObserver';
+import { useResponsiveContext } from '@/app/context/ResponsiveContext';
 
 import LinkPortfolio from '@/app/components/ui/svg/LinkPortfolio';
 import SectionHeading from '../../components/navigation/Heading';
 
-export default function SectionPortfolio({ children, deviceType }) {
+export default function SectionPortfolio({ children }) {
+  const { deviceType } = useResponsiveContext();
   const { sectionRef } = useSectionObserver();
   const svgId = 'portfolioPathMenu';
 

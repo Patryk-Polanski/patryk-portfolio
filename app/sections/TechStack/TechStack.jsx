@@ -1,11 +1,13 @@
 'use client';
 
 import { useSectionObserver } from '@/app/utils/hooks/useSectionObserver';
+import { useResponsiveContext } from '@/app/context/ResponsiveContext';
 
 import LinkTechStack from '@/app/components/ui/svg/LinkTechStack';
 import SectionHeading from '../../components/navigation/Heading';
 
-export default function SectionTechStack({ children, deviceType }) {
+export default function SectionTechStack({ children }) {
+  const { deviceType } = useResponsiveContext();
   const { sectionRef } = useSectionObserver();
   const svgId = 'techStackPathMenu';
 

@@ -2,13 +2,16 @@
 
 import { useState } from 'react';
 
+import { useResponsiveContext } from '@/app/context/ResponsiveContext';
+
 import Button from './Button';
 import MenuModal from '../modal/MenuModal';
 
 import styles from './MenuTrigger.module.css';
 import { AnimatePresence } from 'framer-motion';
 
-export default function MenuTrigger({ deviceType, id = 'menu-trigger' }) {
+export default function MenuTrigger({ id = 'menu-trigger' }) {
+  const { deviceType } = useResponsiveContext();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function handleMenu() {

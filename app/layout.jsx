@@ -1,5 +1,7 @@
 import { Advent_Pro, Comfortaa } from 'next/font/google';
 
+import { ResponsiveContextProvider } from './context/ResponsiveContext';
+
 import CustomCursor from './components/decorative/CustomCursor';
 
 export const AdventProFont = Advent_Pro({
@@ -34,8 +36,10 @@ export default function RootLayout({ children }) {
         }}
       >
         <CustomCursor />
-        {children}
-        <div id='modal-slot'></div>
+        <ResponsiveContextProvider>
+          {children}
+          <div id='modal-slot'></div>
+        </ResponsiveContextProvider>
       </body>
     </html>
   );

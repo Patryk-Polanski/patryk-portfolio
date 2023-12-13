@@ -3,6 +3,8 @@
 import React from 'react';
 import { motion as m } from 'framer-motion';
 
+import { useResponsiveContext } from '@/app/context/ResponsiveContext';
+
 import SectionHeading from '../../components/navigation/Heading';
 import LinkPortfolio from '../../components/ui/svg/LinkPortfolio';
 import Button from '../../components/ui/Button';
@@ -13,14 +15,16 @@ import styles from './ProjectShowcase.module.css';
 import Image from 'next/image';
 
 export default function ProjectShowcase({ slug }) {
+  const { deviceType } = useResponsiveContext();
+
   return (
     <section className={`section wide-container ${styles.projectShowcase}`}>
       <SectionHeading
         title='Portfolio'
         svgId={slug}
-        deviceType={'desktop'}
-        element={<LinkPortfolio deviceType={'desktop'} />}
-        elementActive={<LinkPortfolio id={slug} deviceType={'desktop'} />}
+        deviceType={deviceType}
+        element={<LinkPortfolio deviceType={deviceType} />}
+        elementActive={<LinkPortfolio id={slug} deviceType={deviceType} />}
       />
       <FadeIn
         direction='left'

@@ -1,5 +1,7 @@
 'use client';
 
+import { useResponsiveContext } from '@/app/context/ResponsiveContext';
+
 import LinkHome from '../ui/svg/LinkHome';
 import LinkPortfolio from '../ui/svg/LinkPortfolio';
 import LinkTechStack from '../ui/svg/LinkTechStack';
@@ -9,7 +11,9 @@ import LinkAbout from '../ui/svg/LinkAbout';
 import styles from './Menu.module.css';
 import MenuLink from './MenuLink';
 
-export default function Menu({ onLinkClick, currentSection, deviceType }) {
+export default function Menu({ onLinkClick, currentSection }) {
+  const { deviceType } = useResponsiveContext();
+
   const links = [
     {
       name: 'Home',
