@@ -121,7 +121,11 @@ export default function MenuModal({ onMenuClose, deviceType }) {
             direction='down'
           >
             {portfolioData.map((project) => (
-              <div key={project.id} className={styles.marqueeItem}>
+              <div
+                key={project.id}
+                className={styles.marqueeItem}
+                onClick={onMenuClose}
+              >
                 <Link
                   href={getProjectLink(project.title)}
                   className={styles.marqueeItemLink}

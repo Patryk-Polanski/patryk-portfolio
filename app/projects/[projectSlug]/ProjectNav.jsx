@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState, useCallback, useRef } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import useEmblaCarousel from 'embla-carousel-react';
 import { DotButton } from '../../utils/emblaExtras';
 
@@ -14,6 +14,7 @@ import ProjectNavItem from './ProjectNavItem';
 import styles from './ProjectNav.module.css';
 
 export default function ProjectNav() {
+  const pathname = usePathname();
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
@@ -61,6 +62,18 @@ export default function ProjectNav() {
     emblaApi.on('reInit', onInit);
     emblaApi.on('select', onSelect);
   }, [emblaApi, onInit, onSelect, selectedIndex]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const projectPathname = pathname.split('/').slice(-1);
+    const projectIndex = portfolioData.findIndex(
+      (el) => el.title.toLowerCase().replaceAll(' ', '-') === projectPathname[0]
+    );
+    if (projectIndex === -1) return;
+    setSelectedIndex(projectIndex);
+    emblaApi.scrollTo(projectIndex);
+  }, [emblaApi]);
 
   return (
     <nav className={styles.projectNav}>
