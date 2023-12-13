@@ -16,7 +16,6 @@ export default function ProjectNav() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
-    startIndex: 0,
   });
   const [scrollSnaps, setScrollSnaps] = useState([]);
   const emblaSlidesRef = useRef();
@@ -36,12 +35,10 @@ export default function ProjectNav() {
       const scrollSnap = emblaApi.selectedScrollSnap();
       setSelectedIndex(scrollSnap);
       emblaApi.scrollTo(scrollSnap);
-      setTimeout(() => {
-        const link = emblaSlidesRef.current
-          .querySelectorAll('li')
-          [scrollSnap]?.getAttribute('data-link');
-        if (link) router.push(link);
-      }, 1000);
+      const link = emblaSlidesRef.current
+        .querySelectorAll('li')
+        [scrollSnap]?.getAttribute('data-link');
+      if (link) router.push(link);
     },
     [setSelectedIndex, router]
   );
@@ -51,9 +48,7 @@ export default function ProjectNav() {
       const targetIndex = index + portfolioLength;
       setSelectedIndex(targetIndex);
       emblaApi.scrollTo(targetIndex);
-      // setTimeout(() => {
-      //   router.push(link);
-      // }, 1000);
+      router.push(link);
     },
     [emblaApi, router]
   );
