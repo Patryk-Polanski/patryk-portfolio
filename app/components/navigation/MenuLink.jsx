@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { motion as m } from 'framer-motion';
 
 import { menuLinkWave } from '@/app/utils/motion/menuLinks/animations';
@@ -16,9 +17,8 @@ export default function MenuLink({
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <li key={link.name}>
-      <a
-        onClick={onLinkClick}
+    <li key={link.name} onClick={onLinkClick}>
+      <Link
         className={`${styles.menuLink} ${
           link.name.toLocaleLowerCase() === currentSectionFormatted &&
           styles.menuLinkActive
@@ -56,7 +56,7 @@ export default function MenuLink({
           }
         />
         <div className={styles.menuLinkTextClipped}>{link.elementActive}</div>
-      </a>
+      </Link>
     </li>
   );
 }
