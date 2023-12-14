@@ -1,6 +1,8 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import { motion as m } from 'framer-motion';
 
 import { useResponsiveContext } from '@/app/context/ResponsiveContext';
@@ -12,13 +14,21 @@ import DownArrow from '../../sections/Home/DownArrow';
 import FadeIn from '../../components/wrappers/FadeIn';
 
 import styles from './ProjectShowcase.module.css';
-import Image from 'next/image';
+import Logo from '@/app/components/ui/Logo';
 
 export default function ProjectShowcase({ slug }) {
   const { deviceType } = useResponsiveContext();
 
   return (
     <section className={`section wide-container ${styles.projectShowcase}`}>
+      <FadeIn
+        direction='right'
+        inView={false}
+        className={styles.projectShowcaseHome}
+      >
+        <Logo />
+      </FadeIn>
+
       <SectionHeading
         title='Portfolio'
         svgId={slug}
