@@ -8,7 +8,7 @@ export default function Social() {
   return (
     <div className={`social ${styles.social}`}>
       <Button
-        link='patryk-polanski-cv.pdf'
+        link='/patryk/patryk-polanski-cv.pdf'
         variation='primary'
         newTab={true}
         text='view CV'

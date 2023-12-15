@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${ComfortaaFont.variable} ${AdventProFont.variable}`}
         style={{
-          backgroundImage: 'url(/texture.jpg)',
+          backgroundImage: 'url(/decorative/texture.jpg)',
         }}
       >
         <CustomCursor />

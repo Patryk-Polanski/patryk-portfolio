@@ -8,7 +8,7 @@ export default function Logo() {
     <Link href='/'>
       <Image
         className='logo'
-        src='/logo.png'
+        src='/patryk/logo.png'
         alt='Patryk Polanski logo'
         width={30}
         height={50}

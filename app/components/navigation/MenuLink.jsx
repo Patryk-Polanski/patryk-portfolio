@@ -42,7 +42,7 @@ export default function MenuLink({
             styles.menuImageVisible
           } menuImage`}
           style={{
-            backgroundImage: 'url(/wave.svg)',
+            backgroundImage: 'url(/decorative/wave.svg)',
             clipPath: `url(#${link.id})`,
           }}
           variants={menuLinkWave(deviceType)}

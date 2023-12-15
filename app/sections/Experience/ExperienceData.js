@@ -4,7 +4,7 @@ export const experienceData = [
     jobTitle: 'Digital Marketing Intern',
     location: 'Chengdu, China',
     company: 'Maxxelli',
-    companyLogo: '/logo-maxxelli.svg',
+    companyLogo: '/logos/logo-maxxelli.svg',
     companyLink: 'http://www.maxxelli-consulting.com/',
     tasks: [
       {
@@ -30,7 +30,7 @@ export const experienceData = [
     jobTitle: 'Web Development Intern',
     location: 'London, United Kingdom',
     company: 'Soapbox',
-    companyLogo: '/logo-soapbox.svg',
+    companyLogo: '/logos/logo-soapbox.svg',
     companyLink: 'https://www.designbysoapbox.com/',
     tasks: [
       {
@@ -52,7 +52,7 @@ export const experienceData = [
     jobTitle: 'SEO / Web Designer',
     location: 'London, United Kingdom',
     company: 'Kinetik Solutions',
-    companyLogo: '/logo-kinetik.svg',
+    companyLogo: '/logos/logo-kinetik.svg',
     companyLink: 'https://kinetik.uk.com/',
     tasks: [
       {
@@ -74,7 +74,7 @@ export const experienceData = [
     jobTitle: 'Web Developer and Designer',
     location: 'London, United Kingdom',
     company: 'Selected',
-    companyLogo: '/logo-selected.svg',
+    companyLogo: '/logos/logo-selected.svg',
     companyLink: 'https://www.selected.org/',
     tasks: [
       {
@@ -96,7 +96,7 @@ export const experienceData = [
     jobTitle: 'Front End Developer',
     location: 'London, United Kingdom',
     company: 'Karmoon',
-    companyLogo: '/logo-karmoon.svg',
+    companyLogo: '/logos/logo-karmoon.svg',
     companyLink: 'https://karmoon.co.uk/',
     tasks: [
       {

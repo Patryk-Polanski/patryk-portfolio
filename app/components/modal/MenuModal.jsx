@@ -65,7 +65,7 @@ export default function MenuModal({ onMenuClose, deviceType }) {
         <m.div
           className={styles.menuModalBackground}
           style={{
-            backgroundImage: 'url(/texture.jpg)',
+            backgroundImage: 'url(/decorative/texture.jpg)',
           }}
           key='modal-background'
           variants={modalMenuBackground}

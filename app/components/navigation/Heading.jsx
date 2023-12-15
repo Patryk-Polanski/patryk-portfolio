@@ -23,7 +23,7 @@ export default function SectionHeading({
       <m.div
         className={`${styles.menuImage} ${styles.menuImageVisible}`}
         style={{
-          backgroundImage: 'url(/wave.svg)',
+          backgroundImage: 'url(/decorative/wave.svg)',
           clipPath: `url(#${svgId})`,
         }}
         variants={menuLinkWave(deviceType)}

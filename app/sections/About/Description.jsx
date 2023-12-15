@@ -90,7 +90,7 @@ export default function Description() {
         }}
       >
         <Image
-          src='/patryk-image.jpg'
+          src='/patryk/patryk-image.jpg'
           width={800}
           height={1284}
           alt='image of myself'
@@ -130,7 +130,7 @@ export default function Description() {
       </m.div>
       <FadeIn className={styles.descriptionImage} direction='right'>
         <Image
-          src='/patryk-image.jpg'
+          src='/patryk/patryk-image.jpg'
           width={400}
           height={642}
           alt='image of myself'
