@@ -8,12 +8,43 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12rem;
   margin-top: 8rem;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 990px) {
+  .projectOverview {
+    flex-direction: row;
+  }
 }
 
 .projectOverviewImages {
   position: relative;
+  margin-bottom: 8rem;
+}
+
+@media screen and (min-width: 750px) {
+  .projectOverviewImages {
+    margin: 0 8rem 8rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .projectOverviewImages {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .projectOverviewImages {
+    margin: 0 10rem;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .projectOverviewImages {
+    margin: 0 10rem 0 14rem;
+  }
 }
 
 .projectOverviewIpad,
@@ -22,14 +53,42 @@
   bottom: 0;
 }
 
+.projectOverviewImac {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 .projectOverviewIpad {
   left: 0;
-  transform: translateX(-50%);
+  width: 36%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media screen and (min-width: 750px) {
+  .projectOverviewIpad {
+    transform: translateX(-25%);
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .projectOverviewIpad {
+    transform: translateX(-40%);
+  }
 }
 
 .projectOverviewIphone {
   right: 0;
-  transform: translateX(25%);
+  width: 22%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media screen and (min-width: 750px) {
+  .projectOverviewIphone {
+    transform: translateX(25%);
+  }
 }
 
 .projectOverviewText {
@@ -37,6 +96,8 @@
   flex-direction: column;
   align-items: center;
   gap: 4.5rem;
+  flex-grow: 1;
+  max-width: 60rem;
 }
 
 .projectOverviewText h2 {
@@ -59,13 +120,27 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 6rem;
+  gap: 2rem;
   color: var(--color-primary-lighter);
+  width: 100%;
+  max-width: 50rem;
 }
 
 .arrowWrapper {
+  display: none;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 8%;
+  right: 5%;
+  bottom: 0;
+}
+
+@media screen and (min-width: 990px) {
+  .arrowWrapper {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  .arrowWrapper {
+    bottom: 40%;
+  }
 }

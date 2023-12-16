@@ -48,12 +48,12 @@
   position: absolute;
   top: 0;
   left: 0;
-  transform: translateY(-100%);
+  transform: translateY(calc(-100% - 4px));
   display: inline-block;
 }
 
 .button:hover .sliced-text-letter {
-  transform: translateY(100%);
+  transform: translateY(calc(100% + 4px));
 }
 
 .button--menu {

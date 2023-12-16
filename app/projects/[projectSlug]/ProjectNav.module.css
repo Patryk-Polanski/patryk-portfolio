@@ -16,12 +16,52 @@
 
 .emblaSlide {
   text-align: center;
-  flex: 0 0 15%;
+  flex: 0 0 40%;
   transition: flex 0.6s 0.6s ease;
 }
 
 .emblaSlideSelected {
-  flex: 0 0 17%;
+  flex: 0 0 42%;
+}
+
+@media screen and (min-width: 500px) {
+  .emblaSlide {
+    flex: 0 0 25%;
+  }
+
+  .emblaSlideSelected {
+    flex: 0 0 27%;
+  }
+}
+
+/* @media screen and (min-width: 750px) {
+  .emblaSlide {
+    flex: 0 0 15%;
+  }
+
+  .emblaSlideSelected {
+    flex: 0 0 17%;
+  }
+} */
+
+@media screen and (min-width: 1200px) {
+  .emblaSlide {
+    flex: 0 0 20%;
+  }
+
+  .emblaSlideSelected {
+    flex: 0 0 22%;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .emblaSlide {
+    flex: 0 0 15%;
+  }
+
+  .emblaSlideSelected {
+    flex: 0 0 17%;
+  }
 }
 
 .emblaSlide button {

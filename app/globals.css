@@ -13,7 +13,9 @@
 
   --cubic-bezier: cubic-bezier(0.82, 0.03, 0.54, 0.2);
 
-  /* --bp-huge: 1500px;
+  /* 
+  --bp-massive: 1700px;
+  --bp-huge: 1500px;
   --bp-big: 1200px;
   --bp-medium: 990px;
   --bp-small: 750px;
