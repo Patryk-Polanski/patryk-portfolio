@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import Link from 'next/link';
 import { motion as m } from 'framer-motion';
 
 import { menuLinkWave } from '@/app/utils/motion/menuLinks/animations';
@@ -42,7 +43,7 @@ export default function MenuLink({
             styles.menuImageVisible
           } menuImage`}
           style={{
-            backgroundImage: 'url(/wave.svg)',
+            backgroundImage: 'url(/decorative/wave.svg)',
             clipPath: `url(#${link.id})`,
           }}
           variants={menuLinkWave(deviceType)}

@@ -7,7 +7,7 @@ export default function Profile() {
     <div className={`${styles.profile} profile`}>
       <p>Patryk Polanski</p>
       <Image
-        src='/profile.png'
+        src='/patryk/profile.png'
         width={54}
         height={54}
         alt='Patryk Polanski profile picture'

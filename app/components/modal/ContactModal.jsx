@@ -72,7 +72,7 @@ export default function Modal({ onCloseForm }) {
         <m.div
           className={styles.contactModalBoxBackground}
           style={{
-            backgroundImage: 'url(/texture.jpg)',
+            backgroundImage: 'url(/decorative/texture.jpg)',
           }}
           key='contact-box-background'
           variants={modalContactBoxBackground}
