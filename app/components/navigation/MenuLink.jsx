@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import Link from 'next/link';
 import { motion as m } from 'framer-motion';
 
 import { menuLinkWave } from '@/app/utils/motion/menuLinks/animations';

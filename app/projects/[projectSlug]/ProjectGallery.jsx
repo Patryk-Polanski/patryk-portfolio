@@ -9,7 +9,7 @@ export default function ProjectGallery() {
         <ul className={styles.projectGalleryGrid}>
           <li className={styles.projectGalleryItem}>
             <Image
-              src='/miramar-desktop.jpg'
+              src='/projects/miramar/miramar-desktop.jpg'
               width={1000}
               height={539}
               alt='miramar mockup'
@@ -17,7 +17,7 @@ export default function ProjectGallery() {
           </li>
           <li className={styles.projectGalleryItem}>
             <Image
-              src='/miramar-desktop.jpg'
+              src='/projects/miramar/miramar-desktop.jpg'
               width={1000}
               height={539}
               alt='miramar mockup'
@@ -25,7 +25,7 @@ export default function ProjectGallery() {
           </li>
           <li className={styles.projectGalleryItem}>
             <Image
-              src='/miramar-desktop.jpg'
+              src='/projects/miramar/miramar-desktop.jpg'
               width={1000}
               height={539}
               alt='miramar mockup'
@@ -33,7 +33,7 @@ export default function ProjectGallery() {
           </li>
           <li className={styles.projectGalleryItem}>
             <Image
-              src='/miramar-desktop.jpg'
+              src='/projects/miramar/miramar-desktop.jpg'
               width={1000}
               height={539}
               alt='miramar mockup'
@@ -41,7 +41,7 @@ export default function ProjectGallery() {
           </li>
           <li className={styles.projectGalleryItem}>
             <Image
-              src='/miramar-desktop.jpg'
+              src='/projects/miramar/miramar-desktop.jpg'
               width={1000}
               height={539}
               alt='miramar mockup'
@@ -49,7 +49,7 @@ export default function ProjectGallery() {
           </li>
           <li className={styles.projectGalleryItem}>
             <Image
-              src='/miramar-desktop.jpg'
+              src='/projects/miramar/miramar-desktop.jpg'
               width={1000}
               height={539}
               alt='miramar mockup'
@@ -57,7 +57,7 @@ export default function ProjectGallery() {
           </li>
           <li className={styles.projectGalleryItem}>
             <Image
-              src='/miramar-desktop.jpg'
+              src='/projects/miramar/miramar-desktop.jpg'
               width={1000}
               height={539}
               alt='miramar mockup'
@@ -65,7 +65,7 @@ export default function ProjectGallery() {
           </li>
           <li className={styles.projectGalleryItem}>
             <Image
-              src='/miramar-desktop.jpg'
+              src='/projects/miramar/miramar-desktop.jpg'
               width={1000}
               height={539}
               alt='miramar mockup'
