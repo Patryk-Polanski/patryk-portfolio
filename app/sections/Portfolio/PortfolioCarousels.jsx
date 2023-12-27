@@ -235,6 +235,7 @@ function CustomThumbsCarousel({ updateMainIndex, activeIndex }) {
         whileInView={{
           opacity: 1,
         }}
+        viewport={{ once: true }}
         transition={{
           delay: 0.4,
           duration: 1,
@@ -246,6 +247,7 @@ function CustomThumbsCarousel({ updateMainIndex, activeIndex }) {
         variants={portfolioThumbs}
         initial='hidden'
         whileInView='visible'
+        viewport={{ once: true }}
       >
         <ol className={`embla__container ${styles.thumbsEmblaContainer}`}>
           {portfolioData.map((project, index) => (
