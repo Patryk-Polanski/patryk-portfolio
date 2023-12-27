@@ -48,21 +48,21 @@ export default function ProjectShowcase({ slug }) {
         <div className={styles.projectOverviewImages}>
           <Image
             alt='miramar on an ipad'
-            src='/miramar-overview-ipad.png'
+            src='/projects/miramar/miramar-overview-ipad.png'
             width={245}
             height={361}
             className={styles.projectOverviewIpad}
           />
           <Image
             alt='miramar on an imac'
-            src='/miramar-overview-imac.png'
+            src='/projects/miramar/miramar-overview-imac.png'
             width={675}
             height={506}
             className={styles.projectOverviewImac}
           />
           <Image
             alt='miramar on an iphone'
-            src='/miramar-overview-iphone.png'
+            src='/projects/miramar/miramar-overview-iphone.png'
             width={150}
             height={295}
             className={styles.projectOverviewIphone}

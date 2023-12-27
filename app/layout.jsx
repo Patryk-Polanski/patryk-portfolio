@@ -4,15 +4,15 @@ import { ResponsiveContextProvider } from './context/ResponsiveContext';
 
 import CustomCursor from './components/decorative/CustomCursor';
 
-export const AdventProFont = Advent_Pro({
-  weight: ['400', '600'],
+const AdventProFont = Advent_Pro({
   subsets: ['latin'],
+  weight: ['400', '600'],
   variable: '--font-advent-pro',
 });
 
-export const ComfortaaFont = Comfortaa({
-  weight: ['400', '600'],
+const ComfortaaFont = Comfortaa({
   subsets: ['latin'],
+  weight: ['400', '600'],
   variable: '--font-comfortaa',
 });
 
@@ -28,9 +28,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en'>
+    <html
+      lang='en'
+      className={`${ComfortaaFont.variable} ${AdventProFont.variable}`}
+    >
       <body
-        className={`${ComfortaaFont.variable} ${AdventProFont.variable}`}
         style={{
           backgroundImage: 'url(/decorative/texture.jpg)',
         }}
