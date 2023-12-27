@@ -7,7 +7,7 @@ export const genericAnimProps = {
 export const fadeInProps = {
   initial: 'hidden',
   whileInView: 'visible',
-  // viewport: { once: true },
+  viewport: { once: true },
 };
 
 export const shiftProps = {
