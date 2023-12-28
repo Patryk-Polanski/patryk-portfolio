@@ -4,6 +4,7 @@ import SectionHome from './sections/Home/Home';
 import MobileHeader from './sections/Home/MobileHeader';
 import Menu from './components/navigation/Menu';
 import Logo from './components/ui/Logo';
+import LandingImage from './sections/Home/LandingImage';
 import Profile from './sections/Home/Profile';
 import Social from './components/ui/Social';
 import DownArrow from './sections/Home/DownArrow';
@@ -35,6 +36,10 @@ export default function HomePage() {
       <SectionHome>
         <MobileHeader />
         <Menu />
+
+        <div className={styles.landingImageWrapper}>
+          <LandingImage />
+        </div>
 
         <FadeIn
           direction='down'

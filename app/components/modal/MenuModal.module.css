@@ -49,6 +49,7 @@
     position: absolute;
     right: 0;
     top: 0;
+    z-index: 2;
     overflow: hidden;
     width: 38rem; /* 20rem + the width of the absolutely positioned image */
     height: 100%;
