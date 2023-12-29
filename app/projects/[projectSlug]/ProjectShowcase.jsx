@@ -46,29 +46,48 @@ export default function ProjectShowcase({ slug }) {
       </FadeIn>
       <div className={styles.projectOverview}>
         <div className={styles.projectOverviewImages}>
-          <Image
-            alt='miramar on an ipad'
-            src='/projects/miramar/miramar-overview-ipad.png'
-            width={245}
-            height={361}
+          <FadeIn
+            direction='right'
+            delay={1}
             className={styles.projectOverviewIpad}
-          />
-          <Image
-            alt='miramar on an imac'
-            src='/projects/miramar/miramar-overview-imac.png'
-            width={675}
-            height={506}
+          >
+            <Image
+              alt='miramar on an ipad'
+              src='/projects/miramar/miramar-overview-ipad.png'
+              width={245}
+              height={361}
+            />
+          </FadeIn>
+          <FadeIn
+            direction='down'
+            delay={1}
             className={styles.projectOverviewImac}
-          />
-          <Image
-            alt='miramar on an iphone'
-            src='/projects/miramar/miramar-overview-iphone.png'
-            width={150}
-            height={295}
+          >
+            <Image
+              alt='miramar on an imac'
+              src='/projects/miramar/miramar-overview-imac.png'
+              width={675}
+              height={506}
+            />
+          </FadeIn>
+          <FadeIn
+            direction='left'
+            delay={1}
             className={styles.projectOverviewIphone}
-          />
+          >
+            <Image
+              alt='miramar on an iphone'
+              src='/projects/miramar/miramar-overview-iphone.png'
+              width={150}
+              height={295}
+            />
+          </FadeIn>
         </div>
-        <div className={styles.projectOverviewText}>
+        <FadeIn
+          direction='left'
+          delay={1}
+          className={styles.projectOverviewText}
+        >
           <h2>Overview - {slug}</h2>
           <p>
             A web application built to help traders keep track of all their
@@ -94,7 +113,7 @@ export default function ProjectShowcase({ slug }) {
             <li className='h2'>Frontend</li>
             <li className='h2'>Backend</li>
           </ul>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );

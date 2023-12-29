@@ -244,7 +244,7 @@ function CustomThumbsCarousel({ updateMainIndex, activeIndex }) {
       <m.div
         className={`embla__viewport ${styles.thumbsEmblaViewport}`}
         ref={emblaThumbsRef}
-        variants={portfolioThumbs}
+        variants={portfolioThumbs()}
         initial='hidden'
         whileInView='visible'
         viewport={{ once: true }}
@@ -259,7 +259,7 @@ function CustomThumbsCarousel({ updateMainIndex, activeIndex }) {
               }`}
               key={project.id}
             >
-              <m.div variants={portfolioThumbs}>
+              <m.div variants={portfolioThumbs()}>
                 <button
                   className={`button ${styles.thumbsEmblaSlideContent}`}
                   onClick={() => {
