@@ -10,7 +10,7 @@ const imageAnimations = {
   },
   animate: {
     clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-    transition: { delay: 4, type: 'spring', stiffness: 20, damping: 10 },
+    transition: { delay: 4, type: 'spring', stiffness: 20 },
   },
 };
 
