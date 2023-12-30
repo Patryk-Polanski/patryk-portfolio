@@ -61,7 +61,7 @@ const skillsListAnim = {
       stiffness: 260,
       damping: 40,
       staggerChildren: 0.1,
-      delayChildren: 0.2,
+      delayChildren: 0.4,
     },
   },
 };

@@ -43,9 +43,7 @@ export default function PortfolioCarousels() {
       <FadeIn direction='up'>
         <h3 className={styles.carouselsWrapperHeading}>
           <Link
-            href={portfolioData[activeIndex].title
-              .toLowerCase()
-              .replaceAll(' ', '-')}
+            href={getProjectLink(portfolioData[activeIndex].title)}
             className='h2'
           >
             {portfolioData[activeIndex].title}

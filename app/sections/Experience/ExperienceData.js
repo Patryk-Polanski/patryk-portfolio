@@ -1,6 +1,6 @@
 export const experienceData = [
   {
-    date: 'June 2019 - July 2019',
+    date: 'June 2019 - August 2019',
     jobTitle: 'Digital Marketing Intern',
     location: 'Chengdu, China',
     company: 'Maxxelli',

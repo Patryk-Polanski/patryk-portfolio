@@ -12,7 +12,7 @@ export default function Profile() {
         height={54}
         alt='Patryk Polanski profile picture'
       />
-      <p>Front end developer</p>
+      <p>Frontend developer</p>
     </div>
   );
 }
