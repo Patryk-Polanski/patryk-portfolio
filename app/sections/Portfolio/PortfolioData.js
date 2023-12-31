@@ -19,14 +19,14 @@ export const portfolioData = [
   },
   {
     id: 3,
-    title: 'Good Burger Kitchen',
-    imgDesktop: '/projects/good-burger-kitchen/good-burger-kitchen-desktop.jpg',
-    imgMobile: '/projects/good-burger-kitchen/good-burger-kitchen-mobile.jpg',
+    title: 'Vape Superstore',
+    imgDesktop: '/projects/vape-superstore/carousel-desktop.jpg',
+    imgMobile: '/projects/vape-superstore/carousel-mobile.jpg',
   },
   {
     id: 4,
-    title: 'Casa Araez',
-    imgDesktop: '/projects/casa-araez/casa-araez-desktop.jpg',
-    imgMobile: '/projects/casa-araez/casa-araez-mobile.jpg',
+    title: 'Cascades',
+    imgDesktop: '/projects/cascades/carousel-desktop.jpg',
+    imgMobile: '/projects/cascades/carousel-mobile.jpg',
   },
 ];
