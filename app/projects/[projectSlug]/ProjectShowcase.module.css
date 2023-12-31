@@ -179,8 +179,8 @@
 .projectOverviewTasks {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
+  justify-content: center;
+  gap: 8rem;
   color: var(--color-primary-lighter);
   width: 100%;
   max-width: 50rem;

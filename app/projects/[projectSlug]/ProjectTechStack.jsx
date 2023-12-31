@@ -2,54 +2,11 @@
 
 import { motion as m } from 'framer-motion';
 
+import { skillsData } from '@/app/sections/TechStack/skillsData';
+
 import SkillsListItem from '../../sections/TechStack/SkillsListItem';
 
 import styles from './ProjectTechStack.module.css';
-
-const tempArr = [
-  {
-    id: 'css',
-    name: 'CSS',
-    color: '#2465F1',
-    type: 'frontend',
-  },
-  {
-    id: 'scss',
-    name: 'SCSS',
-    color: '#D06397',
-    type: 'frontend',
-  },
-  {
-    id: 'javascript',
-    name: 'JavaScript',
-    color: '#F0DB4F',
-    type: 'frontend',
-  },
-  {
-    id: 'typescript',
-    name: 'TypeScript',
-    color: '#007ACC',
-    type: 'frontend',
-  },
-  {
-    id: 'react',
-    name: 'React',
-    color: '#00D8FF',
-    type: 'frontend',
-  },
-  {
-    id: 'framer-motion',
-    name: 'Framer Motion',
-    color: '#EF01B9',
-    type: 'frontend',
-  },
-  {
-    id: 'prisma',
-    name: 'Prisma',
-    color: '#178C7E',
-    type: 'backend',
-  },
-];
 
 const skillsListAnim = {
   initial: { scale: 0, rotate: 360 },
@@ -66,20 +23,27 @@ const skillsListAnim = {
   },
 };
 
-export default function ProjectTechStack() {
+export default function ProjectTechStack({ project }) {
+  const techStack = skillsData.nodes.filter((node) => {
+    const foundSkill = project.techStack?.find((el) => el === node.id);
+    if (foundSkill) return foundSkill;
+  });
+
   return (
-    <m.ul
-      variants={skillsListAnim}
-      initial='initial'
-      whileInView='visible'
-      viewport={{ once: true }}
-      className={`text-container ${styles.techStack}`}
-    >
-      {tempArr.map((node, index) => (
-        <m.li variants={skillsListAnim} key={node.id}>
-          <SkillsListItem node={node} index={index} />
-        </m.li>
-      ))}
-    </m.ul>
+    techStack.length > 0 && (
+      <m.ul
+        variants={skillsListAnim}
+        initial='initial'
+        whileInView='visible'
+        viewport={{ once: true }}
+        className={`text-container ${styles.techStack}`}
+      >
+        {techStack.map((node, index) => (
+          <m.li variants={skillsListAnim} key={node.id}>
+            <SkillsListItem node={node} index={index} />
+          </m.li>
+        ))}
+      </m.ul>
+    )
   );
 }

@@ -16,7 +16,7 @@ import FadeIn from '../../components/wrappers/FadeIn';
 import styles from './ProjectShowcase.module.css';
 import Logo from '@/app/components/ui/Logo';
 
-export default function ProjectShowcase({ slug }) {
+export default function ProjectShowcase({ slug, project }) {
   const { deviceType } = useResponsiveContext();
 
   return (
@@ -52,8 +52,8 @@ export default function ProjectShowcase({ slug }) {
             className={styles.projectOverviewIpad}
           >
             <Image
-              alt='miramar on an ipad'
-              src='/projects/miramar/miramar-overview-ipad.png'
+              alt={`${project.title} on an ipad`}
+              src={project.mockupIpad}
               width={245}
               height={361}
             />
@@ -64,8 +64,8 @@ export default function ProjectShowcase({ slug }) {
             className={styles.projectOverviewImac}
           >
             <Image
-              alt='miramar on an imac'
-              src='/projects/miramar/miramar-overview-imac.png'
+              alt={`${project.title} on an imac`}
+              src={project.mockupImac}
               width={675}
               height={506}
             />
@@ -76,8 +76,8 @@ export default function ProjectShowcase({ slug }) {
             className={styles.projectOverviewIphone}
           >
             <Image
-              alt='miramar on an iphone'
-              src='/projects/miramar/miramar-overview-iphone.png'
+              alt={`${project.title} on an iphone`}
+              src={project.mockupIphone}
               width={150}
               height={295}
             />
@@ -88,30 +88,32 @@ export default function ProjectShowcase({ slug }) {
           delay={1}
           className={styles.projectOverviewText}
         >
-          <h2>Overview - {slug}</h2>
-          <p>
-            A web application built to help traders keep track of all their
-            completed trades, keep a trading journal and analyze their trading
-            performance with the help of visualisations.
-          </p>
+          <h2>Overview</h2>
+          <p>{project.overview}</p>
           <div className={styles.projectOverviewButtons}>
-            <Button
-              link='https://www.linkedin.com/in/patryk-polanski/'
-              variation='primary'
-              newTab={true}
-              text='visit Miramar'
-            />
-            <Button
-              link='https://github.com/Patryk-Polanski'
-              variation='primary'
-              newTab={true}
-              text='Github repo'
-            />
+            {project.linkWebsite && (
+              <Button
+                link={project.linkWebsite}
+                variation='primary'
+                newTab={true}
+                text='visit project'
+              />
+            )}
+            {project.linkGithub && (
+              <Button
+                link={project.linkGithub}
+                variation='primary'
+                newTab={true}
+                text='Github repo'
+              />
+            )}
           </div>
           <ul className={styles.projectOverviewTasks}>
-            <li className='h2'>UI/UX</li>
-            <li className='h2'>Frontend</li>
-            <li className='h2'>Backend</li>
+            {project.categories?.map((category) => (
+              <li key={category} className='h2'>
+                {category}
+              </li>
+            ))}
           </ul>
         </FadeIn>
       </div>
