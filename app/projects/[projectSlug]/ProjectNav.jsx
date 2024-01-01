@@ -97,7 +97,7 @@ export default function ProjectNav() {
                 index={index}
                 project={project}
                 selected={index === selectedIndex ? true : false}
-                onClickParams={[getProjectLink(project.title), index]}
+                onClickParams={[getProjectLink(project.id), index]}
                 handleClick={handleThumbClick}
               />
             ))}
@@ -110,7 +110,7 @@ export default function ProjectNav() {
                   index + portfolioLength === selectedIndex ? true : false
                 }
                 onClickParams={[
-                  getProjectLink(project.title),
+                  getProjectLink(project.id),
                   index,
                   portfolioLength,
                 ]}

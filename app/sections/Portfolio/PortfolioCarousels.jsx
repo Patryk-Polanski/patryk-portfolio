@@ -43,7 +43,7 @@ export default function PortfolioCarousels() {
       <FadeIn direction='up'>
         <h3 className={styles.carouselsWrapperHeading}>
           <Link
-            href={getProjectLink(portfolioData[activeIndex].title)}
+            href={getProjectLink(portfolioData[activeIndex].id)}
             className='h2'
           >
             {portfolioData[activeIndex].title}
@@ -154,12 +154,12 @@ function MainCarousel({ updateThumbsIndex, activeIndex, deviceType }) {
           {portfolioData.map((project, index) => (
             <li
               className={`embla__slide ${styles.mainEmblaSlide} ${
-                selectedIndex === project.id && styles.mainEmblaSlideActive
+                selectedIndex === project.index && styles.mainEmblaSlideActive
               }`}
               key={project.id}
             >
               <Link
-                href={getProjectLink(project.title)}
+                href={getProjectLink(project.id)}
                 className={`embla__scale ${styles.mainEmblaSlideContent}`}
                 style={{
                   ...(tweenValues.length && {
@@ -251,7 +251,7 @@ function CustomThumbsCarousel({ updateMainIndex, activeIndex }) {
           {portfolioData.map((project, index) => (
             <li
               className={`embla__slide ${styles.thumbsEmblaSlide} ${
-                selectedIndex === project.id
+                selectedIndex === project.index
                   ? styles.thumbsEmblaSlideActive
                   : ''
               }`}
@@ -261,8 +261,8 @@ function CustomThumbsCarousel({ updateMainIndex, activeIndex }) {
                 <button
                   className={`button ${styles.thumbsEmblaSlideContent}`}
                   onClick={() => {
-                    emblaThumbsApi.scrollTo(project.id);
-                    updateMainIndex(project.id);
+                    emblaThumbsApi.scrollTo(project.index);
+                    updateMainIndex(project.index);
                   }}
                 >
                   <Image

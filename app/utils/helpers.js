@@ -2,13 +2,10 @@ import { portfolioData } from '../sections/Portfolio/PortfolioData';
 
 export const isInBrowser = () => typeof window !== 'undefined';
 
-export const getProjectLink = (title) =>
-  '/projects/' + title.toLowerCase().replaceAll(' ', '-');
+export const getProjectLink = (id) => '/projects/' + id;
 
 export const getProject = (slug) =>
-  portfolioData.find(
-    (project) => project.title.toLowerCase().replace(' ', '-') === slug
-  );
+  portfolioData.find((project) => project.id === slug);
 
 export function debounceFunction(cb, delay) {
   let timer;

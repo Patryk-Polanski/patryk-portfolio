@@ -21,7 +21,7 @@ export default function ProjectNavItem({
       className={`embla__slide ${styles.emblaSlide} ${
         selected && styles.emblaSlideSelected
       }`}
-      data-link={getProjectLink(project.title)}
+      data-link={getProjectLink(project.id)}
     >
       <m.div variants={portfolioThumbs()}>
         <Button onClick={handleClick} onClickParams={onClickParams}>

@@ -2,13 +2,11 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import { motion as m } from 'framer-motion';
 
 import { useResponsiveContext } from '@/app/context/ResponsiveContext';
 
 import SectionHeading from '../../components/navigation/Heading';
-import LinkPortfolio from '../../components/ui/svg/LinkPortfolio';
+import LinkPortfolio from '@/app/components/ui/svg/LinkPortfolio';
 import Button from '../../components/ui/Button';
 import DownArrow from '../../sections/Home/DownArrow';
 import FadeIn from '../../components/wrappers/FadeIn';

@@ -127,7 +127,7 @@ export default function MenuModal({ onMenuClose, deviceType }) {
                 onClick={onMenuClose}
               >
                 <Link
-                  href={getProjectLink(project.title)}
+                  href={getProjectLink(project.id)}
                   className={styles.marqueeItemLink}
                 >
                   <Image
