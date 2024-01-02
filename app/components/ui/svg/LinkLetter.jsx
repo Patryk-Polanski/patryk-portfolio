@@ -7,6 +7,8 @@ export default function LinkLetter({ index, path }) {
       key={index}
       d={path}
       stroke='currentColor'
+      fillRule='evenodd'
+      clipRule='evenodd'
       className='link-letter'
       strokeWidth='2'
       initial={{

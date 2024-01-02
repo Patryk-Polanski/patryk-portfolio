@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useResponsiveContext } from '@/app/context/ResponsiveContext';
 
 import SectionHeading from '../../components/navigation/Heading';
-import LinkPortfolio from '@/app/components/ui/svg/LinkPortfolio';
+import TitleProject from '@/app/components/ui/svg/TitleProject';
 import Button from '../../components/ui/Button';
 import DownArrow from '../../sections/Home/DownArrow';
 import FadeIn from '../../components/wrappers/FadeIn';
@@ -31,8 +31,10 @@ export default function ProjectShowcase({ slug, project }) {
         title='Portfolio'
         svgId={slug}
         deviceType={deviceType}
-        element={<LinkPortfolio deviceType={deviceType} />}
-        elementActive={<LinkPortfolio id={slug} deviceType={deviceType} />}
+        element={<TitleProject slug={slug} deviceType={deviceType} />}
+        elementActive={
+          <TitleProject slug={slug} id={slug} deviceType={deviceType} />
+        }
       />
       <FadeIn
         direction='left'
