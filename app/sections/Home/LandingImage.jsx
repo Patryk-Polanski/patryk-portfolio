@@ -22,6 +22,7 @@ export default function LandingImage() {
         width='550'
         height='733'
         alt='Patryk Polanski image'
+        priority={true}
       />
     </m.div>
   );
