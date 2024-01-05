@@ -103,6 +103,7 @@
 
 .projectOverviewImac {
   width: 100%;
+  max-width: 67.5rem;
 }
 
 .projectOverviewImac img {

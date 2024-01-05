@@ -54,8 +54,8 @@ export default function ProjectShowcase({ slug, project }) {
             <Image
               alt={`${project.title} on an ipad`}
               src={project.mockupIpad}
-              width={245}
-              height={361}
+              width={600}
+              height={773}
             />
           </FadeIn>
           <FadeIn
@@ -66,8 +66,8 @@ export default function ProjectShowcase({ slug, project }) {
             <Image
               alt={`${project.title} on an imac`}
               src={project.mockupImac}
-              width={675}
-              height={506}
+              width={1000}
+              height={802}
             />
           </FadeIn>
           <FadeIn
@@ -78,8 +78,8 @@ export default function ProjectShowcase({ slug, project }) {
             <Image
               alt={`${project.title} on an iphone`}
               src={project.mockupIphone}
-              width={150}
-              height={295}
+              width={400}
+              height={808}
             />
           </FadeIn>
         </div>

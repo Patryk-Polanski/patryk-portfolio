@@ -36,7 +36,7 @@ export default function ProjectGallery({ project }) {
                 <Image
                   src={image.src}
                   width={1000}
-                  height={539}
+                  height={1000}
                   alt={`${project.title} mockup`}
                 />
               </m.li>
