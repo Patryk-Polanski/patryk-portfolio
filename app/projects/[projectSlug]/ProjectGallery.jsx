@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import Image from 'next/image';
 import { motion as m, AnimatePresence } from 'framer-motion';
 
@@ -12,16 +12,18 @@ import styles from './ProjectGallery.module.css';
 
 export default function ProjectGallery({ project }) {
   const [isGalleryModalOpen, setIsGalleryModalOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  function handleOpenGallery() {
+  const handleOpenGallery = useCallback((index) => {
     setIsGalleryModalOpen(true);
     document.body.classList.add('frozen');
-  }
+    setActiveIndex(index);
+  }, []);
 
-  function handleCloseGallery() {
+  const handleCloseGallery = useCallback(() => {
     setIsGalleryModalOpen(false);
     document.body.classList.remove('frozen');
-  }
+  }, []);
 
   return (
     project.gallery?.length > 0 && (
@@ -43,12 +45,12 @@ export default function ProjectGallery({ project }) {
               whileInView='visible'
               viewport={{ once: true }}
             >
-              {project.gallery.map((image) => (
+              {project.gallery.map((image, index) => (
                 <m.li
                   key={image.src}
-                  className={styles.projectGalleryItem}
+                  className={` ${styles.projectGalleryItem} hide-cursor`}
                   variants={portfolioThumbs()}
-                  onClick={handleOpenGallery}
+                  onClick={() => handleOpenGallery(index)}
                 >
                   <Image
                     src={image.src}
@@ -63,7 +65,12 @@ export default function ProjectGallery({ project }) {
         </section>
         <AnimatePresence>
           {isGalleryModalOpen && (
-            <GalleryModal onCloseGallery={handleCloseGallery} />
+            <GalleryModal
+              onCloseGallery={handleCloseGallery}
+              project={project}
+              activeIndex={activeIndex}
+              setActiveIndex={setActiveIndex}
+            />
           )}
         </AnimatePresence>
       </>

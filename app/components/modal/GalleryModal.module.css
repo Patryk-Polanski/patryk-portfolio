@@ -8,7 +8,7 @@
   z-index: 100;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .galleryModalBackDrop {
@@ -20,4 +20,78 @@
   background-color: #000;
   opacity: 40%;
   z-index: -1;
+}
+
+.galleryCloseButton {
+  position: fixed;
+  top: 3rem;
+  right: 3rem;
+  height: 8rem;
+  width: 8rem;
+}
+
+.embla {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.emblaViewport {
+}
+
+.emblaContainer {
+  width: 100%;
+}
+
+.emblaSlide {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  max-width: 92%;
+  max-height: 100rem;
+}
+
+@media screen and (min-width: 750px) {
+  .emblaSlide {
+    max-width: 80%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .emblaSlide {
+    max-width: 75vh;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .emblaSlide {
+    max-width: 85vh;
+  }
+}
+
+.emblaSlide img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+}
+
+.emblaSlide::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 55%;
+  transition: opacity 0.3s ease;
+}
+
+.emblaSlideActive {
+  cursor: auto;
+}
+
+.emblaSlideActive::after {
+  opacity: 0;
 }
