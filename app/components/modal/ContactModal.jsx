@@ -20,7 +20,7 @@ import { genericAnimProps } from '@/app/utils/motion/shared/animations';
 
 import styles from './ContactModal.module.css';
 
-export default function Modal({ onCloseForm }) {
+export default function ContactModal({ onCloseForm }) {
   const [windowSize, setWindowSize] = useState(getLongerViewportSide());
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formMessage, setFormMessage] = useState(null);
