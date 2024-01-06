@@ -1,0 +1,12 @@
+.notFound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4rem;
+  min-height: 100vh;
+}
+
+.notFound h2 {
+  color: var(--color-primary-lighter);
+}
