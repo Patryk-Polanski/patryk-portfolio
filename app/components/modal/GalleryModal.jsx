@@ -76,7 +76,7 @@ export default function GalleryModal({
       >
         <Button
           variation='menu'
-          className={`button button--menu-is-open ${styles.galleryCloseButton}`}
+          className='button button--menu-is-open'
           onClick={onCloseGallery}
         >
           <span className='button--menu-line'></span>
