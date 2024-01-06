@@ -15,7 +15,7 @@ import {
   modalContactBoxBackground,
   modalContactContent,
   modalContactMessage,
-} from '@/app/utils/motion/contactModal/animations';
+} from '@/app/utils/motion/modal/animations';
 import { genericAnimProps } from '@/app/utils/motion/shared/animations';
 
 import styles from './ContactModal.module.css';

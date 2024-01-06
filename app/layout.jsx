@@ -23,7 +23,7 @@ import './components/ui/button.css';
 
 export const metadata = {
   title: 'Patryk Polanski Portfolio',
-  description: 'Web developer, React, Next, WordPress, UI, UX',
+  description: 'Web developer, React, Next.js, Node.js, WordPress, UI, UX',
 };
 
 export default function RootLayout({ children }) {

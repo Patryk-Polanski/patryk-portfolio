@@ -4,8 +4,16 @@ import ReactDOM from 'react-dom';
 import { useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
+import { motion as m } from 'framer-motion';
 
 import Button from '../ui/Button';
+
+import {
+  modalGalleryBackdrop,
+  modalGallerySlides,
+  modalGalleryClose,
+} from '@/app/utils/motion/modal/animations';
+import { genericAnimProps } from '@/app/utils/motion/shared/animations';
 
 import styles from './GalleryModal.module.css';
 
@@ -24,8 +32,6 @@ export default function GalleryModal({
     (emblaApi) => {
       const scrollSnap = emblaApi.selectedScrollSnap();
       setActiveIndex(scrollSnap);
-      // setPrevBtnDisabled(!emblaApi.canScrollPrev());
-      // setNextBtnDisabled(!emblaApi.canScrollNext());
     },
     [setActiveIndex]
   );
@@ -55,17 +61,30 @@ export default function GalleryModal({
 
   return ReactDOM.createPortal(
     <div className={styles.galleryModal}>
-      <span className={styles.galleryModalBackDrop} onClick={onCloseGallery} />
-      <Button
-        variation='menu'
-        className={`button button--menu-is-open ${styles.galleryCloseButton}`}
+      <m.span
+        className={styles.galleryModalBackDrop}
         onClick={onCloseGallery}
+        key='gallery-backdrop'
+        variants={modalGalleryBackdrop}
+        {...genericAnimProps}
+      />
+      <m.div
+        key='gallery-close'
+        variants={modalGalleryClose}
+        {...genericAnimProps}
+        className={styles.galleryCloseButtonWrapper}
       >
-        <span className='button--menu-line'></span>
-        <span className='button--menu-line'></span>
-        <span className='button--menu-line'></span>
-        <span className='visually-hidden'>open menu</span>
-      </Button>
+        <Button
+          variation='menu'
+          className={`button button--menu-is-open ${styles.galleryCloseButton}`}
+          onClick={onCloseGallery}
+        >
+          <span className='button--menu-line'></span>
+          <span className='button--menu-line'></span>
+          <span className='button--menu-line'></span>
+          <span className='visually-hidden'>open menu</span>
+        </Button>
+      </m.div>
       <div
         className={`embla ${styles.embla} hide-cursor`}
         onClick={(e) => {
@@ -74,9 +93,12 @@ export default function GalleryModal({
           onCloseGallery();
         }}
       >
-        <div
+        <m.div
           ref={emblaRef}
           className={`embla__viewport ${styles.emblaViewport}`}
+          key='gallery-slides'
+          variants={modalGallerySlides}
+          {...genericAnimProps}
         >
           <ul className={`embla__container ${styles.emblaContainer}`}>
             {project.gallery.map((image, index) => (
@@ -99,7 +121,7 @@ export default function GalleryModal({
               </li>
             ))}
           </ul>
-        </div>
+        </m.div>
       </div>
     </div>,
     document.getElementById('modal-slot')

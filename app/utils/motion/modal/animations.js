@@ -82,3 +82,56 @@ export const modalContactMessage = {
     },
   },
 };
+
+export const modalGalleryBackdrop = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 0.4,
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      delay: 0.2,
+    },
+  },
+};
+
+export const modalGallerySlides = {
+  initial: {
+    opacity: 0,
+    transform: 'translateY(4rem)',
+  },
+  animate: {
+    opacity: 1,
+    transform: 'translateY(0)',
+    transition: {
+      duration: 0.3,
+    },
+  },
+  exit: {
+    opacity: 0,
+    transform: 'translateY(4rem)',
+  },
+};
+
+export const modalGalleryClose = {
+  initial: {
+    transform: 'translateX(12rem) rotateZ(90deg)',
+  },
+  animate: {
+    transform: 'translateX(0) rotateZ(0deg)',
+    transition: {
+      delay: 0.4,
+      duration: 0.4,
+    },
+  },
+  exit: {
+    transform: 'translateX(12rem) rotateZ(90deg)',
+    transition: {
+      delay: 0.1,
+      duration: 0.4,
+    },
+  },
+};
