@@ -2,7 +2,7 @@ import Button from './components/ui/Button';
 
 import styles from './NotFound.module.css';
 
-export default function NotFoundPage() {
+export default function notFoundPage() {
   return (
     <div className={styles.notFound}>
       <h2>404</h2>
