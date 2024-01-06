@@ -12,3 +12,11 @@
     right: 2rem;
   }
 }
+
+.projectNotFound {
+  margin-top: 10rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}

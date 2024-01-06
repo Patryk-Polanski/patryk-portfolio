@@ -17,24 +17,27 @@ export default function ProjectDetailsPage({ params }) {
   const { projectSlug } = params;
   const project = getProject(projectSlug);
 
-  return (
-    project && (
-      <>
-        <main>
-          <ProjectShowcase slug={projectSlug} project={project} />
-          <ProjectTechStack project={project} />
-          <ProjectDescription project={project} />
-          <ProjectGallery project={project} />
-        </main>
-        <Footer>
-          <FadeIn direction='left' className={styles.contactWrapperFooter}>
-            <CircularIcon />
-          </FadeIn>
-          <FadeIn direction='down'>
-            <Copyright />
-          </FadeIn>
-        </Footer>
-      </>
-    )
+  return project ? (
+    <>
+      <main>
+        <ProjectShowcase slug={projectSlug} project={project} />
+        <ProjectTechStack project={project} />
+        <ProjectDescription project={project} />
+        <ProjectGallery project={project} />
+      </main>
+      <Footer>
+        <FadeIn direction='left' className={styles.contactWrapperFooter}>
+          <CircularIcon />
+        </FadeIn>
+        <FadeIn direction='down'>
+          <Copyright />
+        </FadeIn>
+      </Footer>
+    </>
+  ) : (
+    <div className={styles.projectNotFound}>
+      <p>The project could not be found.</p>
+      <p>You can access all projects from the above menu.</p>
+    </div>
   );
 }
