@@ -34,7 +34,7 @@ body {
   color: var(--color-tertiary);
   font-size: 1.6rem;
   min-height: 100vh;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   font-family: var(--font-comfortaa);
   scrollbar-gutter: stable;
 }
