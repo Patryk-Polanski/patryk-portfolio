@@ -33,7 +33,7 @@ export default function HomePage() {
   return (
     <main>
       <MenuTrigger id='menu-trigger-observed' />
-      <SectionHome>
+      {/* <SectionHome>
         <MobileHeader />
         <Menu />
 
@@ -89,7 +89,7 @@ export default function HomePage() {
         >
           <CircularIcon />
         </FadeIn>
-      </SectionHome>
+      </SectionHome> */}
 
       <SectionPortfolio>
         <PortfolioCarousels />
