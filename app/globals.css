@@ -27,7 +27,6 @@ html {
   background-color: var(--color-primary);
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
-  /* overflow-x: hidden; */
 }
 
 body {
@@ -178,6 +177,7 @@ a {
 }
 
 .section {
+  overflow-x: hidden;
   padding-top: 2rem;
   padding-bottom: 16rem;
   position: relative;
