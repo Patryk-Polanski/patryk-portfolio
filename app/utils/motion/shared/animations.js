@@ -36,7 +36,7 @@ export const fadeIn = (
           : direction === 'down'
           ? -80
           : startingCoords.y || 0,
-      opacity: 0,
+      opacity: 0.1,
       transition: {
         type: 'tween',
         duration: 1.5,

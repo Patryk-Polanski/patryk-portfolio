@@ -1,4 +1,5 @@
 .horizontalLine {
+  pointer-events: none;
   display: none;
   position: absolute;
   left: 0;
