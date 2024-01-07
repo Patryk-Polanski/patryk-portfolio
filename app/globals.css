@@ -27,14 +27,14 @@ html {
   background-color: var(--color-primary);
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 body {
   color: var(--color-tertiary);
   font-size: 1.6rem;
   min-height: 100vh;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   font-family: var(--font-comfortaa);
   scrollbar-gutter: stable;
 }
