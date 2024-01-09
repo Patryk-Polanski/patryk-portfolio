@@ -15,6 +15,12 @@ import ProjectNavItem from './ProjectNavItem';
 
 import styles from './ProjectNav.module.css';
 
+export function generateStaticParams() {
+  return portfolioData.map((project) => ({
+    projectSlug: project.id,
+  }));
+}
+
 export default function ProjectNav() {
   const pathname = usePathname();
   const [selectedIndex, setSelectedIndex] = useState(0);

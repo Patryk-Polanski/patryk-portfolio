@@ -12,6 +12,7 @@ export default function Logo() {
         alt='Patryk Polanski logo'
         width={30}
         height={50}
+        loading='eager'
       />
     </Link>
   );

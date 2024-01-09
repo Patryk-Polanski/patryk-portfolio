@@ -4,13 +4,14 @@
   top: 0;
   left: 0;
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
+  height: 100svh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  gap: 2rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  overflow-x: hidden;
 }
 
 @media screen and (min-width: 990px) {
@@ -21,7 +22,7 @@
 }
 
 .menuModalBackground {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   height: 100%;

@@ -11,6 +11,7 @@ export default function Profile() {
         width={54}
         height={54}
         alt='Patryk Polanski profile picture'
+        loading='eager'
       />
       <p>Web developer</p>
     </div>
