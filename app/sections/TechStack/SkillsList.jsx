@@ -7,9 +7,9 @@ import { skillsData } from './skillsData';
 import SkillsListItem from './SkillsListItem';
 
 const filteredSkillsData = {
-  frontend: skillsData.nodes.filter((node) => node.type === 'frontend'),
+  fullstack: skillsData.nodes.filter((node) => node.type === 'fullstack'),
   cms: skillsData.nodes.filter((node) => node.type === 'cms'),
-  backend: skillsData.nodes.filter((node) => node.type === 'backend'),
+  databases: skillsData.nodes.filter((node) => node.type === 'databases'),
 };
 
 const skillsListAnim = {
@@ -46,14 +46,14 @@ export default function SkillsList() {
       className={styles.skillsList}
     >
       <m.li
-        key='frontend'
+        key='fullstack'
         {...skillsListHeadingAnim}
         className={styles.skillsListHeading}
       >
-        <h3>Frontend</h3>
+        <h3>frontend/backend</h3>
       </m.li>
 
-      {filteredSkillsData.frontend.map((node, index) => {
+      {filteredSkillsData.fullstack.map((node, index) => {
         return (
           <m.li variants={skillsListAnim} key={node.id}>
             <SkillsListItem node={node} index={index} />
@@ -78,14 +78,14 @@ export default function SkillsList() {
       })}
 
       <m.li
-        key='backend'
+        key='databases'
         {...skillsListHeadingAnim}
         className={styles.skillsListHeading}
       >
-        <h3>Backend</h3>
+        <h3>Databases</h3>
       </m.li>
 
-      {filteredSkillsData.backend.map((node, index) => {
+      {filteredSkillsData.databases.map((node, index) => {
         return (
           <m.li variants={skillsListAnim} key={node.id}>
             <SkillsListItem node={node} index={index} />
