@@ -39,7 +39,14 @@ export default function RootLayout({ children }) {
       >
         <CustomCursor />
         <ResponsiveContextProvider>
-          <h1 style={{ opacity: 0.1, position: 'absolute', zIndex: -1 }}>
+          <h1
+            style={{
+              opacity: 0.1,
+              fontSize: '10px',
+              position: 'absolute',
+              zIndex: -1,
+            }}
+          >
             Patryk Polanski programming portfolio
           </h1>
           {children}

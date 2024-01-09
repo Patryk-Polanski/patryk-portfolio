@@ -38,6 +38,8 @@ export default function ProjectNavItem({
               width={326}
               height={630}
               alt={`screenshot of ${project.title} project`}
+              priority
+              loading='eager'
             />
           </picture>
         </Button>
