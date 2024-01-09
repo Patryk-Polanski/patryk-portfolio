@@ -97,6 +97,7 @@ export default function MenuModal({ onMenuClose, deviceType }) {
             onLinkClick={onMenuClose}
             currentSection={currentSection}
             deviceType={deviceType}
+            idModifier='Modal'
           />
         </m.div>
         <m.div

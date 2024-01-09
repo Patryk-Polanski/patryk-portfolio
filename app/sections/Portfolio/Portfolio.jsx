@@ -4,12 +4,12 @@ import { useSectionObserver } from '@/app/utils/hooks/useSectionObserver';
 import { useResponsiveContext } from '@/app/context/ResponsiveContext';
 
 import LinkPortfolio from '@/app/components/ui/svg/LinkPortfolio';
-import SectionHeading from '../../components/navigation/Heading';
+import SectionHeading from '../../components/navigation/SectionHeading';
 
 export default function SectionPortfolio({ children }) {
   const { deviceType } = useResponsiveContext();
   const { sectionRef } = useSectionObserver();
-  const svgId = 'portfolioPathMenu';
+  const svgId = 'portfolioPathHeading';
 
   return (
     <section className='section wide-container' id='portfolio' ref={sectionRef}>

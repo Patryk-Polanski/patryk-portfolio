@@ -71,4 +71,5 @@
   background-size: contain;
   background-repeat: repeat-x;
   transition: background-position 1s ease;
+  transform: translate3d(0, 0, 0);
 }

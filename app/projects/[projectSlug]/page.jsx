@@ -11,7 +11,15 @@ import FadeIn from '../../components/wrappers/FadeIn';
 import CircularIcon from '../../sections/Home/CircularIcon';
 import Copyright from '../../sections/Footer/Copyright';
 
+// import { portfolioData } from '@/app/sections/Portfolio/PortfolioData';
+
 import styles from './ProjectPage.module.css';
+
+// export function generateStaticParams() {
+//   return portfolioData.map((project) => ({
+//     projectSlug: project.id,
+//   }));
+// }
 
 export default function ProjectDetailsPage({ params }) {
   const { projectSlug } = params;

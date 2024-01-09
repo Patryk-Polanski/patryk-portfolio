@@ -4,12 +4,12 @@ import { useSectionObserver } from '@/app/utils/hooks/useSectionObserver';
 import { useResponsiveContext } from '@/app/context/ResponsiveContext';
 
 import LinkTechStack from '@/app/components/ui/svg/LinkTechStack';
-import SectionHeading from '../../components/navigation/Heading';
+import SectionHeading from '../../components/navigation/SectionHeading';
 
 export default function SectionTechStack({ children }) {
   const { deviceType } = useResponsiveContext();
   const { sectionRef } = useSectionObserver();
-  const svgId = 'techStackPathMenu';
+  const svgId = 'techStackPathHeading';
 
   return (
     <section
@@ -18,7 +18,7 @@ export default function SectionTechStack({ children }) {
       ref={sectionRef}
     >
       <SectionHeading
-        title='Portfolio'
+        title='Tech Stack'
         svgId={svgId}
         deviceType={deviceType}
         element={<LinkTechStack deviceType={deviceType} />}

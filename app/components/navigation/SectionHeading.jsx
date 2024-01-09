@@ -21,14 +21,14 @@ export default function SectionHeading({
       </div>
       <div className={styles.menuLinkTextClipped}>{elementActive}</div>
       <m.div
-        className={`${styles.menuImage} ${styles.menuImageVisible}`}
+        className={styles.menuImage}
         style={{
           backgroundImage: 'url(/decorative/wave.svg)',
           clipPath: `url(#${svgId})`,
         }}
         variants={menuLinkWave(deviceType)}
         initial='initial'
-        animate={'animate'}
+        animate='animate'
       />
     </h2>
   );

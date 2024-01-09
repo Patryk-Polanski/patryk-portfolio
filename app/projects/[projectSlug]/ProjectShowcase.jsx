@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 import { useResponsiveContext } from '@/app/context/ResponsiveContext';
 
-import SectionHeading from '../../components/navigation/Heading';
+import SectionHeading from '../../components/navigation/SectionHeading';
 import TitleProject from '@/app/components/ui/svg/TitleProject';
 import Button from '../../components/ui/Button';
 import DownArrow from '../../sections/Home/DownArrow';

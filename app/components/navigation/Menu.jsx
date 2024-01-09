@@ -11,44 +11,57 @@ import LinkAbout from '../ui/svg/LinkAbout';
 import styles from './Menu.module.css';
 import MenuLink from './MenuLink';
 
-export default function Menu({ onLinkClick, currentSection }) {
+export default function Menu({ onLinkClick, currentSection, idModifier = '' }) {
   const { deviceType } = useResponsiveContext();
 
   const links = [
     {
       name: 'Home',
-      id: 'homePath',
-      elementActive: <LinkHome id='homePath' deviceType={deviceType} />,
+      id: 'homePath' + idModifier,
+      elementActive: (
+        <LinkHome id={'homePath' + idModifier} deviceType={deviceType} />
+      ),
       element: <LinkHome deviceType={deviceType} />,
     },
     {
       name: 'Portfolio',
-      id: 'portfolioPath',
+      id: 'portfolioPath' + idModifier,
       elementActive: (
-        <LinkPortfolio id='portfolioPath' deviceType={deviceType} />
+        <LinkPortfolio
+          id={`portfolioPath` + idModifier}
+          deviceType={deviceType}
+        />
       ),
       element: <LinkPortfolio deviceType={deviceType} />,
     },
     {
       name: 'Tech-Stack',
-      id: 'techStackPath',
+      id: 'techStackPath' + idModifier,
       elementActive: (
-        <LinkTechStack id='techStackPath' deviceType={deviceType} />
+        <LinkTechStack
+          id={`techStackPath` + idModifier}
+          deviceType={deviceType}
+        />
       ),
       element: <LinkTechStack deviceType={deviceType} />,
     },
     {
       name: 'Experience',
-      id: 'experiencePath',
+      id: 'experiencePath' + idModifier,
       elementActive: (
-        <LinkExperience id='experiencePath' deviceType={deviceType} />
+        <LinkExperience
+          id={`experiencePath` + idModifier}
+          deviceType={deviceType}
+        />
       ),
       element: <LinkExperience deviceType={deviceType} />,
     },
     {
       name: 'About',
-      id: 'aboutPath',
-      elementActive: <LinkAbout id='aboutPath' deviceType={deviceType} />,
+      id: 'aboutPath' + idModifier,
+      elementActive: (
+        <LinkAbout id={`aboutPath` + idModifier} deviceType={deviceType} />
+      ),
       element: <LinkAbout deviceType={deviceType} />,
     },
   ];
