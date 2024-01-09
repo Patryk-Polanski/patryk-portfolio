@@ -174,12 +174,14 @@ function MainCarousel({ updateThumbsIndex, activeIndex, deviceType }) {
                     alt={`screenshot of ${project.title} project`}
                     width={2000}
                     height={1078}
+                    loading='eager'
                   />
                   <Image
                     src={project.imgMobile}
                     width={362}
                     height={700}
                     alt={`screenshot of ${project.title} project`}
+                    loading='eager'
                   />
                 </picture>
               </Link>
@@ -270,6 +272,7 @@ function CustomThumbsCarousel({ updateMainIndex, activeIndex }) {
                     width={362}
                     height={700}
                     alt={`screenshot of ${project.title} project`}
+                    loading='eager'
                   />
                 </button>
               </m.div>
