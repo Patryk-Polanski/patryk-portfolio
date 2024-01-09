@@ -18,7 +18,7 @@ export default function MenuLink({
 
   return (
     <li key={link.name} onClick={onLinkClick}>
-      <Link
+      <a
         className={`${styles.menuLink} ${
           link.name.toLocaleLowerCase() === currentSectionFormatted &&
           styles.menuLinkActive
@@ -56,7 +56,7 @@ export default function MenuLink({
           }
         />
         <div className={styles.menuLinkTextClipped}>{link.elementActive}</div>
-      </Link>
+      </a>
     </li>
   );
 }
