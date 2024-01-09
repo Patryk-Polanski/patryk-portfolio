@@ -82,6 +82,7 @@ export default function Description() {
           width={800}
           height={1284}
           alt='image of myself'
+          loading='eager'
         />
       </m.div>
       <m.div

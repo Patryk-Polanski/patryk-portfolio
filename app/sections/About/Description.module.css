@@ -35,6 +35,7 @@
   width: 100%;
   top: 0;
   left: 0;
+  transform: translate3d(0, 0, 0);
 
   -webkit-mask-image: url(../../../public/patryk/patryk-image-small.jpg);
   mask-image: url(../../../public/patryk/patryk-image-small.jpg);
