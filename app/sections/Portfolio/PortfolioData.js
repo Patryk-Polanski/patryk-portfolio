@@ -4,7 +4,7 @@ export const portfolioData = [
     title: 'Restaurante Miramar',
     index: 0,
     imgDesktop: '/projects/miramar/miramar-desktop.webp',
-    imgMobile: '/projects/miramar/miramar-mobile.webp',
+    imgMobile: '/projects/miramar/carousel-mobile.webp',
     imgThumbnail: '/projects/miramar/carousel-thumbnail.webp',
   },
   {
@@ -12,7 +12,7 @@ export const portfolioData = [
     title: 'PizzaMe',
     index: 1,
     imgDesktop: '/projects/pizza-me/pizza-me-desktop.webp',
-    imgMobile: '/projects/pizza-me/pizza-me-mobile.webp',
+    imgMobile: '/projects/pizza-me/carousel-mobile.webp',
     imgThumbnail: '/projects/pizza-me/carousel-thumbnail.webp',
   },
   {
@@ -20,7 +20,7 @@ export const portfolioData = [
     title: 'La Tana',
     index: 2,
     imgDesktop: '/projects/la-tana/la-tana-desktop.webp',
-    imgMobile: '/projects/la-tana/la-tana-mobile.webp',
+    imgMobile: '/projects/la-tana/carousel-mobile.webp',
     imgThumbnail: '/projects/la-tana/carousel-thumbnail.webp',
   },
   {

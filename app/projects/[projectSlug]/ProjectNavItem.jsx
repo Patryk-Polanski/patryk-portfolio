@@ -36,8 +36,8 @@ export default function ProjectNavItem({
             />
             <Image
               src={project.imgMobile}
-              width={313}
-              height={604}
+              width={560}
+              height={1082}
               alt={`screenshot of ${project.title} project`}
               priority
               loading='eager'
