@@ -25,6 +25,7 @@
 html {
   font-size: 62.5%;
   background-color: var(--color-primary);
+  overflow-x: hidden;
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
 }
@@ -177,7 +178,6 @@ a {
 }
 
 .section {
-  overflow-x: hidden;
   padding-top: 2rem;
   padding-bottom: 16rem;
   position: relative;
