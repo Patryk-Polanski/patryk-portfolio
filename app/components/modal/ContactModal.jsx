@@ -91,7 +91,7 @@ export default function ContactModal({ onCloseForm }) {
         <m.div
           className={styles.contactModalBoxBackground}
           style={{
-            backgroundImage: 'url(/decorative/texture.jpg)',
+            backgroundImage: 'url(/decorative/texture.webp)',
           }}
           key='contact-box-background'
           variants={modalContactBoxBackground}
@@ -179,7 +179,7 @@ export default function ContactModal({ onCloseForm }) {
             <m.div
               className={styles.contactModalMessage}
               style={{
-                backgroundImage: 'url(/decorative/texture.jpg)',
+                backgroundImage: 'url(/decorative/texture.webp)',
               }}
               variants={modalContactMessage}
               {...genericAnimProps}

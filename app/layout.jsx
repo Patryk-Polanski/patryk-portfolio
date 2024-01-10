@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
     >
       <body
         style={{
-          backgroundImage: 'url(/decorative/texture.jpg)',
+          backgroundImage: 'url(/decorative/texture.webp)',
         }}
       >
         <CustomCursor />
