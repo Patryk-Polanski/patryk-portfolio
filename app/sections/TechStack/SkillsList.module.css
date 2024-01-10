@@ -51,6 +51,8 @@
 
 .skillsListImage {
   z-index: 1;
+  width: 6rem;
+  height: 6rem;
 }
 
 .skillsListImageWrapper {

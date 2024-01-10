@@ -14,8 +14,8 @@ export default function SkillsListItem({ node, index }) {
           className={styles.skillsListImage}
           src={`/skills/skill-${node.id}.webp`}
           alt={`icon - ${node.name}`}
-          width={60}
-          height={60}
+          width={100}
+          height={100}
         />
         <span
           style={{ backgroundColor: `${node.color}` }}
