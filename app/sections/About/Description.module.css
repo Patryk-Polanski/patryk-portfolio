@@ -37,8 +37,8 @@
   left: 0;
   transform: translate3d(0, 0, 0);
 
-  -webkit-mask-image: url(../../../public/patryk/patryk-image-small.jpg);
-  mask-image: url(../../../public/patryk/patryk-image-small.jpg);
+  -webkit-mask-image: url(../../../public/patryk/patryk-image-small.webp);
+  mask-image: url(../../../public/patryk/patryk-image-small.webp);
   -webkit-mask-size: 30rem;
   mask-size: 30rem;
   -webkit-mask-repeat: no-repeat;

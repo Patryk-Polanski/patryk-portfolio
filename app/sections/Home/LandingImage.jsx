@@ -18,7 +18,7 @@ export default function LandingImage() {
   return (
     <m.div variants={imageAnimations} initial='initial' animate='animate'>
       <Image
-        src='/patryk/patryk-dark.jpg'
+        src='/patryk/patryk-dark.webp'
         width='550'
         height='733'
         alt='Patryk Polanski image'

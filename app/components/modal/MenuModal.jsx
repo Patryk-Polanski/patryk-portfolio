@@ -137,6 +137,7 @@ export default function MenuModal({ onMenuClose, deviceType }) {
                     width={330}
                     height={178}
                     alt={`screenshot of ${project.title} project`}
+                    loading='eager'
                   />
                 </Link>
               </div>
