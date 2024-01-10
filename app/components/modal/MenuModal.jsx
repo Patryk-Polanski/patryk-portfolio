@@ -134,8 +134,8 @@ export default function MenuModal({ onMenuClose, deviceType }) {
                   <Image
                     className={styles.marqueeItemImage}
                     src={project.imgThumbnail}
-                    width={352}
-                    height={190}
+                    width={528}
+                    height={285}
                     alt={`screenshot of ${project.title} project`}
                     loading='eager'
                     quality={100}

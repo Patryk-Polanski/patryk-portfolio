@@ -30,8 +30,8 @@ export default function ProjectNavItem({
               srcSet={project.imgThumbnail}
               media='(min-width: 750px)'
               alt={`screenshot of ${project.title} project`}
-              width={352}
-              height={190}
+              width={528}
+              height={285}
               quality={100}
             />
             <Image
