@@ -6,6 +6,11 @@
   gap: 2rem;
 }
 
+.profile img {
+  width: 5.4rem;
+  height: 5.4rem;
+}
+
 .profile p {
   white-space: nowrap;
 }

@@ -79,8 +79,8 @@ export default function Description() {
       >
         <Image
           src='/patryk/patryk-image.webp'
-          width={800}
-          height={1284}
+          width={600}
+          height={963}
           alt='image of myself'
           loading='eager'
         />
@@ -105,8 +105,8 @@ export default function Description() {
       <FadeIn className={styles.descriptionImage} direction='right'>
         <Image
           src='/patryk/patryk-image.webp'
-          width={400}
-          height={642}
+          width={600}
+          height={963}
           alt='image of myself'
         />
       </FadeIn>

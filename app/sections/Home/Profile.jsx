@@ -8,8 +8,8 @@ export default function Profile() {
       <p>Patryk Polanski</p>
       <Image
         src='/patryk/profile.webp'
-        width={54}
-        height={54}
+        width={100}
+        height={100}
         alt='Patryk Polanski profile picture'
         loading='eager'
       />

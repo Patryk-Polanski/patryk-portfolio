@@ -7,11 +7,12 @@ export default function Logo() {
   return (
     <Link href='/'>
       <Image
+        style={{ width: '3rem', height: 'auto' }}
         className='logo'
         src='/patryk/logo.webp'
         alt='Patryk Polanski logo'
-        width={30}
-        height={50}
+        width={50}
+        height={82}
         loading='eager'
       />
     </Link>
