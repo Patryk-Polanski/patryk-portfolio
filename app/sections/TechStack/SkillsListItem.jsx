@@ -12,10 +12,10 @@ export default function SkillsListItem({ node, index }) {
       <div className={styles.skillsListImageWrapper}>
         <Image
           className={styles.skillsListImage}
-          src={`/skills/skill-${node.id}.png`}
+          src={`/skills/skill-${node.id}.webp`}
           alt={`icon - ${node.name}`}
-          width={80}
-          height={80}
+          width={60}
+          height={60}
         />
         <span
           style={{ backgroundColor: `${node.color}` }}
