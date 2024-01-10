@@ -47,10 +47,10 @@ export const portfolioData = [
       'Overall I am satisfied with the final outcome and my learning experience. Although the project was difficult at times due to the complexity and the amount of custom features, it was a valuable lesson. I was able to learn the ins and outs of Shopify as well as its limits. It is a platform that has been built in a very specific way that imposes a system and can be quite awkward when it needs to be modified in a certain way. In general, I feel my front-end skills have progressed as well. Having been so heavily focused on the website aesthetics and behaviour, I have learned a number of new libraries and understood how to make the UI more attractive, interesting and professional.',
     ],
     gallery: [
-      { src: '/projects/vape-superstore/gallery-collage.jpg' },
-      { src: '/projects/vape-superstore/gallery-phones.jpg' },
-      { src: '/projects/vape-superstore/gallery-tablets.jpg' },
-      { src: '/projects/vape-superstore/gallery-laptops.jpg' },
+      { src: '/projects/vape-superstore/gallery-collage.webp' },
+      { src: '/projects/vape-superstore/gallery-phones.webp' },
+      { src: '/projects/vape-superstore/gallery-tablets.webp' },
+      { src: '/projects/vape-superstore/gallery-laptops.webp' },
     ],
   },
   {
@@ -77,10 +77,10 @@ export const portfolioData = [
       'To conclude, I am content with the results. Although the blog is quite straightforward, having done the majority of the site by myself gave me a deep understanding of the WordPress CMS. It was also my first deep dive with PHP and I explored the capabilities and functionalities of WordPress in greater depth. Having successfully completed the project as the main developer, this has made me feel more competent and independent as a developer, as well as given me more confidence for new	programming challenges.',
     ],
     gallery: [
-      { src: '/projects/cascades/gallery-collage.jpg' },
-      { src: '/projects/cascades/gallery-phones.jpg' },
-      { src: '/projects/cascades/gallery-tablets.jpg' },
-      { src: '/projects/cascades/gallery-laptops.jpg' },
+      { src: '/projects/cascades/gallery-collage.webp' },
+      { src: '/projects/cascades/gallery-phones.webp' },
+      { src: '/projects/cascades/gallery-tablets.webp' },
+      { src: '/projects/cascades/gallery-laptops.webp' },
     ],
   },
 ];
