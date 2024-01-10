@@ -58,6 +58,7 @@ export default function ProjectShowcase({ slug, project }) {
               height={773}
               priority
               loading='eager'
+              quality={100}
             />
           </FadeIn>
           <FadeIn
@@ -72,6 +73,7 @@ export default function ProjectShowcase({ slug, project }) {
               height={802}
               priority
               loading='eager'
+              quality={100}
             />
           </FadeIn>
           <FadeIn
@@ -86,6 +88,7 @@ export default function ProjectShowcase({ slug, project }) {
               height={808}
               priority
               loading='eager'
+              quality={100}
             />
           </FadeIn>
         </div>

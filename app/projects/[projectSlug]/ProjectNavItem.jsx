@@ -27,19 +27,21 @@ export default function ProjectNavItem({
         <Button onClick={handleClick} onClickParams={onClickParams}>
           <picture>
             <source
-              srcSet={project.imgDesktop}
+              srcSet={project.imgThumbnail}
               media='(min-width: 750px)'
               alt={`screenshot of ${project.title} project`}
-              width={500}
-              height={270}
+              width={352}
+              height={190}
+              quality={100}
             />
             <Image
               src={project.imgMobile}
-              width={326}
-              height={630}
+              width={313}
+              height={604}
               alt={`screenshot of ${project.title} project`}
               priority
               loading='eager'
+              quality={100}
             />
           </picture>
         </Button>
