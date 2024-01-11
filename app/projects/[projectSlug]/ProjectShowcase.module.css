@@ -68,7 +68,6 @@
 .projectOverviewImages {
   position: relative;
   margin-bottom: 8rem;
-  background-color: var(--color-primary-lighter);
 }
 
 @media screen and (min-width: 750px) {
