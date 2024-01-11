@@ -9,7 +9,7 @@ export const experienceData = [
     tasks: [
       {
         id: '1',
-        task: 'Created engaging and effective content using CMS platform WeChat.',
+        task: 'Created engaging and effective content using CMS platforms, Wordpress and WeChat',
       },
       {
         id: '2',
@@ -17,7 +17,7 @@ export const experienceData = [
       },
       {
         id: '3',
-        task: 'Produced high-quality graphics to enhance visual communication efforts',
+        task: 'Produced high-quality graphics for social media comms',
       },
       {
         id: '4',
@@ -65,7 +65,7 @@ export const experienceData = [
       },
       {
         id: '3',
-        task: 'Created engaging infographics that complemented the company s brand voice and elevated its online presence.',
+        task: "Created engaging infographics that complemented the company's brand voice and elevated its online presence.",
       },
     ],
   },
@@ -105,11 +105,11 @@ export const experienceData = [
       },
       {
         id: '2',
-        task: 'Developed custom Shopify e-commerce sites and themes using HTML, SCSS, JavaScript, Web components, and Liquid',
+        task: 'Developed custom Shopify e-commerce sites and themes using HTML, SCSS, JavaScript, Web components and Liquid',
       },
       {
         id: '3',
-        task: 'Run unit tests and optimized projects with Google Lighthouse, third party software and best practices',
+        task: 'Conducted unit tests and optimized projects with Google Lighthouse, third party software and best practices',
       },
       {
         id: '4',
