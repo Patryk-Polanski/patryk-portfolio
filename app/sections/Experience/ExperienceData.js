@@ -92,7 +92,7 @@ export const experienceData = [
     ],
   },
   {
-    date: 'April 2022 - September 2023',
+    date: 'April 2022 - October 2023',
     jobTitle: 'Front End Developer',
     location: 'London, United Kingdom',
     company: 'Karmoon',
