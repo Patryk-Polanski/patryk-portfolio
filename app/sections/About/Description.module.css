@@ -66,6 +66,13 @@
   }
 }
 
+@media screen and (min-width: 2000px) {
+  .descriptionMaskedTextWrapper {
+    -webkit-mask-size: 50rem;
+    mask-size: 50rem;
+  }
+}
+
 .descriptionFloatingImage {
   transition: opacity 0.4s ease-in;
   width: 30rem;
@@ -85,6 +92,12 @@
 @media screen and (min-width: 1500px) {
   .descriptionFloatingImage {
     width: 42rem;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .descriptionFloatingImage {
+    width: 50rem;
   }
 }
 

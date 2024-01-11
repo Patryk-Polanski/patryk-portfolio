@@ -25,6 +25,12 @@
   }
 }
 
+@media screen and (min-width: 2000px) {
+  .landingImageWrapper {
+    width: 34rem;
+  }
+}
+
 .landingImageWrapper img {
   border-radius: 0rem;
   width: 100%;

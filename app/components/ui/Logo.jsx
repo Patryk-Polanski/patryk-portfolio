@@ -3,12 +3,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import styles from './Logo.module.css';
+
 export default function Logo() {
   return (
     <Link href='/'>
       <Image
-        style={{ width: '3rem', height: 'auto' }}
-        className='logo'
+        className={`logo ${styles.logo}`}
         src='/patryk/logo.webp'
         alt='Patryk Polanski logo'
         width={50}

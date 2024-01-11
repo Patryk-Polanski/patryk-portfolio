@@ -15,6 +15,12 @@
   transition: all 0.2s ease-in;
 }
 
+@media screen and (min-width: 2000px) {
+  .button--primary {
+    font-size: 1.6rem;
+  }
+}
+
 @media screen and (min-width: 400px) {
   .button--primary {
     padding: 1.4rem 2.6rem;
@@ -70,6 +76,13 @@
   .button--menu {
     height: 8rem;
     width: 8rem;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .button--menu {
+    height: 8.4rem;
+    width: 8.4rem;
   }
 }
 

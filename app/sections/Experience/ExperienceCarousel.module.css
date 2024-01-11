@@ -159,8 +159,20 @@
 }
 
 .emblaButtons svg {
-  width: unset;
-  height: unset;
+  width: 8rem;
+  height: auto;
+}
+
+@media screen and (min-width: 1200px) {
+  .emblaButtons svg {
+    width: 11rem;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .emblaButtons svg {
+    width: 12rem;
+  }
 }
 
 .emblaButtons :global(.embla__button--prev),
@@ -208,6 +220,13 @@
   }
 }
 
+@media screen and (min-width: 2000px) {
+  .emblaDots :global(.embla__dot) {
+    width: 3.4rem;
+    height: 3.4rem;
+  }
+}
+
 .emblaDots :global(.embla__dot):hover {
   border-color: var(--color-secondary) !important;
 }
@@ -252,6 +271,13 @@
   color: var(--color-tertiary-darker);
   font-size: 1.4rem;
   font-family: var(--font-comfortaa);
+}
+
+@media screen and (min-width: 2000px) {
+  .emblaDots :global(.embla__dot):last-of-type::after,
+  .emblaDots :global(.embla__dot):first-of-type::after {
+    font-size: 1.5rem;
+  }
 }
 
 .emblaDots :global(.embla__dot):first-of-type::after {

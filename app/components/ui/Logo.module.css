@@ -1,0 +1,10 @@
+.logo {
+  width: 3rem;
+  height: auto;
+}
+
+@media screen and (min-width: 2000px) {
+  .logo {
+    width: 3.4rem;
+  }
+}

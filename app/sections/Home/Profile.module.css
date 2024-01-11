@@ -8,7 +8,13 @@
 
 .profile img {
   width: 5.4rem;
-  height: 5.4rem;
+  height: auto;
+}
+
+@media screen and (min-width: 2000px) {
+  .profile img {
+    width: 5.8rem;
+  }
 }
 
 .profile p {

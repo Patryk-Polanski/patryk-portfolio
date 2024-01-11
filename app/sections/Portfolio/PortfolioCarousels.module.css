@@ -23,6 +23,12 @@
   }
 }
 
+@media screen and (min-width: 2000px) {
+  .carouselsWrapperHeading {
+    width: 65%;
+  }
+}
+
 .carouselsWrapperHeading a {
   transition: color 0.3s ease;
 }
@@ -164,7 +170,13 @@
 
 @media screen and (min-width: 1200px) {
   .mainEmblaButtons button {
-    width: 10rem;
+    width: 11rem;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .mainEmblaButtons button {
+    width: 12rem;
   }
 }
 
@@ -185,6 +197,12 @@
   .thumbsEmbla {
     visibility: visible;
     pointer-events: all;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .thumbsEmbla {
+    width: 35%;
   }
 }
 
@@ -216,6 +234,13 @@
 @media screen and (min-width: 990px) {
   .thumbsEmblaSlide {
     flex: 0 0 45%;
+    padding-left: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .thumbsEmblaSlide {
+    flex: 0 0 50%;
     padding-left: 1.6rem;
   }
 }

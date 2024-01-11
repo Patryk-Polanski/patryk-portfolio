@@ -36,7 +36,7 @@ export default function ProjectTechStack({ project, isShowcaseReady }) {
         initial='initial'
         whileInView={isShowcaseReady ? 'visible' : ''}
         viewport={{ once: true }}
-        className={`text-container ${styles.techStack}`}
+        className={styles.techStack}
       >
         {techStack.map((node, index) => (
           <m.li variants={skillsListAnim} key={node.id}>

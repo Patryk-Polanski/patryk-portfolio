@@ -3,8 +3,13 @@
   align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
-  column-gap: 1rem;
   row-gap: 3rem;
+}
+
+@media screen and (min-width: 750px) {
+  .techStack {
+    column-gap: 1rem;
+  }
 }
 
 .techStack img {

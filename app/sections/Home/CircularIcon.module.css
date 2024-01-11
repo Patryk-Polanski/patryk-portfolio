@@ -10,6 +10,12 @@
   }
 }
 
+@media screen and (min-width: 2000px) {
+  .circularIcon {
+    transform: scale(1.2);
+  }
+}
+
 .circularIcon:hover textPath {
   fill: var(--color-secondary);
 }

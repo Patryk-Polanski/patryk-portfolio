@@ -4,9 +4,16 @@
   /* height: 100%; */
   max-height: 100vh;
   aspect-ratio: 3/2;
+  width: auto;
   box-sizing: border-box;
-  max-width: 1500px;
+  max-width: 150rem;
   margin: 4rem auto 0;
+}
+
+@media screen and (min-width: 2000px) {
+  .force-graph-section {
+    max-width: 170rem;
+  }
 }
 
 .force-graph-section--initial {
