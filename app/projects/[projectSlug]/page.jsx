@@ -36,13 +36,12 @@ export default function ProjectDetailsPage({ params }) {
           project={project}
           toggleShowcaseState={setIsShowcaseReady}
         />
-        {isShowcaseReady && (
-          <>
-            <ProjectTechStack project={project} />
-            <ProjectDescription project={project} />
-            <ProjectGallery project={project} />
-          </>
-        )}
+        <ProjectTechStack project={project} isShowcaseReady={isShowcaseReady} />
+        <ProjectDescription
+          project={project}
+          isShowcaseReady={isShowcaseReady}
+        />
+        <ProjectGallery project={project} />
       </main>
       <Footer>
         <FadeIn direction='left' className={styles.contactWrapperFooter}>

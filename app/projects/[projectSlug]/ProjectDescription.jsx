@@ -20,12 +20,12 @@ const text = {
   show: { opacity: 1, y: 0 },
 };
 
-export default function ProjectDescription({ project }) {
+export default function ProjectDescription({ project, isShowcaseReady }) {
   return (
     <m.section
       variants={textContainer}
       initial='hidden'
-      whileInView='show'
+      whileInView={isShowcaseReady ? 'show' : ''}
       viewport={{ once: true }}
       className={`section text-container ${styles.projectDescription}`}
     >

@@ -23,7 +23,7 @@ const skillsListAnim = {
   },
 };
 
-export default function ProjectTechStack({ project }) {
+export default function ProjectTechStack({ project, isShowcaseReady }) {
   const techStack = skillsData.nodes.filter((node) => {
     const foundSkill = project.techStack?.find((el) => el === node.id);
     if (foundSkill) return foundSkill;
@@ -34,7 +34,7 @@ export default function ProjectTechStack({ project }) {
       <m.ul
         variants={skillsListAnim}
         initial='initial'
-        whileInView='visible'
+        whileInView={isShowcaseReady ? 'visible' : ''}
         viewport={{ once: true }}
         className={`text-container ${styles.techStack}`}
       >
