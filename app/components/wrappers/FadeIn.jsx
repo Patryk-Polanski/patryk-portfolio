@@ -17,12 +17,14 @@ export default function FadeIn({
   delay,
   startingCoords,
   finalCoords,
+  onComplete = () => {},
 }) {
   const animProps = inView ? fadeInProps : shiftProps;
   return (
     <m.div
       className={className}
       variants={fadeIn(direction, delay, finalCoords, startingCoords)}
+      onAnimationComplete={onComplete}
       {...animProps}
     >
       {children}

@@ -1,6 +1,3 @@
-'use client';
-
-import React from 'react';
 import Image from 'next/image';
 
 import { useResponsiveContext } from '@/app/context/ResponsiveContext';
@@ -14,7 +11,11 @@ import FadeIn from '../../components/wrappers/FadeIn';
 import styles from './ProjectShowcase.module.css';
 import Logo from '@/app/components/ui/Logo';
 
-export default function ProjectShowcase({ slug, project }) {
+export default function ProjectShowcase({
+  slug,
+  project,
+  toggleShowcaseState,
+}) {
   const { deviceType } = useResponsiveContext();
 
   return (
@@ -64,6 +65,7 @@ export default function ProjectShowcase({ slug, project }) {
           <FadeIn
             direction='down'
             delay={1}
+            onComplete={() => toggleShowcaseState(true)}
             className={styles.projectOverviewImac}
           >
             <Image

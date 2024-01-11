@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import { useState } from 'react';
 
 import { getProject } from '@/app/utils/helpers';
 
@@ -24,14 +26,23 @@ import styles from './ProjectPage.module.css';
 export default function ProjectDetailsPage({ params }) {
   const { projectSlug } = params;
   const project = getProject(projectSlug);
+  const [isShowcaseReady, setIsShowcaseReady] = useState(false);
 
   return project ? (
     <>
       <main>
-        <ProjectShowcase slug={projectSlug} project={project} />
-        <ProjectTechStack project={project} />
-        <ProjectDescription project={project} />
-        <ProjectGallery project={project} />
+        <ProjectShowcase
+          slug={projectSlug}
+          project={project}
+          toggleShowcaseState={setIsShowcaseReady}
+        />
+        {isShowcaseReady && (
+          <>
+            <ProjectTechStack project={project} />
+            <ProjectDescription project={project} />
+            <ProjectGallery project={project} />
+          </>
+        )}
       </main>
       <Footer>
         <FadeIn direction='left' className={styles.contactWrapperFooter}>
