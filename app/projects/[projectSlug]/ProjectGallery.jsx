@@ -16,13 +16,13 @@ export default function ProjectGallery({ project }) {
 
   const handleOpenGallery = useCallback((index) => {
     setIsGalleryModalOpen(true);
-    document.body.classList.add('frozen');
+    document.body.parentElement.classList.add('frozen');
     setActiveIndex(index);
   }, []);
 
   const handleCloseGallery = useCallback(() => {
     setIsGalleryModalOpen(false);
-    document.body.classList.remove('frozen');
+    document.body.parentElement.classList.remove('frozen');
   }, []);
 
   return (

@@ -12,12 +12,12 @@ export default function CircularIcon() {
 
   function handleOpenForm() {
     setIsContactFormOpen(true);
-    document.body.classList.add('frozen');
+    document.body.parentElement.classList.add('frozen');
   }
 
   function handleCloseForm() {
     setIsContactFormOpen(false);
-    document.body.classList.remove('frozen');
+    document.body.parentElement.classList.remove('frozen');
   }
 
   return (

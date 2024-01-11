@@ -16,10 +16,10 @@ export default function MenuTrigger({ id = 'menu-trigger' }) {
 
   function handleMenu() {
     setIsMenuOpen((prevVal) => !prevVal);
-    if (document.body.classList.contains('frozen')) {
-      document.body.classList.remove('frozen');
+    if (document.body.parentElement.classList.contains('frozen')) {
+      document.body.parentElement.classList.remove('frozen');
     } else {
-      document.body.classList.add('frozen');
+      document.body.parentElement.classList.add('frozen');
     }
   }
 
