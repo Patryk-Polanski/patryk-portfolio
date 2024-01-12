@@ -1,6 +1,6 @@
 import LinkLetter from './LinkLetter';
 
-export default function LinkHome({ id, deviceType = 'desktop' }) {
+export default function TitleVapeSuperstore({ id, deviceType = 'desktop' }) {
   const responsiveVariants = {
     mobile: {
       width: '312',

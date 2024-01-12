@@ -16,12 +16,34 @@ export const portfolioData = [
     imgThumbnail: '/projects/pizza-me/carousel-thumbnail.webp',
   },
   {
-    id: 'la-tana',
-    title: 'La Tana',
+    id: 'descripti',
+    title: 'Descripti',
     index: 2,
-    imgDesktop: '/projects/la-tana/la-tana-desktop.webp',
-    imgMobile: '/projects/la-tana/carousel-mobile.webp',
-    imgThumbnail: '/projects/la-tana/carousel-thumbnail.webp',
+    imgDesktop: '/projects/descripti/carousel-desktop.webp',
+    imgMobile: '/projects/descripti/carousel-mobile.webp',
+    imgThumbnail: '/projects/descripti/carousel-thumbnail.webp',
+    mockupIphone: '/projects/descripti/mockup-iphone.webp',
+    mockupIpad: '/projects/descripti/mockup-ipad.webp',
+    mockupImac: '/projects/descripti/mockup-imac.webp',
+    overview:
+      'Content generation tool leveraging chatGPT to generate product titles, descriptions and metadata.',
+    linkWebsite: 'https://descripti.ai/',
+    categories: ['Frontend'],
+    techStack: ['tailwind', 'javascript', 'react', 'next', 'typescript'],
+    challenge: [
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo ullamcorper a lacus vestibulum. Nulla pellentesque dignissim enim sit amet venenatis urna cursus eget. Condimentum vitae sapien pellentesque habitant morbi tristique. Tellus pellentesque eu tincidunt tortor. Malesuada fames ac turpis egestas sed. Feugiat in ante metus dictum at tempor commodo ullamcorper. Volutpat odio facilisis mauris sit amet massa vitae tortor. Egestas tellus rutrum tellus pellentesque. Leo urna molestie at elementum eu facilisis sed odio. Dolor sed viverra ipsum nunc aliquet bibendum enim.',
+
+      'Interdum consectetur libero id faucibus nisl tincidunt. Nascetur ridiculus mus mauris vitae. Senectus et netus et malesuada fames ac. Quam nulla porttitor massa id neque. Elementum tempus egestas sed sed. Vitae aliquet nec ullamcorper sit amet. A diam sollicitudin tempor id eu nisl nunc mi ipsum. Facilisis gravida neque convallis a. Etiam dignissim diam quis enim. Suspendisse in est ante in nibh mauris cursus mattis. Augue ut lectus arcu bibendum at varius vel pharetra vel. Id nibh tortor id aliquet lectus proin nibh nisl condimentum.',
+    ],
+    evaluation: [
+      'Ante metus dictum at tempor. Sodales neque sodales ut etiam sit amet nisl purus. Sed odio morbi quis commodo odio aenean sed adipiscing diam. Sed augue lacus viverra vitae congue eu. Amet consectetur adipiscing elit ut aliquam purus. Nec feugiat nisl pretium fusce id. Volutpat sed cras ornare arcu dui. Nunc aliquet bibendum enim facilisis gravida. Adipiscing bibendum est ultricies integer quis auctor elit sed. Enim ut tellus elementum sagittis. Scelerisque purus semper eget duis at tellus at urna condimentum. Proin gravida hendrerit lectus a. In nisl nisi scelerisque eu ultrices vitae. Iaculis urna id volutpat lacus. ',
+    ],
+    gallery: [
+      { src: '/projects/descripti/gallery-collage.webp' },
+      { src: '/projects/descripti/gallery-tablets.webp' },
+      { src: '/projects/descripti/gallery-laptops.webp' },
+      { src: '/projects/descripti/gallery-laptops-2.webp' },
+    ],
   },
   {
     id: 'vape-superstore',

@@ -1,6 +1,6 @@
 import LinkLetter from './LinkLetter';
 
-export default function LinkHome({ id, deviceType = 'desktop' }) {
+export default function TitleCascades({ id, deviceType = 'desktop' }) {
   const responsiveVariants = {
     mobile: {
       width: '217',
