@@ -10,6 +10,7 @@ const filteredSkillsData = {
   fullstack: skillsData.nodes.filter((node) => node.type === 'fullstack'),
   cms: skillsData.nodes.filter((node) => node.type === 'cms'),
   databases: skillsData.nodes.filter((node) => node.type === 'databases'),
+  design: skillsData.nodes.filter((node) => node.type === 'design'),
 };
 
 const skillsListAnim = {
@@ -86,6 +87,22 @@ export default function SkillsList() {
       </m.li>
 
       {filteredSkillsData.databases.map((node, index) => {
+        return (
+          <m.li variants={skillsListAnim} key={node.id}>
+            <SkillsListItem node={node} index={index} />
+          </m.li>
+        );
+      })}
+
+      <m.li
+        key='design'
+        {...skillsListHeadingAnim}
+        className={styles.skillsListHeading}
+      >
+        <h3>Design</h3>
+      </m.li>
+
+      {filteredSkillsData.design.map((node, index) => {
         return (
           <m.li variants={skillsListAnim} key={node.id}>
             <SkillsListItem node={node} index={index} />

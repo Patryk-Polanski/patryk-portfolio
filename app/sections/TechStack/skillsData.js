@@ -85,9 +85,15 @@ export const skillsData = {
       type: 'fullstack',
     },
     {
-      id: 'router',
-      name: 'Router',
+      id: 'react-router',
+      name: 'React Router',
       color: '#F54250',
+      type: 'fullstack',
+    },
+    {
+      id: 'tanstack-query',
+      name: 'Tanstack Query',
+      color: '#FF4154',
       type: 'fullstack',
     },
     {
@@ -131,6 +137,24 @@ export const skillsData = {
       name: 'Prisma',
       color: '#178C7E',
       type: 'databases',
+    },
+    {
+      id: 'design',
+      name: 'Design',
+      color: '#21A3DD',
+      type: 'decorative',
+    },
+    {
+      id: 'photoshop',
+      name: 'Photoshop',
+      color: '#355EC9',
+      type: 'design',
+    },
+    {
+      id: 'figma',
+      name: 'Figma',
+      color: '#F24E1E',
+      type: 'design',
     },
   ],
   links: [
@@ -198,8 +222,8 @@ export const skillsData = {
       color: '#764ABC',
     },
     {
-      id: 'router-react',
-      source: 'router',
+      id: 'react-router-react',
+      source: 'react-router',
       target: 'react',
       speed: 1,
       color: '#F54250',
@@ -210,6 +234,13 @@ export const skillsData = {
       target: 'react',
       speed: 1,
       color: '#EF01B9',
+    },
+    {
+      id: 'tanstack-query-react',
+      source: 'tanstack-query',
+      target: 'react',
+      speed: 1,
+      color: '#FF4154',
     },
     {
       id: 'next-react',
@@ -280,6 +311,27 @@ export const skillsData = {
       target: 'databases',
       speed: 1,
       color: '#178C7E',
+    },
+    {
+      id: 'design-patryk',
+      source: 'design',
+      target: 'patryk',
+      speed: 1,
+      color: '#21A3DD',
+    },
+    {
+      id: 'photoshop-design',
+      source: 'photoshop',
+      target: 'design',
+      speed: 1,
+      color: '#355EC9',
+    },
+    {
+      id: 'figma-design',
+      source: 'figma',
+      target: 'design',
+      speed: 1,
+      color: '#F24E1E',
     },
   ],
 };

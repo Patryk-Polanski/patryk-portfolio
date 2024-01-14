@@ -59,7 +59,7 @@ function SkillsGraph() {
       forceRef.current
         .d3Force('link')
         .iterations(1)
-        .distance((link) => (containerWidth < 1400 ? 70 : 100));
+        .distance((link) => (containerWidth < 1400 ? 80 : 110));
     }, 1400);
   }, [containerWidth, renderGraph]);
 

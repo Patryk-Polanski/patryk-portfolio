@@ -112,7 +112,7 @@ export const portfolioData = [
     linkWebsite: 'https://tiker.netlify.app/',
     projectLogin: 'username: trader, password: app',
     categories: ['UI/UX', 'Frontend'],
-    techStack: ['css', 'scss', 'javascript', 'd3'],
+    techStack: ['figma', 'photoshop', 'css', 'scss', 'javascript', 'd3'],
     challenge: [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo ullamcorper a lacus vestibulum. Nulla pellentesque dignissim enim sit amet venenatis urna cursus eget. Condimentum vitae sapien pellentesque habitant morbi tristique. Tellus pellentesque eu tincidunt tortor. Malesuada fames ac turpis egestas sed. Feugiat in ante metus dictum at tempor commodo ullamcorper. Volutpat odio facilisis mauris sit amet massa vitae tortor. Egestas tellus rutrum tellus pellentesque. Leo urna molestie at elementum eu facilisis sed odio. Dolor sed viverra ipsum nunc aliquet bibendum enim.',
 
