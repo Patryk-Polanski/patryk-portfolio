@@ -118,6 +118,11 @@ export default function ProjectShowcase({
                 text='Github repo'
               />
             )}
+            {project.projectLogin && (
+              <small className={styles.projectOverviewLogin}>
+                {project.projectLogin}
+              </small>
+            )}
           </div>
           <ul className={styles.projectOverviewTasks}>
             {project.categories?.map((category) => (

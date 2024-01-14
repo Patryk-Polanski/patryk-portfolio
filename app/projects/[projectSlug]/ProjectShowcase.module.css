@@ -171,10 +171,29 @@
 }
 
 .projectOverviewButtons {
+  width: 100%;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1.2rem;
+}
+
+.projectOverviewButtons:has(.projectOverviewLogin) {
+  margin-bottom: 3rem;
+}
+
+.projectOverviewLogin {
+  margin: 0;
+  width: 100%;
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+}
+
+.projectOverviewLogin + .projectOverviewTasks {
+  margin-top: 4rem;
 }
 
 .projectOverviewTasks {

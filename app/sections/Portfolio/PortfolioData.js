@@ -8,17 +8,9 @@ export const portfolioData = [
     imgThumbnail: '/projects/miramar/carousel-thumbnail.webp',
   },
   {
-    id: 'pizzame',
-    title: 'PizzaMe',
-    index: 1,
-    imgDesktop: '/projects/pizza-me/pizza-me-desktop.webp',
-    imgMobile: '/projects/pizza-me/carousel-mobile.webp',
-    imgThumbnail: '/projects/pizza-me/carousel-thumbnail.webp',
-  },
-  {
     id: 'descripti',
     title: 'Descripti',
-    index: 2,
+    index: 1,
     imgDesktop: '/projects/descripti/carousel-desktop.webp',
     imgMobile: '/projects/descripti/carousel-mobile.webp',
     imgThumbnail: '/projects/descripti/carousel-thumbnail.webp',
@@ -41,14 +33,14 @@ export const portfolioData = [
     gallery: [
       { src: '/projects/descripti/gallery-collage.webp' },
       { src: '/projects/descripti/gallery-tablets.webp' },
-      { src: '/projects/descripti/gallery-laptops.webp' },
+      { src: '/projects/descripti/gallery-laptops-1.webp' },
       { src: '/projects/descripti/gallery-laptops-2.webp' },
     ],
   },
   {
     id: 'vape-superstore',
     title: 'Vape Superstore',
-    index: 3,
+    index: 2,
     imgDesktop: '/projects/vape-superstore/carousel-desktop.webp',
     imgMobile: '/projects/vape-superstore/carousel-mobile.webp',
     imgThumbnail: '/projects/vape-superstore/carousel-thumbnail.webp',
@@ -78,7 +70,7 @@ export const portfolioData = [
   {
     id: 'cascades',
     title: 'Cascades',
-    index: 4,
+    index: 3,
     imgDesktop: '/projects/cascades/carousel-desktop.webp',
     imgMobile: '/projects/cascades/carousel-mobile.webp',
     imgThumbnail: '/projects/cascades/carousel-thumbnail.webp',
@@ -103,6 +95,37 @@ export const portfolioData = [
       { src: '/projects/cascades/gallery-phones.webp' },
       { src: '/projects/cascades/gallery-tablets.webp' },
       { src: '/projects/cascades/gallery-laptops.webp' },
+    ],
+  },
+  {
+    id: 'tiker',
+    title: 'Tiker',
+    index: 4,
+    imgDesktop: '/projects/tiker/carousel-desktop.webp',
+    imgMobile: '/projects/tiker/carousel-mobile.webp',
+    imgThumbnail: '/projects/tiker/carousel-thumbnail.webp',
+    mockupIphone: '/projects/tiker/mockup-iphone.webp',
+    mockupIpad: '/projects/tiker/mockup-ipad.webp',
+    mockupImac: '/projects/tiker/mockup-imac.webp',
+    overview:
+      'A web app for traders to assist with analysing trading performance using various tools including a trading journal and data visualisations.',
+    linkWebsite: 'https://tiker.netlify.app/',
+    projectLogin: 'username: trader, password: app',
+    categories: ['UI/UX', 'Frontend'],
+    techStack: ['css', 'scss', 'javascript', 'd3'],
+    challenge: [
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo ullamcorper a lacus vestibulum. Nulla pellentesque dignissim enim sit amet venenatis urna cursus eget. Condimentum vitae sapien pellentesque habitant morbi tristique. Tellus pellentesque eu tincidunt tortor. Malesuada fames ac turpis egestas sed. Feugiat in ante metus dictum at tempor commodo ullamcorper. Volutpat odio facilisis mauris sit amet massa vitae tortor. Egestas tellus rutrum tellus pellentesque. Leo urna molestie at elementum eu facilisis sed odio. Dolor sed viverra ipsum nunc aliquet bibendum enim.',
+
+      'Interdum consectetur libero id faucibus nisl tincidunt. Nascetur ridiculus mus mauris vitae. Senectus et netus et malesuada fames ac. Quam nulla porttitor massa id neque. Elementum tempus egestas sed sed. Vitae aliquet nec ullamcorper sit amet. A diam sollicitudin tempor id eu nisl nunc mi ipsum. Facilisis gravida neque convallis a. Etiam dignissim diam quis enim. Suspendisse in est ante in nibh mauris cursus mattis. Augue ut lectus arcu bibendum at varius vel pharetra vel. Id nibh tortor id aliquet lectus proin nibh nisl condimentum.',
+    ],
+    evaluation: [
+      'Ante metus dictum at tempor. Sodales neque sodales ut etiam sit amet nisl purus. Sed odio morbi quis commodo odio aenean sed adipiscing diam. Sed augue lacus viverra vitae congue eu. Amet consectetur adipiscing elit ut aliquam purus. Nec feugiat nisl pretium fusce id. Volutpat sed cras ornare arcu dui. Nunc aliquet bibendum enim facilisis gravida. Adipiscing bibendum est ultricies integer quis auctor elit sed. Enim ut tellus elementum sagittis. Scelerisque purus semper eget duis at tellus at urna condimentum. Proin gravida hendrerit lectus a. In nisl nisi scelerisque eu ultrices vitae. Iaculis urna id volutpat lacus. ',
+    ],
+    gallery: [
+      { src: '/projects/tiker/gallery-collage.webp' },
+      { src: '/projects/tiker/gallery-tablets.webp' },
+      { src: '/projects/tiker/gallery-laptops-1.webp' },
+      { src: '/projects/tiker/gallery-laptops-2.webp' },
     ],
   },
 ];
