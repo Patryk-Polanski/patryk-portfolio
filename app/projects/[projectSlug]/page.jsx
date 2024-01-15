@@ -9,15 +9,7 @@ import ProjectTechStack from './ProjectTechStack';
 import ProjectDescription from './ProjectDescription';
 import ProjectGallery from './ProjectGallery';
 
-// import { portfolioData } from '@/app/sections/Portfolio/PortfolioData';
-
 import styles from './ProjectPage.module.css';
-
-// export function generateStaticParams() {
-//   return portfolioData.map((project) => ({
-//     projectSlug: project.id,
-//   }));
-// }
 
 export default function ProjectDetailsPage({ params }) {
   const { projectSlug } = params;
