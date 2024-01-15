@@ -118,6 +118,14 @@ export default function ProjectShowcase({
                 text='Github repo'
               />
             )}
+            {project.linkVideo && (
+              <Button
+                link={project.linkVideo}
+                variation='primary'
+                newTab={true}
+                text='Watch video'
+              />
+            )}
             {project.projectLogin && (
               <small className={styles.projectOverviewLogin}>
                 {project.projectLogin}

@@ -111,6 +111,7 @@ export const portfolioData = [
       'A web app for traders to assist with analysing trading performance using various tools including a trading journal and data visualisations.',
     linkWebsite: 'https://tiker.netlify.app/',
     linkGithub: 'https://github.com/Patryk-Polanski/Tiker',
+    linkVideo: 'https://vimeo.com/538930971',
     projectLogin: 'username: trader, password: app',
     categories: ['UI/UX', 'Frontend'],
     techStack: ['figma', 'photoshop', 'css', 'scss', 'javascript', 'd3'],
