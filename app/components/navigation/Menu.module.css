@@ -27,7 +27,7 @@
 .menu ul {
   display: flex;
   flex-direction: column;
-  gap: 3.4rem;
+  gap: 2.6rem;
   font-family: var(--font-advent-pro);
   align-items: center;
 }
@@ -35,6 +35,12 @@
 @media screen and (min-width: 990px) {
   .menu ul {
     align-items: flex-start;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .menu ul {
+    gap: 3.4rem;
   }
 }
 
