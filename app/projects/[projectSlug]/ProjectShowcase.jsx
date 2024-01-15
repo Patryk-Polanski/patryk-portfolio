@@ -107,7 +107,7 @@ export default function ProjectShowcase({
                 link={project.linkWebsite}
                 variation='primary'
                 newTab={true}
-                text='visit project'
+                text='Visit project'
               />
             )}
             {project.linkGithub && (
