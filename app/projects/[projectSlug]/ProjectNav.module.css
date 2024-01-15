@@ -57,8 +57,14 @@
 .emblaSlide button {
   border: 1px solid var(--color-tertiary-darkest);
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 0.6rem;
   display: block;
+}
+
+@media screen and (min-width: 500px) {
+  .emblaSlide button {
+    padding: 1rem;
+  }
 }
 
 .emblaSlide button:hover,

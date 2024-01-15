@@ -6,7 +6,7 @@ import { motion as m } from 'framer-motion';
 
 import styles from './SkillsList.module.css';
 
-export default function SkillsListItem({ node, index }) {
+export default function SkillsListItem({ node, index, isTechStackReady }) {
   return (
     <div className={styles.skillsListItem}>
       <div className={styles.skillsListImageWrapper}>
@@ -26,7 +26,7 @@ export default function SkillsListItem({ node, index }) {
         className={styles.skillsListItemHeading}
         style={{ color: `${node.color}` }}
         initial={{ opacity: 0, translateY: '20px' }}
-        whileInView={{ opacity: 1, translateY: '0' }}
+        animate={isTechStackReady ? { opacity: 1, translateY: '0' } : ''}
         transition={{ delay: 1 + 0.05 * index, duration: 0.4 }}
         viewport={{ once: true }}
       >

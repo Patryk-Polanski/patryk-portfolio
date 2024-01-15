@@ -116,15 +116,6 @@ export default function HomePage() {
           <Social />
         </FadeIn>
       </SectionAbout>
-
-      <Footer>
-        <FadeIn direction='left' className={styles.contactWrapperFooter}>
-          <CircularIcon />
-        </FadeIn>
-        <FadeIn direction='down'>
-          <Copyright />
-        </FadeIn>
-      </Footer>
     </main>
   );
 }

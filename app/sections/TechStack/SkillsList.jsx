@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { motion as m } from 'framer-motion';
 
 import { skillsData } from './skillsData';
@@ -23,7 +24,7 @@ const skillsListAnim = {
       stiffness: 260,
       damping: 40,
       staggerChildren: 0.05,
-      delayChildren: 0.2,
+      delayChildren: 0.4,
     },
   },
 };
@@ -38,77 +39,124 @@ const skillsListHeadingAnim = {
 import styles from './SkillsList.module.css';
 
 export default function SkillsList() {
+  const [isTechStackReady, setIsTechStackReady] = useState(false);
+
   return (
-    <m.ul
-      variants={skillsListAnim}
-      initial='initial'
-      whileInView='visible'
-      viewport={{ once: true }}
-      className={styles.skillsList}
-    >
-      <m.li
-        key='fullstack'
-        {...skillsListHeadingAnim}
-        className={styles.skillsListHeading}
+    <>
+      <m.h2
+        style={{ opacity: 0 }}
+        className={styles.skillsListHelper}
+        whileInView={() =>
+          isTechStackReady === false &&
+          window.scrollY > 0 &&
+          setIsTechStackReady(true)
+        }
       >
-        <h3>frontend/backend</h3>
-      </m.li>
-
-      {filteredSkillsData.fullstack.map((node, index) => {
-        return (
-          <m.li variants={skillsListAnim} key={node.id}>
-            <SkillsListItem node={node} index={index} />
-          </m.li>
-        );
-      })}
-
-      <m.li
-        key='cms'
-        {...skillsListHeadingAnim}
-        className={styles.skillsListHeading}
+        Tech Stack
+      </m.h2>
+      <m.ul
+        variants={skillsListAnim}
+        initial='initial'
+        animate={isTechStackReady ? 'visible' : ''}
+        viewport={{ once: true, amount: 0.1 }}
+        className={styles.skillsList}
       >
-        <h3>CMS</h3>
-      </m.li>
+        <m.li
+          key='fullstack'
+          {...skillsListHeadingAnim}
+          className={styles.skillsListHeading}
+        >
+          <h3>Frontend</h3>
+        </m.li>
 
-      {filteredSkillsData.cms.map((node, index) => {
-        return (
-          <m.li variants={skillsListAnim} key={node.id}>
-            <SkillsListItem node={node} index={index} />
-          </m.li>
-        );
-      })}
+        {filteredSkillsData.fullstack.map((node, index) => {
+          return (
+            <m.li
+              variants={skillsListAnim}
+              key={node.id}
+              viewport={{ amount: 0.1 }}
+            >
+              <SkillsListItem
+                node={node}
+                index={index}
+                isTechStackReady={isTechStackReady}
+              />
+            </m.li>
+          );
+        })}
 
-      <m.li
-        key='databases'
-        {...skillsListHeadingAnim}
-        className={styles.skillsListHeading}
-      >
-        <h3>Databases</h3>
-      </m.li>
+        <m.li
+          key='cms'
+          {...skillsListHeadingAnim}
+          className={styles.skillsListHeading}
+        >
+          <h3>CMS</h3>
+        </m.li>
 
-      {filteredSkillsData.databases.map((node, index) => {
-        return (
-          <m.li variants={skillsListAnim} key={node.id}>
-            <SkillsListItem node={node} index={index} />
-          </m.li>
-        );
-      })}
+        {filteredSkillsData.cms.map((node, index) => {
+          return (
+            <m.li
+              variants={skillsListAnim}
+              key={node.id}
+              viewport={{ amount: 0.1 }}
+            >
+              <SkillsListItem
+                node={node}
+                index={index}
+                isTechStackReady={isTechStackReady}
+              />
+            </m.li>
+          );
+        })}
 
-      <m.li
-        key='design'
-        {...skillsListHeadingAnim}
-        className={styles.skillsListHeading}
-      >
-        <h3>Design</h3>
-      </m.li>
+        <m.li
+          key='databases'
+          {...skillsListHeadingAnim}
+          className={styles.skillsListHeading}
+        >
+          <h3>Databases</h3>
+        </m.li>
 
-      {filteredSkillsData.design.map((node, index) => {
-        return (
-          <m.li variants={skillsListAnim} key={node.id}>
-            <SkillsListItem node={node} index={index} />
-          </m.li>
-        );
-      })}
-    </m.ul>
+        {filteredSkillsData.databases.map((node, index) => {
+          return (
+            <m.li
+              variants={skillsListAnim}
+              key={node.id}
+              viewport={{ amount: 0.1 }}
+            >
+              <SkillsListItem
+                node={node}
+                index={index}
+                isTechStackReady={isTechStackReady}
+              />
+            </m.li>
+          );
+        })}
+
+        <m.li
+          key='design'
+          {...skillsListHeadingAnim}
+          className={styles.skillsListHeading}
+        >
+          <h3>Design</h3>
+        </m.li>
+
+        {filteredSkillsData.design.map((node, index) => {
+          return (
+            <m.li
+              variants={skillsListAnim}
+              key={node.id}
+              viewport={{ amount: 0.1 }}
+            >
+              <SkillsListItem
+                node={node}
+                index={index}
+                isTechStackReady={isTechStackReady}
+              />
+            </m.li>
+          );
+        })}
+      </m.ul>
+    </>
   );
 }

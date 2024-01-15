@@ -3,7 +3,6 @@
   column-gap: 2.6rem;
   row-gap: 4rem;
   flex-wrap: wrap;
-  margin-top: 6rem;
   justify-content: center;
 }
 
@@ -17,6 +16,12 @@
   .skillsList {
     column-gap: 6rem;
   }
+}
+
+.skillsListHelper {
+  color: var(--color-tertiary-darkest);
+  text-align: center;
+  margin-top: 2rem;
 }
 
 .skillsListHeading {

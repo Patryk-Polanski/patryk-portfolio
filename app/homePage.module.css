@@ -52,8 +52,7 @@
 }
 
 @media screen and (min-width: 750px) {
-  .contactWrapper,
-  .contactWrapperFooter {
+  .contactWrapper {
     display: block;
     position: absolute;
     bottom: 0;
@@ -63,8 +62,7 @@
 }
 
 @media screen and (min-width: 990px) {
-  .contactWrapper,
-  .contactWrapperFooter {
+  .contactWrapper {
     right: 2rem;
   }
 }

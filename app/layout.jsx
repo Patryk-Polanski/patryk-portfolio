@@ -3,6 +3,10 @@ import { Advent_Pro, Comfortaa } from 'next/font/google';
 import { ResponsiveContextProvider } from './context/ResponsiveContext';
 
 import CustomCursor from './components/decorative/CustomCursor';
+import Footer from './sections/Footer/Footer';
+import CircularIcon from './sections/Home/CircularIcon';
+import Copyright from './sections/Footer/Copyright';
+import FadeIn from './components/wrappers/FadeIn';
 
 const AdventProFont = Advent_Pro({
   subsets: ['latin'],
@@ -52,6 +56,14 @@ export default function RootLayout({ children }) {
           {children}
           <div id='modal-slot'></div>
         </ResponsiveContextProvider>
+        <Footer>
+          <FadeIn direction='left' className='contact-footer'>
+            <CircularIcon />
+          </FadeIn>
+          <FadeIn direction='down'>
+            <Copyright />
+          </FadeIn>
+        </Footer>
       </body>
     </html>
   );

@@ -472,3 +472,18 @@ body::-webkit-scrollbar-thumb {
 .textarea:focus-within span::after {
   width: 100%;
 }
+
+@media screen and (min-width: 750px) {
+  .contact-footer {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .contact-footer {
+    right: 2rem;
+  }
+}

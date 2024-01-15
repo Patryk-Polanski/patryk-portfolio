@@ -8,10 +8,6 @@ import ProjectShowcase from './ProjectShowcase';
 import ProjectTechStack from './ProjectTechStack';
 import ProjectDescription from './ProjectDescription';
 import ProjectGallery from './ProjectGallery';
-import Footer from '../../sections/Footer/Footer';
-import FadeIn from '../../components/wrappers/FadeIn';
-import CircularIcon from '../../sections/Home/CircularIcon';
-import Copyright from '../../sections/Footer/Copyright';
 
 // import { portfolioData } from '@/app/sections/Portfolio/PortfolioData';
 
@@ -30,27 +26,14 @@ export default function ProjectDetailsPage({ params }) {
 
   return project ? (
     <>
-      <main>
-        <ProjectShowcase
-          slug={projectSlug}
-          project={project}
-          toggleShowcaseState={setIsShowcaseReady}
-        />
-        <ProjectTechStack project={project} isShowcaseReady={isShowcaseReady} />
-        <ProjectDescription
-          project={project}
-          isShowcaseReady={isShowcaseReady}
-        />
-        <ProjectGallery project={project} />
-      </main>
-      <Footer>
-        <FadeIn direction='left' className={styles.contactWrapperFooter}>
-          <CircularIcon />
-        </FadeIn>
-        <FadeIn direction='down'>
-          <Copyright />
-        </FadeIn>
-      </Footer>
+      <ProjectShowcase
+        slug={projectSlug}
+        project={project}
+        toggleShowcaseState={setIsShowcaseReady}
+      />
+      <ProjectTechStack project={project} isShowcaseReady={isShowcaseReady} />
+      <ProjectDescription project={project} isShowcaseReady={isShowcaseReady} />
+      <ProjectGallery project={project} />
     </>
   ) : (
     <div className={styles.projectNotFound}>

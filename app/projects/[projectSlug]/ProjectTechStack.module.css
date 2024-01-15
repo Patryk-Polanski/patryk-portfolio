@@ -12,6 +12,11 @@
   }
 }
 
+.techStack h2 {
+  color: var(--color-tertiary-darkest);
+  text-align: center;
+}
+
 .techStack img {
   height: 4rem;
   width: 4rem;
