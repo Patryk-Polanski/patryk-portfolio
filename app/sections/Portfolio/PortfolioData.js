@@ -1,11 +1,11 @@
 export const portfolioData = [
   {
-    id: 'restaurante-miramar',
-    title: 'Restaurante Miramar',
+    id: 'citi-quiz',
+    title: 'CitiQuiz',
     index: 0,
-    imgDesktop: '/projects/miramar/miramar-desktop.webp',
-    imgMobile: '/projects/miramar/carousel-mobile.webp',
-    imgThumbnail: '/projects/miramar/carousel-thumbnail.webp',
+    imgDesktop: '/projects/citiquiz/carousel-desktop.webp',
+    imgMobile: '/projects/citiquiz/carousel-mobile.webp',
+    imgThumbnail: '/projects/citiquiz/carousel-thumbnail.webp',
   },
   {
     id: 'descripti',
