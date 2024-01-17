@@ -51,12 +51,23 @@
   object-fit: contain;
 }
 
+.projectComingSoon {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .projectOverview {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 8rem;
   flex-direction: column;
+
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 60rem);
+
+  margin-top: 8rem;
 }
 
 @media screen and (min-width: 990px) {

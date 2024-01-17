@@ -3,6 +3,7 @@ export const portfolioData = [
     id: 'citi-quiz',
     title: 'CitiQuiz',
     index: 0,
+    comingSoon: true,
     imgDesktop: '/projects/citiquiz/carousel-desktop.webp',
     imgMobile: '/projects/citiquiz/carousel-mobile.webp',
     imgThumbnail: '/projects/citiquiz/carousel-thumbnail.webp',

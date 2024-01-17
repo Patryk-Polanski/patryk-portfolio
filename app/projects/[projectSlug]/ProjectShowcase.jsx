@@ -37,110 +37,124 @@ export default function ProjectShowcase({
           <TitleProject slug={slug} id={slug} deviceType={deviceType} />
         }
       />
-      <FadeIn
-        direction='left'
-        className={styles.arrowWrapper}
-        inView={false}
-        delay={2.5}
-      >
-        <DownArrow target='#challenge' />
-      </FadeIn>
-      <div className={styles.projectOverview}>
-        <div className={styles.projectOverviewImages}>
-          <FadeIn
-            direction='right'
-            delay={1}
-            className={styles.projectOverviewIpad}
-          >
-            <Image
-              alt={`${project.title} on an ipad`}
-              src={project.mockupIpad}
-              width={600}
-              height={773}
-              priority
-              loading='eager'
-              quality={100}
-            />
-          </FadeIn>
-          <FadeIn
-            direction='down'
-            delay={1}
-            onComplete={() => toggleShowcaseState(true)}
-            className={styles.projectOverviewImac}
-          >
-            <Image
-              alt={`${project.title} on an imac`}
-              src={project.mockupImac}
-              width={1000}
-              height={802}
-              priority
-              loading='eager'
-              quality={100}
-            />
-          </FadeIn>
+      {!project.comingSoon ? (
+        <>
           <FadeIn
             direction='left'
-            delay={1}
-            className={styles.projectOverviewIphone}
+            className={styles.arrowWrapper}
+            inView={false}
+            delay={2.5}
           >
-            <Image
-              alt={`${project.title} on an iphone`}
-              src={project.mockupIphone}
-              width={400}
-              height={808}
-              priority
-              loading='eager'
-              quality={100}
-            />
+            <DownArrow target='#challenge' />
           </FadeIn>
-        </div>
-        <FadeIn
-          direction='left'
-          delay={1}
-          className={styles.projectOverviewText}
-        >
-          <h2>Overview</h2>
-          <p>{project.overview}</p>
-          <div className={styles.projectOverviewButtons}>
-            {project.linkWebsite && (
-              <Button
-                link={project.linkWebsite}
-                variation='primary'
-                newTab={true}
-                text='Visit project'
-              />
-            )}
-            {project.linkGithub && (
-              <Button
-                link={project.linkGithub}
-                variation='primary'
-                newTab={true}
-                text='Github repo'
-              />
-            )}
-            {project.linkVideo && (
-              <Button
-                link={project.linkVideo}
-                variation='primary'
-                newTab={true}
-                text='Watch video'
-              />
-            )}
-            {project.projectLogin && (
-              <small className={styles.projectOverviewLogin}>
-                {project.projectLogin}
-              </small>
-            )}
+          <div className={styles.projectOverview}>
+            <div className={styles.projectOverviewImages}>
+              <FadeIn
+                direction='right'
+                delay={1}
+                className={styles.projectOverviewIpad}
+              >
+                <Image
+                  alt={`${project.title} on an ipad`}
+                  src={project.mockupIpad}
+                  width={600}
+                  height={773}
+                  priority
+                  loading='eager'
+                  quality={100}
+                />
+              </FadeIn>
+              <FadeIn
+                direction='down'
+                delay={1}
+                onComplete={() => toggleShowcaseState(true)}
+                className={styles.projectOverviewImac}
+              >
+                <Image
+                  alt={`${project.title} on an imac`}
+                  src={project.mockupImac}
+                  width={1000}
+                  height={802}
+                  priority
+                  loading='eager'
+                  quality={100}
+                />
+              </FadeIn>
+              <FadeIn
+                direction='left'
+                delay={1}
+                className={styles.projectOverviewIphone}
+              >
+                <Image
+                  alt={`${project.title} on an iphone`}
+                  src={project.mockupIphone}
+                  width={400}
+                  height={808}
+                  priority
+                  loading='eager'
+                  quality={100}
+                />
+              </FadeIn>
+            </div>
+            <FadeIn
+              direction='left'
+              delay={1}
+              className={styles.projectOverviewText}
+            >
+              <h2>Overview</h2>
+              <p>{project.overview}</p>
+              <div className={styles.projectOverviewButtons}>
+                {project.linkWebsite && (
+                  <Button
+                    link={project.linkWebsite}
+                    variation='primary'
+                    newTab={true}
+                    text='Visit project'
+                  />
+                )}
+                {project.linkGithub && (
+                  <Button
+                    link={project.linkGithub}
+                    variation='primary'
+                    newTab={true}
+                    text='Github repo'
+                  />
+                )}
+                {project.linkVideo && (
+                  <Button
+                    link={project.linkVideo}
+                    variation='primary'
+                    newTab={true}
+                    text='Watch video'
+                  />
+                )}
+                {project.projectLogin && (
+                  <small className={styles.projectOverviewLogin}>
+                    {project.projectLogin}
+                  </small>
+                )}
+              </div>
+              <ul className={styles.projectOverviewTasks}>
+                {project.categories?.map((category) => (
+                  <li key={category} className='h2'>
+                    {category}
+                  </li>
+                ))}
+              </ul>
+            </FadeIn>
           </div>
-          <ul className={styles.projectOverviewTasks}>
-            {project.categories?.map((category) => (
-              <li key={category} className='h2'>
-                {category}
-              </li>
-            ))}
-          </ul>
+        </>
+      ) : (
+        <FadeIn
+          direction='up'
+          className={styles.projectComingSoon}
+          inView={false}
+          delay={1}
+        >
+          <p>Work in Progress</p>
+          <p>Coming soon 🚀</p>
         </FadeIn>
-      </div>
+      )}
     </section>
   );
 }

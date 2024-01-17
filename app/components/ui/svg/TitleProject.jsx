@@ -2,8 +2,12 @@ import TitleDescripti from './TitleDescripti';
 import TitleCascades from './TitleCascades';
 import TitleVapeSuperstore from './TitleVapeSuperstore';
 import TitleTiker from './TitleTiker';
+import TitleCitiQuiz from './TitleCitiQuiz';
 
 export default function TitleProject({ id, slug, deviceType = 'desktop' }) {
+  if (slug === 'citi-quiz')
+    return <TitleCitiQuiz id={id} deviceType={deviceType} />;
+
   if (slug === 'descripti')
     return <TitleDescripti id={id} deviceType={deviceType} />;
 
