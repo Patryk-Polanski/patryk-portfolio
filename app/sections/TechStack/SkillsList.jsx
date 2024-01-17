@@ -47,9 +47,7 @@ export default function SkillsList() {
         style={{ opacity: 0 }}
         className={styles.skillsListHelper}
         whileInView={() =>
-          isTechStackReady === false &&
-          window.scrollY > 0 &&
-          setIsTechStackReady(true)
+          isTechStackReady === false && setIsTechStackReady(true)
         }
       >
         Tech Stack

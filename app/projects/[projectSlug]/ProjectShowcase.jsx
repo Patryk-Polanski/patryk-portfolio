@@ -45,7 +45,7 @@ export default function ProjectShowcase({
             inView={false}
             delay={2.5}
           >
-            <DownArrow target='#challenge' />
+            <DownArrow target='#tech-stack' />
           </FadeIn>
           <div className={styles.projectOverview}>
             <div className={styles.projectOverviewImages}>

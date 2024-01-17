@@ -1,8 +1,14 @@
 .projectShowcase {
   text-align: center;
-  margin-top: 5rem;
+  margin-top: 3rem;
   position: relative;
-  padding-bottom: 4rem;
+  padding-bottom: 0;
+}
+
+@media screen and (min-width: 990px) {
+  .projectShowcase {
+    margin-top: 5rem;
+  }
 }
 
 .projectShowcaseHome {
@@ -52,36 +58,37 @@
 }
 
 .projectComingSoon {
-  margin-top: 4rem;
+  margin-top: 16rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
 .projectOverview {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
   justify-items: center;
-
-  margin-top: 8rem;
+  align-items: center;
+  margin-top: 4rem;
 }
 
 @media screen and (min-width: 990px) {
   .projectOverview {
     gap: 12rem;
     grid-template-columns: auto auto;
+    margin-top: 8rem;
   }
 }
 
 @media screen and (min-width: 1500px) {
   .projectOverview {
     gap: 0;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .projectOverviewImages {
+    margin-top: 10rem;
   }
 }
 
@@ -113,7 +120,13 @@
 
 @media screen and (min-width: 1500px) {
   .projectOverviewImages {
-    margin: 0 16rem 8rem 8rem;
+    margin: 0 4rem 8rem 8rem;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .projectOverviewImages {
+    max-width: 74rem;
   }
 }
 
@@ -127,6 +140,12 @@
 .projectOverviewImac {
   width: 100%;
   max-width: 67.5rem;
+}
+
+@media screen and (min-width: 2000px) {
+  .projectOverviewImac {
+    max-width: 74rem;
+  }
 }
 
 .projectOverviewImac img {
@@ -187,6 +206,7 @@
 @media screen and (min-width: 990px) {
   .projectOverviewText {
     max-width: unset;
+    justify-self: start;
   }
 }
 

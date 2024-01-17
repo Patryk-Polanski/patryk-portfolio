@@ -1,3 +1,24 @@
+.techStackWrapper {
+  position: relative;
+  padding-top: 4rem;
+}
+
+.techStackWrapper h2 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  color: var(--color-tertiary-darkest);
+  text-align: center;
+}
+
+@media screen and (min-width: 990px) {
+  .techStackWrapper h2 {
+    top: unset;
+    bottom: 0;
+    transform: translateY(100%);
+  }
+}
+
 .techStack {
   display: flex;
   align-items: flex-start;
@@ -10,11 +31,6 @@
   .techStack {
     column-gap: 1rem;
   }
-}
-
-.techStack h2 {
-  color: var(--color-tertiary-darkest);
-  text-align: center;
 }
 
 .techStack img {

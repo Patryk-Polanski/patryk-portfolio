@@ -116,12 +116,18 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 35.2rem;
+  width: 36rem;
   height: auto;
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 0.6rem;
   border: 1px solid var(--color-tertiary-darkest);
   transition: all 0.2s ease-in;
+}
+
+@media screen and (min-width: 500px) {
+  .marqueeItemImage {
+    padding: 0.8rem;
+  }
 }
 
 @media screen and (min-width: 2000px) {

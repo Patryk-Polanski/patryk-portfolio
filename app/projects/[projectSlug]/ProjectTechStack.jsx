@@ -35,13 +35,11 @@ export default function ProjectTechStack({ project, isShowcaseReady }) {
 
   return (
     techStack.length > 0 && (
-      <>
+      <div className={styles.techStackWrapper} id='tech-stack'>
         <m.h2
           style={{ opacity: 0 }}
           whileInView={() =>
-            isTechStackReady === false &&
-            window.scrollY > 0 &&
-            setIsTechStackReady(true)
+            isTechStackReady === false && setIsTechStackReady(true)
           }
         >
           Tech Stack
@@ -63,7 +61,7 @@ export default function ProjectTechStack({ project, isShowcaseReady }) {
             </m.li>
           ))}
         </m.ul>
-      </>
+      </div>
     )
   );
 }
