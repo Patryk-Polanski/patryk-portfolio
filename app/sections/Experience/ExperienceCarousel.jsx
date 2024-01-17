@@ -75,6 +75,7 @@ export default function ExperienceCarousel() {
                       src={experience.companyLogo}
                       width={170}
                       height={58}
+                      priority={true}
                       alt={`${experience.company} logo`}
                     />
                     <a className='plain-link' href={experience.companyLink}>
