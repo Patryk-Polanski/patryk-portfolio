@@ -65,43 +65,55 @@
   flex-direction: column;
 
   display: grid;
-  grid-template-columns: 1fr minmax(auto, 60rem);
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  justify-items: center;
 
   margin-top: 8rem;
 }
 
 @media screen and (min-width: 990px) {
   .projectOverview {
-    flex-direction: row;
+    gap: 12rem;
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .projectOverview {
+    gap: 0;
   }
 }
 
 .projectOverviewImages {
   position: relative;
   margin-bottom: 8rem;
+  margin: 0 4rem 8rem;
+  width: 100%;
+  max-width: 67.5rem;
 }
 
 @media screen and (min-width: 750px) {
   .projectOverviewImages {
-    margin: 0 8rem 8rem;
+    margin: 0 8rem 8rem 8rem;
   }
 }
 
 @media screen and (min-width: 990px) {
   .projectOverviewImages {
-    margin-bottom: 0;
+    margin: 0 3rem 8rem 14rem;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .projectOverviewImages {
-    margin: 0 10rem;
+    margin: 0 3rem 8rem 16rem;
   }
 }
 
 @media screen and (min-width: 1500px) {
   .projectOverviewImages {
-    margin: 0 10rem 0 14rem;
+    margin: 0 16rem 8rem 8rem;
   }
 }
 
@@ -170,6 +182,12 @@
   gap: 4.5rem;
   flex-grow: 1;
   max-width: 60rem;
+}
+
+@media screen and (min-width: 990px) {
+  .projectOverviewText {
+    max-width: unset;
+  }
 }
 
 .projectOverviewText h2 {
