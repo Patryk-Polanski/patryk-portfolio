@@ -151,7 +151,7 @@ export default function ProjectShowcase({
           inView={false}
           delay={1}
         >
-          <p>Work in Progress</p>
+          <p>Work in progress</p>
           <p>Coming soon 🚀</p>
         </FadeIn>
       )}

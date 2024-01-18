@@ -11,7 +11,7 @@ export default function Social() {
         link='/patryk/patryk-polanski-cv.pdf'
         variation='primary'
         newTab={true}
-        text='view CV'
+        text='View CV'
       />
       <Button
         link='https://www.linkedin.com/in/patryk-polanski/'

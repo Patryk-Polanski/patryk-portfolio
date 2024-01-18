@@ -13,7 +13,7 @@ export default function Profile() {
         alt='Patryk Polanski profile picture'
         loading='eager'
       />
-      <p>Web developer</p>
+      <p>Web Developer</p>
     </div>
   );
 }
