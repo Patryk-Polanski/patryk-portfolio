@@ -152,7 +152,16 @@ export default function ProjectShowcase({
           delay={1}
         >
           <p>Work in progress</p>
-          <p>Coming soon 🚀</p>
+          <p>
+            Coming soon
+            <Image
+              style={{ marginLeft: '8px', marginBottom: '-6px' }}
+              src={'/decorative/rocket.webp'}
+              width={22}
+              height={22}
+              alt='rocket emoji'
+            />
+          </p>
         </FadeIn>
       )}
     </section>

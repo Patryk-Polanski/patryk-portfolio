@@ -18,7 +18,7 @@ export default function HorizontalLine({
   return (
     <m.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 0.75 }}
+      animate={{ opacity: 0.85 }}
       transition={{
         delay: delay,
         duration: 1,

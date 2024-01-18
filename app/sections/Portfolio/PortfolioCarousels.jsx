@@ -61,12 +61,12 @@ export default function PortfolioCarousels() {
           updateThumbsIndex={updateThumbsIndex}
           deviceType={deviceType}
         />
+        <small>Click on the title or main cards to go to project page</small>
       </FadeIn>
       <CustomThumbsCarousel
         activeIndex={activeIndex}
         updateMainIndex={updateMainIndex}
       />
-      <small>Click on the title or main cards to go to project page</small>
     </div>
   );
 }
