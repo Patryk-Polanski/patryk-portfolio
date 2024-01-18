@@ -30,7 +30,7 @@ export default function LandingImage() {
       </m.div>
       <m.span
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={{ opacity: 0.7 }}
         transition={{
           delay: 5,
           duration: 1,
@@ -38,7 +38,7 @@ export default function LandingImage() {
       />
       <m.span
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={{ opacity: 0.7 }}
         transition={{
           delay: 5,
           duration: 1,

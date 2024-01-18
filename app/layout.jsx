@@ -8,6 +8,11 @@ import CircularIcon from './sections/Home/CircularIcon';
 import Copyright from './sections/Footer/Copyright';
 import FadeIn from './components/wrappers/FadeIn';
 
+import './reset.css';
+import './globals.css';
+import './embla.css';
+import './components/ui/button.css';
+
 const AdventProFont = Advent_Pro({
   subsets: ['latin'],
   weight: ['400', '600'],
@@ -19,11 +24,6 @@ const ComfortaaFont = Comfortaa({
   weight: ['400', '600'],
   variable: '--font-comfortaa',
 });
-
-import './reset.css';
-import './globals.css';
-import './embla.css';
-import './components/ui/button.css';
 
 export const metadata = {
   title: 'Patryk Polanski Portfolio',

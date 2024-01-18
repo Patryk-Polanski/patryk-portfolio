@@ -9,7 +9,7 @@
     top: 50%;
     right: 20%;
     width: 24rem;
-    transform: translateY(calc(-50% - 6vw));
+    transform: translateY(calc(-50% - 4vw));
   }
 }
 
@@ -22,6 +22,7 @@
 @media screen and (min-width: 1500px) {
   .landingImageWrapper {
     width: 28rem;
+    transform: translateY(calc(-50% - 6vw));
   }
 }
 
