@@ -1,6 +1,6 @@
 # Portfolio site
 
-** Website to showcase programming projects **
+## Website to showcase programming projects
 
 Built with React, Next.js and Framer Motion
 
