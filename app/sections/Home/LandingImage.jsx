@@ -1,8 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-
 import { motion as m } from 'framer-motion';
+
+import styles from './LandingImage.module.css';
 
 const imageAnimations = {
   initial: {
@@ -16,14 +17,32 @@ const imageAnimations = {
 
 export default function LandingImage() {
   return (
-    <m.div variants={imageAnimations} initial='initial' animate='animate'>
-      <Image
-        src='/patryk/patryk-dark.webp'
-        width='825'
-        height='1100'
-        alt='Patryk Polanski image'
-        priority={true}
-        quality={100}
+    <m.div className={styles.landingImage}>
+      <m.div variants={imageAnimations} initial='initial' animate='animate'>
+        <Image
+          src='/patryk/patryk-dark.webp'
+          width='825'
+          height='1100'
+          alt='Patryk Polanski image'
+          priority={true}
+          quality={100}
+        />
+      </m.div>
+      <m.span
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          delay: 5,
+          duration: 1,
+        }}
+      />
+      <m.span
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          delay: 5,
+          duration: 1,
+        }}
       />
     </m.div>
   );
