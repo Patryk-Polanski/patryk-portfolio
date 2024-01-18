@@ -1,17 +1,17 @@
 .carouselsWrapper {
-  margin-top: 8rem;
+  margin-top: 6rem;
   position: relative;
 }
 
 @media screen and (min-width: 750px) {
   .carouselsWrapper {
-    margin-top: 12rem;
+    margin-top: 10rem;
   }
 }
 
 .carouselsWrapperHeading {
   padding: 2rem 0;
-  color: var(--color-tertiary-darkest);
+  color: var(--color-tertiary-darker);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -268,4 +268,17 @@
   color: inherit;
   transition: border 0.2s ease-in;
   padding: 1rem;
+}
+
+.carouselsWrapper small {
+  display: block;
+  margin-top: 2rem;
+  line-height: 140%;
+  color: var(--color-tertiary-darker);
+}
+
+@media screen and (min-width: 750px) {
+  .carouselsWrapper small {
+    color: var(--color-tertiary);
+  }
 }

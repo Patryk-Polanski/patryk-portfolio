@@ -66,6 +66,7 @@ export default function PortfolioCarousels() {
         activeIndex={activeIndex}
         updateMainIndex={updateMainIndex}
       />
+      <small>Click on the title or main cards to go to project page</small>
     </div>
   );
 }
