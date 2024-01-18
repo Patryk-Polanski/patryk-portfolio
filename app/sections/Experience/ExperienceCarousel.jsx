@@ -71,14 +71,20 @@ export default function ExperienceCarousel() {
                     <h5>{experience.location}</h5>
                   </div>
                   <div className={styles.emblaSlideIntroRight}>
-                    <Image
-                      src={experience.companyLogo}
-                      width={170}
-                      height={58}
-                      priority={true}
-                      alt={`${experience.company} logo`}
-                    />
-                    <a className='plain-link' href={experience.companyLink}>
+                    <a href={experience.companyLink} target='_blank'>
+                      <Image
+                        src={experience.companyLogo}
+                        width={170}
+                        height={58}
+                        priority={true}
+                        alt={`${experience.company} logo`}
+                      />
+                    </a>
+                    <a
+                      className='plain-link'
+                      href={experience.companyLink}
+                      target='_blank'
+                    >
                       {experience.companyLink}
                     </a>
                   </div>
