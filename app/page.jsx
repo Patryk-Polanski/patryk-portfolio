@@ -22,9 +22,6 @@ import ExperienceCarousel from './sections/Experience/ExperienceCarousel';
 import SectionAbout from './sections/About/About';
 import Description from './sections/About/Description';
 import Testimonials from './sections/About/Testimonials';
-
-import Footer from './sections/Footer/Footer';
-import Copyright from './sections/Footer/Copyright';
 import FadeIn from './components/wrappers/FadeIn';
 
 import styles from './homePage.module.css';
