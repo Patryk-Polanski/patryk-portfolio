@@ -41,16 +41,6 @@ export default function ProjectDescription({ project, isShowcaseReady }) {
           ))}
         </>
       )}
-      {project.evaluation?.length > 0 && (
-        <>
-          <m.h2 variants={text}>Evaluation</m.h2>
-          {project.evaluation.map((p, index) => (
-            <m.p key={index} variants={text}>
-              {p}
-            </m.p>
-          ))}
-        </>
-      )}
     </m.section>
   );
 }
