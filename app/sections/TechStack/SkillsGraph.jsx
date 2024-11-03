@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { useRef, useEffect, useState } from 'react';
-import ForceGraph2D from 'react-force-graph-2d';
+import { useRef, useEffect, useState } from "react";
+import ForceGraph2D from "react-force-graph-2d";
 
-import { debounceFunction } from '@/app/utils/helpers';
+import { debounceFunction } from "@/app/utils/helpers";
 
-import Button from '@/app/components/ui/Button';
+import Button from "@/app/components/ui/Button";
 
-import { skillsData } from './skillsData';
+import { skillsData } from "./skillsData";
 
-import './skillsGraph.css';
+import "./skillsGraph.css";
 
 const IMAGE_SIZE = 37;
 
@@ -17,8 +17,8 @@ function SkillsGraph() {
   const forceRef = useRef(null);
   const containerRef = useRef(null);
   const revealBtnRef = useRef(null);
-  const [zoomLevel, setZoomLevel] = useState(1.4);
-  const [containerWidth, setContainerWidth] = useState('');
+  const [zoomLevel, setZoomLevel] = useState(1.2);
+  const [containerWidth, setContainerWidth] = useState("");
   const [renderGraph, setRenderGraph] = useState(false);
 
   useEffect(() => {
@@ -29,9 +29,9 @@ function SkillsGraph() {
     });
     observer.observe(containerRef?.current);
 
-    if (typeof window !== 'undefined') {
-      window.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' && !renderGraph) {
+    if (typeof window !== "undefined") {
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && !renderGraph) {
           if (
             revealBtnRef.current?.getBoundingClientRect().bottom -
               window.innerHeight <
@@ -51,13 +51,13 @@ function SkillsGraph() {
   useEffect(() => {
     if (!containerWidth || !renderGraph) return;
     forceRef.current
-      .d3Force('charge')
+      .d3Force("charge")
       .strength(containerWidth < 1400 ? -360 : -400)
       .distanceMin(40)
       .distanceMax(containerWidth < 1400 ? 250 : 300);
     setTimeout(() => {
       forceRef.current
-        .d3Force('link')
+        .d3Force("link")
         .iterations(1)
         .distance((link) => (containerWidth < 1400 ? 80 : 110));
     }, 1400);
@@ -86,8 +86,8 @@ function SkillsGraph() {
   return (
     <>
       <div
-        className='visually-hidden'
-        aria-label='Description of the below skill graph'
+        className="visually-hidden"
+        aria-label="Description of the below skill graph"
       >
         Below is a visual graph demonstrating my skills as a web Developer. I
         specialize in front end development, specifically React, Next.js, CSS,
@@ -95,38 +95,38 @@ function SkillsGraph() {
         such as WordPress, Sanity and Shopify.
       </div>
       <div
-        aria-hidden='true'
-        focusable='false'
+        aria-hidden="true"
+        focusable="false"
         className={`force-graph-section ${
-          !renderGraph && 'force-graph-section--initial'
+          !renderGraph && "force-graph-section--initial"
         } hide-cursor`}
         ref={containerRef}
       >
         {!renderGraph ? (
-          <div className='force-graph-button render' ref={revealBtnRef}>
-            <Button variation='primary' onClick={handlePlay} text='Reveal' />
-            <span className='d2'> or press Enter</span>
+          <div className="force-graph-button render" ref={revealBtnRef}>
+            <Button variation="primary" onClick={handlePlay} text="Reveal" />
+            <span className="d2"> or press Enter</span>
           </div>
         ) : (
-          <div className='force-graph-button reset'>
-            <Button variation='primary' onClick={handleReset} text='Reset' />
+          <div className="force-graph-button reset">
+            <Button variation="primary" onClick={handleReset} text="Reset" />
             <Button
-              variation='primary'
+              variation="primary"
               onClick={() => {
                 zoomLevel > 0.8 && setZoomLevel((prevZoom) => prevZoom - 0.2);
               }}
-              aria-label='Zoom out'
-              className='styled-icon'
-              text='&minus;'
+              aria-label="Zoom out"
+              className="styled-icon"
+              text="&minus;"
             />
             <Button
-              variation='primary'
+              variation="primary"
               onClick={() => {
                 zoomLevel < 3 && setZoomLevel((prevZoom) => prevZoom + 0.2);
               }}
-              aria-label='Zoom in'
-              className='styled-icon'
-              text='+'
+              aria-label="Zoom in"
+              className="styled-icon"
+              text="+"
             />
           </div>
         )}
@@ -135,8 +135,8 @@ function SkillsGraph() {
             ref={forceRef}
             key={Math.random}
             graphData={skillsData}
-            backgroundColor={'#14191F'}
-            nodeLabel='name'
+            backgroundColor={"#14191F"}
+            nodeLabel="name"
             refresh={true}
             enableZoomInteraction={false}
             width={containerWidth}
@@ -146,18 +146,18 @@ function SkillsGraph() {
             cooldownTicks={250}
             linkDirectionalParticleColor={(link) => link.color}
             linkDirectionalParticleWidth={6}
-            linkDirectionalParticles='speed'
+            linkDirectionalParticles="speed"
             linkDirectionalParticleSpeed={(d) => d.speed * 0.003}
-            nodeCanvasObjectMode={() => 'after'}
+            nodeCanvasObjectMode={() => "after"}
             nodeColor={(node) => node.color}
             linkCurvature={0.2}
-            linkColor={(link) => '#3d3d3d'}
-            linkWidth={(link) => '3'}
+            linkColor={(link) => "#3d3d3d"}
+            linkWidth={(link) => "3"}
             nodeCanvasObject={(node, ctx, globalScale) => {
-              ctx.font = '11px Sans-Serif';
-              ctx.textAlign = 'center';
-              ctx.textBaseline = 'middle';
-              ctx.fillStyle = '#A9A9A9';
+              ctx.font = "11px Sans-Serif";
+              ctx.textAlign = "center";
+              ctx.textBaseline = "middle";
+              ctx.fillStyle = "#A9A9A9";
               ctx.fillText(node.name, node.x, node.y + (IMAGE_SIZE - 4));
               let icon = document.getElementById(`skill-${node.id}`);
               if (!icon) return;
