@@ -1,7 +1,7 @@
 export const experienceData = [
   {
     date: 'June 2019 - August 2019',
-    jobTitle: 'Digital Marketing Intern',
+    jobTitle: 'Design / Marketing Intern',
     location: 'Chengdu, China',
     company: 'Maxxelli',
     companyLogo: '/logos/logo-maxxelli.svg',
@@ -9,11 +9,11 @@ export const experienceData = [
     tasks: [
       {
         id: '1',
-        task: 'Created engaging and effective content using CMS platforms, Wordpress and WeChat',
+        task: 'Created engaging and effective content using CMS platforms Wordpress and WeChat',
       },
       {
         id: '2',
-        task: "Designed impactful documents and reports for company's internal usage",
+        task: "Designed elegant documents and reports for the company's internal usage",
       },
       {
         id: '3',
@@ -31,7 +31,7 @@ export const experienceData = [
     tasks: [
       {
         id: '1',
-        task: 'Developed WordPress themes using HTML, SCSS, JavaScript and PHP',
+        task: 'Developed WordPress themes and landing pages using HTML, SCSS, JavaScript and PHP',
       },
       {
         id: '2',
@@ -39,13 +39,35 @@ export const experienceData = [
       },
       {
         id: '3',
-        task: 'Maintained regular communication with clients to gather feedback and ensure their satisfaction with provided services',
+        task: 'Maintained regular communication with clients to gather feedback and ensure their satisfaction with our services',
+      },
+    ],
+  },
+  {
+    date: 'October 2021 - March 2022',
+    jobTitle: 'Web Developer and Designer',
+    location: 'London, United Kingdom',
+    company: 'Selected Group',
+    companyLogo: '/logos/logo-selected.svg',
+    companyLink: 'https://www.selected.org/',
+    tasks: [
+      {
+        id: '1',
+        task: 'Designed/developed slick and modern restaurant websites for clients across the UK and Spain',
+      },
+      {
+        id: '2',
+        task: "Added functionality to enable the implementation of the company's internal software for managing reservations and deliveries",
+      },
+      {
+        id: '3',
+        task: 'Managed a portfolio of websites with regular updates and maintenance',
       },
     ],
   },
   {
     date: 'August 2021 - June 2022',
-    jobTitle: 'SEO / Web Designer',
+    jobTitle: 'Web Developer & SEO / Web Designer ',
     location: 'London, United Kingdom',
     company: 'Kinetik Solutions',
     companyLogo: '/logos/logo-kinetik.svg',
@@ -53,37 +75,15 @@ export const experienceData = [
     tasks: [
       {
         id: '1',
-        task: 'Enhanced website layouts to optimise user experience and increase readability, resulting in improved engagement',
+        task: 'Reworked website layouts and behaviour to enhance user experience and improve accessibility, which resulted in improved engagement',
       },
       {
         id: '2',
-        task: 'Streamlined SEO techniques and improved site performance, leading to faster load times and enhanced responsiveness',
+        task: 'Implemented SEO techniques and optimized site performance, leading to faster load times and better website visibility',
       },
       {
         id: '3',
         task: "Created engaging infographics and documents that complemented the company's brand voice and elevated online presence",
-      },
-    ],
-  },
-  {
-    date: 'November 2021 - March 2022',
-    jobTitle: 'Web Developer and Designer',
-    location: 'London, United Kingdom',
-    company: 'Selected',
-    companyLogo: '/logos/logo-selected.svg',
-    companyLink: 'https://www.selected.org/',
-    tasks: [
-      {
-        id: '1',
-        task: 'Developed and designed multiple restaurant websites for clients across the UK and Spain',
-      },
-      {
-        id: '2',
-        task: 'Enhanced user experience by creating intuitive UI designs',
-      },
-      {
-        id: '3',
-        task: 'Managed a portfolio of websites with regular updates and maintenance',
       },
     ],
   },
@@ -97,7 +97,7 @@ export const experienceData = [
     tasks: [
       {
         id: '1',
-        task: 'Utilised modern technologies such as React, Next.js, TypeScript, and Tailwind to create engaging websites and web applications',
+        task: 'Utilised JS technologies such as React, TypeScript and Next.js to compose reactive UIs, write backend API routes and build full stack applications with AI integrations',
       },
       {
         id: '2',
@@ -105,7 +105,7 @@ export const experienceData = [
       },
       {
         id: '3',
-        task: 'Conducted unit tests and optimised projects with Google Lighthouse, third-party software and best practices',
+        task: 'Managed unit tests and optimised projects with Google Lighthouse, third-party software and best practices to increase performance, SEO and accessibility',
       },
       {
         id: '4',

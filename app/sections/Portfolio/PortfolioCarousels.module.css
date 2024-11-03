@@ -152,7 +152,7 @@
 @media screen and (min-width: 990px) {
   .mainEmblaButtons {
     position: absolute;
-    bottom: 4rem;
+    bottom: 8rem;
     right: 0;
     top: unset;
     left: unset;
