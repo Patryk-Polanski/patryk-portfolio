@@ -12,6 +12,7 @@ export const portfolioData = [
     overview:
       "A free, open-source tool designed to help British citizenship applicants prepare for the 'Life in the UK' test.",
     linkWebsite: "https://citiquiz.netlify.app/",
+    linkGithub: "https://github.com/Patryk-Polanski/citi-quiz",
     categories: ["UX/UI", "Frontend", "Backend"],
     techStack: [
       "figma",
