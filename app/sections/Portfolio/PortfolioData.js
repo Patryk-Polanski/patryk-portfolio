@@ -20,6 +20,8 @@ export const portfolioData = [
       "react",
       "typescript",
       "tanstack-query",
+      "redux",
+      "react-router",
       "firebase",
     ],
     challenge: [

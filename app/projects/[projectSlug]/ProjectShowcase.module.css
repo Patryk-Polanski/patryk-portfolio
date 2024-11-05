@@ -31,7 +31,7 @@
 
 .projectShowcaseHome::before {
   pointer-events: none;
-  content: 'Home';
+  content: "Home";
   position: absolute;
   left: 50%;
   bottom: 0;
@@ -251,10 +251,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8rem;
+  flex-wrap: wrap;
+  gap: 4rem;
   color: var(--color-primary-lighter);
   width: 100%;
   max-width: 50rem;
+}
+
+@media screen and (min-width: 990px) {
+  .projectOverviewTasks {
+    gap: 6rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .projectOverviewTasks {
+    gap: 7rem;
+  }
 }
 
 .arrowWrapper {
