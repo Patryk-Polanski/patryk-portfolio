@@ -9,7 +9,8 @@ export const portfolioData = [
     mockupIphone: "/projects/citiquiz/mockup-iphone.webp",
     mockupIpad: "/projects/citiquiz/mockup-ipad.webp",
     mockupImac: "/projects/citiquiz/mockup-imac.webp",
-    overview: "Overview",
+    overview:
+      "A free, open-source tool designed to help British citizenship applicants prepare for the 'Life in the UK' test.",
     linkWebsite: "https://citiquiz.netlify.app/",
     categories: ["UX/UI", "Frontend", "Backend"],
     techStack: [
@@ -21,7 +22,11 @@ export const portfolioData = [
       "tanstack-query",
       "firebase",
     ],
-    challenge: ["Challenge"],
+    challenge: [
+      "Applying for a British citizenship requires completing the “Life in the UK” test, which is a quiz comprising of 24 questions that test the applicants knowledge of the British history, culture and customs. Having completed the test myself, I've experienced a couple of frustrations with the learning tools that were available on the market - official apps were paid and were either available on phones or personal computers. Free versions were under maintained and felt clunky. Additionally, I wanted to be able to keep a reference of all the questions I failed to help me find gaps in my knowledge and better memorise the correct answers. Knowing that a few of my acquaintances were preparing for the Life in the UK test as well, I decided to develop an open source tool to facilitate this learning process.",
+
+      "I started with gathering ideas for the layout, functionality and design for the web app. In Figma, I created mood boards and mockups which were later turned into fully fleshed designs. For the front-end, I've decided to choose a tech stack I am most familiar with, which is React with TypeScript and Tailwind to speed up styling. React Router was used to manage routes and Tanstack Query was added for better data fetching workflow. Even though Redux was not necessary, I decided to incorporate it into the project to practice creating slices and dispatching actions. The backend of the web app is powered by the Google Firebase services. Firebase is used as a database along with Firebase authentication that allows users to create accounts. Signing up is optional and the tool is still usable without an account - user data/statistics are instead managed in Local storage in this case. CitiQuiz is fully responsive and can be used on all devices.",
+    ],
     gallery: [
       { src: "/projects/citiquiz/gallery-collage.webp" },
       { src: "/projects/citiquiz/gallery-tablets.webp" },
