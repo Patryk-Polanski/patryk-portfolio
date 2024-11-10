@@ -397,6 +397,7 @@ body::-webkit-scrollbar-thumb {
 .input::placeholder,
 .textarea::placeholder {
   visibility: hidden;
+  opacity: 0;
 }
 
 .textarea {

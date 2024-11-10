@@ -4,7 +4,7 @@
   left: 0;
   height: 100vh;
   width: 100%;
-  overflow: scroll;
+  overflow: auto;
   z-index: 100;
   display: flex;
   justify-content: center;
