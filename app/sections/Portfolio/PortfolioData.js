@@ -34,10 +34,10 @@ export const portfolioData = [
       'Overall, the application is complex and has incredible depth and even though I struggled at times, I am appreciative of the opportunity to work on such a grand project where I was required to go above and beyond and push my skills as a developer.',
     ],
     gallery: [
-      { src: '/projects/citiquiz/gallery-collage.webp' },
-      { src: '/projects/citiquiz/gallery-tablets.webp' },
-      { src: '/projects/citiquiz/gallery-laptops.webp' },
-      { src: '/projects/citiquiz/gallery-phones.webp' },
+      { src: '/projects/smartzer/gallery-collage.webp' },
+      { src: '/projects/smartzer/gallery-laptops-1.webp' },
+      { src: '/projects/smartzer/gallery-laptops-2.webp' },
+      { src: '/projects/smartzer/gallery-phones.webp' },
     ],
   },
   {
