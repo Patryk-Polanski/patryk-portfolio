@@ -1,28 +1,17 @@
 'use client';
 
-import { useState, useCallback } from 'react';
-import { motion as m, useInView } from 'framer-motion';
+import { useState } from 'react';
+import { motion as m } from 'framer-motion';
 
 import { skillsData } from '@/app/sections/TechStack/skillsData';
 
+import {
+  skillAnim,
+  skillsListAnim,
+} from '@/app/utils/motion/skillsList/animations';
 import SkillsListItem from '../../sections/TechStack/SkillsListItem';
 
 import styles from './ProjectTechStack.module.css';
-
-const skillsListAnim = {
-  initial: { scale: 0, rotate: 360 },
-  visible: {
-    rotate: 0,
-    scale: 1,
-    transition: {
-      type: 'spring',
-      stiffness: 260,
-      damping: 40,
-      staggerChildren: 0.1,
-      delayChildren: 0.4,
-    },
-  },
-};
 
 export default function ProjectTechStack({ project, isShowcaseReady }) {
   const [techStack, _setTechStack] = useState(
@@ -52,7 +41,7 @@ export default function ProjectTechStack({ project, isShowcaseReady }) {
           className={styles.techStack}
         >
           {techStack.map((node, index) => (
-            <m.li variants={skillsListAnim} key={node.id}>
+            <m.li variants={skillAnim} key={node.id}>
               <SkillsListItem
                 node={node}
                 index={index}
