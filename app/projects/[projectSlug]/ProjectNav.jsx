@@ -15,12 +15,6 @@ import ProjectNavItem from './ProjectNavItem';
 
 import styles from './ProjectNav.module.css';
 
-// export function generateStaticParams() {
-//   return portfolioData.map((project) => ({
-//     projectSlug: project.id,
-//   }));
-// }
-
 export default function ProjectNav() {
   const pathname = usePathname();
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -76,12 +70,12 @@ export default function ProjectNav() {
 
     const projectPathname = pathname.split('/').slice(-1);
     const projectIndex = portfolioData.findIndex(
-      (el) => el.title.toLowerCase().replaceAll(' ', '-') === projectPathname[0]
+      (el) => el.id === projectPathname[0]
     );
     if (projectIndex === -1) return;
     setSelectedIndex(projectIndex);
     emblaApi.scrollTo(projectIndex);
-  }, [emblaApi]);
+  }, [emblaApi, pathname]);
 
   return (
     <nav className={styles.projectNav}>
