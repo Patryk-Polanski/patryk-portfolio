@@ -123,7 +123,7 @@ export const experienceData = [
     tasks: [
       {
         id: "1",
-        task: "Developing, improving and maintaining an in-house set of tools that allow the creation of interactive shopping videos and livestreams. The product is packaged as SaaS and sold as a standalone web app and can be integrated with e-commerce platforms such as Shopify",
+        task: "Developing and maintaining an in-house suite of tools that enable the creation of interactive shopping videos and livestreams. Responsibilites include optimising the player/editor for high traffic, polishing the user experience on desktop/mobile devices as well as making the user flow pleasant, clear and accesible",
       },
       {
         id: "2",
