@@ -127,7 +127,7 @@ export const experienceData = [
       },
       {
         id: "2",
-        task: "Working on a monorepo consisting of React, Redux, React Router, Tanstack Query, TypeScript, Node.js, Zod, Firebase and GCP",
+        task: "Working on a monorepo consisting of React, Redux, React Router, Tanstack Query, TypeScript, Node.js, Zod, Firebase and GCP, while also maintaining custom built Shopify apps",
       },
       {
         id: "3",
