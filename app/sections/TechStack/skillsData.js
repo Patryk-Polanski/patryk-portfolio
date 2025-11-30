@@ -55,6 +55,12 @@ export const skillsData = {
       type: "cms",
     },
     {
+      id: "notion",
+      name: "Notion",
+      color: "#FFFFFF",
+      type: "cms",
+    },
+    {
       id: "javascript",
       name: "JavaScript",
       color: "#F0DB4F",
@@ -87,6 +93,12 @@ export const skillsData = {
     {
       id: "react",
       name: "React",
+      color: "#00D8FF",
+      type: "fullstack",
+    },
+    {
+      id: "react-native",
+      name: "React Native",
       color: "#00D8FF",
       type: "fullstack",
     },
@@ -142,12 +154,6 @@ export const skillsData = {
       id: "mongodb",
       name: "MongoDB",
       color: "#439934",
-      type: "databases",
-    },
-    {
-      id: "prisma",
-      name: "Prisma",
-      color: "#178C7E",
       type: "databases",
     },
     {
@@ -276,6 +282,13 @@ export const skillsData = {
       color: "#FFFFFF",
     },
     {
+      id: "react-native-react",
+      source: "react-native",
+      target: "react",
+      speed: 1,
+      color: "#00D8FF",
+    },
+    {
       id: "cms-patryk",
       source: "cms",
       target: "patryk",
@@ -304,6 +317,13 @@ export const skillsData = {
       color: "#F04939",
     },
     {
+      id: "notion-cms",
+      source: "notion",
+      target: "cms",
+      speed: 1,
+      color: "#FFFFFF",
+    },
+    {
       id: "databases-patryk",
       source: "databases",
       target: "patryk",
@@ -330,13 +350,6 @@ export const skillsData = {
       target: "databases",
       speed: 1,
       color: "#439934",
-    },
-    {
-      id: "prisma-databases",
-      source: "prisma",
-      target: "databases",
-      speed: 1,
-      color: "#178C7E",
     },
     {
       id: "design-patryk",
