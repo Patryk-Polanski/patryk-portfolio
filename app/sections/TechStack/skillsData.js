@@ -151,6 +151,12 @@ export const skillsData = {
       type: "databases",
     },
     {
+      id: "gcp",
+      name: "GCP",
+      color: "#448AFF",
+      type: "databases",
+    },
+    {
       id: "mongodb",
       name: "MongoDB",
       color: "#439934",
@@ -350,6 +356,13 @@ export const skillsData = {
       target: "databases",
       speed: 1,
       color: "#439934",
+    },
+    {
+      id: "gcp-databases",
+      source: "gcp",
+      target: "databases",
+      speed: 1,
+      color: "#448AFF",
     },
     {
       id: "design-patryk",
